@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --canvas: #ffffff;
+    --canvas-subtle: #fbfbfd;
+    --canvas-muted: #f5f5f7;
+    --ink: #111113;
+    --ink-secondary: #6e6e73;
+    --ink-tertiary: #86868b;
+    --hairline: rgba(0, 0, 0, 0.08);
+    --hairline-strong: rgba(0, 0, 0, 0.16);
+    --glass-bg: rgba(255, 255, 255, 0.72);
+    --glass-border: rgba(0, 0, 0, 0.06);
+    --glass-card: rgba(255, 255, 255, 0.85);
+  }
+
+  * {
+    font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", system-ui, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--canvas-subtle);
+    color: var(--ink);
+    font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", system-ui, sans-serif;
+  }
+}
+
+.font-mono {
+  font-family: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace !important;
+}
+
+/* Glassmorphism primitives */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.glass-surface {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(24px) saturate(190%);
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.04);
+}
+
+.glass-card-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-hover:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.96);
+  border-color: rgba(0, 0, 0, 0.12);
+  box-shadow: 0 16px 36px -4px rgba(0, 0, 0, 0.08);
+}
+
+.glass-dark {
+  background: rgba(12, 12, 14, 0.82);
+  backdrop-filter: blur(24px) saturate(190%);
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 48px -12px rgba(0, 0, 0, 0.4);
+}
+
+.glass-inset {
+  background: rgba(0, 0, 0, 0.025);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.ambient-glow {
+  background: radial-gradient(circle at 50% 0%, rgba(0, 0, 0, 0.035) 0%, transparent 70%);
+}
+
+.ambient-glow-dark {
+  background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.08) 0%, transparent 75%);
+}
+
+/* Number display with tabular spacing */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Press state as per Apple fluid interfaces */
+.btn-press {
+  transition: transform 120ms ease-out, opacity 120ms ease-out, background-color 150ms ease-out;
+}
+.btn-press:active {
+  transform: scale(0.97);
+}
