@@ -6,10 +6,7 @@ import {
   Gift,
   ArrowRight,
   CheckCircle2,
-  Lock,
-  Sparkles,
   Zap,
-  Users,
 } from "lucide-react";
 
 interface OfferProps {
@@ -18,28 +15,28 @@ interface OfferProps {
 
 export function GrandSlamOffer({ onOpenTrial }: OfferProps) {
   return (
-    <section id="guarantee" className="py-20 sm:py-28 bg-white relative overflow-hidden">
+    <section id="guarantee" className="py-20 sm:py-28 bg-[#09090b] relative overflow-hidden text-neutral-100">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         {/* Top Scarcity Pill */}
         <div className="flex justify-center mb-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-100 border border-neutral-200 text-xs font-semibold text-neutral-800">
-            <span className="w-2 h-2 rounded-full bg-rose-500 animate-ping" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-neutral-300">
+            <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
             <span>Cohort Cap: 19 of 25 Studio Seats Reserved This Month</span>
           </div>
         </div>
 
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-[#111113] leading-tight mb-4">
+          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight mb-4">
             The Grand Slam Studio Offer.
           </h2>
-          <p className="text-sm sm:text-base text-neutral-600 leading-relaxed">
-            We don't offer generic software discounts. Instead, we remove every single obstacle—switching friction, team adoption, and financial risk—so your decision is a no-brainer.
+          <p className="text-sm sm:text-base text-neutral-400 leading-relaxed">
+            We don't offer generic software discounts. Instead, we remove every single obstacle: switching friction, team adoption, and financial risk, so your decision is a no-brainer.
           </p>
         </div>
 
         {/* The Offer Monolith Box */}
-        <div className="rounded-3xl bg-neutral-900 text-white p-6 sm:p-12 shadow-[0_24px_64px_rgba(0,0,0,0.3)] relative overflow-hidden border border-neutral-800">
+        <div className="rounded-3xl bg-[#121218] text-white p-6 sm:p-12 shadow-[0_24px_64px_rgba(0,0,0,0.6)] relative overflow-hidden border border-white/10">
           <div className="absolute top-0 right-0 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
 
           {/* Core + Value Stack Grid */}
@@ -56,7 +53,7 @@ export function GrandSlamOffer({ onOpenTrial }: OfferProps) {
               </div>
 
               {/* Stack Item 1: Core Platform */}
-              <div className="p-4 rounded-2xl bg-white/5 border border-white/10 flex items-start gap-3.5">
+              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 flex items-start gap-3.5">
                 <div className="w-8 h-8 rounded-xl bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
                   <Zap className="w-4 h-4 text-emerald-400" />
                 </div>
@@ -74,7 +71,7 @@ export function GrandSlamOffer({ onOpenTrial }: OfferProps) {
               </div>
 
               {/* Stack Item 2: Bonus 1 */}
-              <div className="p-4 rounded-2xl bg-white/5 border border-white/10 flex items-start gap-3.5">
+              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 flex items-start gap-3.5">
                 <div className="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
                   <Gift className="w-4 h-4" />
                 </div>
@@ -92,7 +89,7 @@ export function GrandSlamOffer({ onOpenTrial }: OfferProps) {
               </div>
 
               {/* Stack Item 3: Bonus 2 */}
-              <div className="p-4 rounded-2xl bg-white/5 border border-white/10 flex items-start gap-3.5">
+              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 flex items-start gap-3.5">
                 <div className="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
                   <Gift className="w-4 h-4" />
                 </div>
@@ -110,7 +107,7 @@ export function GrandSlamOffer({ onOpenTrial }: OfferProps) {
               </div>
 
               {/* Stack Item 4: Bonus 3 */}
-              <div className="p-4 rounded-2xl bg-white/5 border border-white/10 flex items-start gap-3.5">
+              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 flex items-start gap-3.5">
                 <div className="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
                   <Gift className="w-4 h-4" />
                 </div>
@@ -129,7 +126,7 @@ export function GrandSlamOffer({ onOpenTrial }: OfferProps) {
             </div>
 
             {/* The 100% Margin Recovery Guarantee (5 cols) */}
-            <div className="lg:col-span-5 bg-white text-neutral-900 rounded-2xl p-6 sm:p-8 flex flex-col justify-between shadow-2xl">
+            <div className="lg:col-span-5 bg-white text-neutral-950 rounded-2xl p-6 sm:p-8 flex flex-col justify-between shadow-2xl">
               <div>
                 <div className="w-12 h-12 rounded-2xl bg-black text-white flex items-center justify-center mb-4">
                   <ShieldCheck className="w-6 h-6 text-emerald-400" />
@@ -138,7 +135,7 @@ export function GrandSlamOffer({ onOpenTrial }: OfferProps) {
                 <span className="text-xs font-bold text-neutral-500 uppercase tracking-wider block mb-1">
                   The Ironclad Guarantee
                 </span>
-                <h4 className="text-xl sm:text-2xl font-extrabold text-[#111113] leading-tight mb-3">
+                <h4 className="text-xl sm:text-2xl font-extrabold text-neutral-950 leading-tight mb-3">
                   The 5× ROI Margin Recovery Guarantee.
                 </h4>
 
@@ -146,11 +143,11 @@ export function GrandSlamOffer({ onOpenTrial }: OfferProps) {
                   Use Vertex OS on your active turnkey projects for 30 days.
                 </p>
 
-                <p className="text-xs sm:text-sm text-neutral-700 leading-relaxed font-semibold bg-neutral-50 p-3.5 rounded-xl border border-neutral-200">
+                <p className="text-xs sm:text-sm text-neutral-800 leading-relaxed font-semibold bg-neutral-100 p-3.5 rounded-xl border border-neutral-200">
                   If you don't recover at least <strong>5× your software cost</strong> in prevented material leakage, caught change orders, and verified labor disbursements, we will refund 100% of your fee immediately. No questions. No friction.
                 </p>
 
-                <div className="mt-4 space-y-2 text-xs text-neutral-600">
+                <div className="mt-4 space-y-2 text-xs text-neutral-700">
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-3.5 h-3.5 text-black shrink-0" />
                     <span>Zero long-term lock-in contracts</span>
@@ -167,16 +164,16 @@ export function GrandSlamOffer({ onOpenTrial }: OfferProps) {
               </div>
 
               {/* Action Button */}
-              <div className="mt-6 pt-6 border-t border-neutral-100">
+              <div className="mt-6 pt-6 border-t border-neutral-200">
                 <button
                   onClick={onOpenTrial}
-                  className="btn-press w-full py-3.5 rounded-full bg-black text-white font-semibold text-xs sm:text-sm hover:bg-neutral-800 flex items-center justify-center gap-2 shadow-md transition-all"
+                  className="btn-press w-full py-3.5 rounded-full bg-black text-white font-semibold text-xs sm:text-sm hover:bg-neutral-800 flex items-center justify-center gap-2 shadow-md transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 active:scale-[0.98]"
                 >
                   <span>Claim Studio Pass + All 3 Bonuses</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
-                <span className="text-[11px] text-neutral-400 text-center block mt-2">
-                  14-Day Free Access • No Credit Card Required
+                <span className="text-xs text-neutral-500 text-center block mt-2">
+                  14-Day Free Access / No Credit Card Required
                 </span>
               </div>
             </div>

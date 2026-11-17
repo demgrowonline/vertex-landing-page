@@ -18,7 +18,7 @@ export default function HomePage() {
   const [trialModalOpen, setTrialModalOpen] = useState(false);
 
   return (
-    <div className="relative min-h-screen bg-[#FBFBFD] text-[#111113] selection:bg-black selection:text-white">
+    <div className="relative min-h-screen bg-[#09090b] text-[#f4f4f5] selection:bg-white selection:text-black">
       {/* 01: Frosted Pill Navigation */}
       <Navbar onOpenTrial={() => setTrialModalOpen(true)} />
 

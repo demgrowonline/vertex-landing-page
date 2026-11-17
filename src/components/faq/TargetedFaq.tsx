@@ -21,7 +21,7 @@ export function TargetedFaq() {
     },
     {
       q: "Does the AI ever 'hallucinate' or guess material rates?",
-      a: "Never. In Vertex OS, the AI only handles voice transcription and entity structuring (via Groq Whisper). All mathematical calculations—unit conversions, square footage multipliers, GST calculations, and package totals—are executed by deterministic server code. The AI never invents rates; it strictly matches your spoken specifications to your approved studio catalog and verified supplier benchmarks.",
+      a: "Never. In Vertex OS, the AI only handles voice transcription and entity structuring (via Groq Whisper). All mathematical calculations: unit conversions, square footage multipliers, GST calculations, and package totals, are executed by deterministic server code. The AI never invents rates; it strictly matches your spoken specifications to your approved studio catalog and verified supplier benchmarks.",
     },
     {
       q: "What is the 5× ROI Margin Recovery Guarantee?",
@@ -34,18 +34,18 @@ export function TargetedFaq() {
   ];
 
   return (
-    <section id="faq" className="py-20 sm:py-28 bg-[#FBFBFD] relative overflow-hidden">
+    <section id="faq" className="py-20 sm:py-28 bg-[#0d0d11] relative overflow-hidden text-neutral-100">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-neutral-200 text-[11px] font-semibold text-neutral-800 uppercase tracking-wider mb-4 shadow-sm">
-            <HelpCircle className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-neutral-300 mb-4 shadow-sm">
+            <HelpCircle className="w-3.5 h-3.5 text-neutral-300" />
             <span>Objection Annihilation</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-[#111113] leading-tight mb-4">
+          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight mb-4">
             Frequently Asked Questions.
           </h2>
-          <p className="text-sm sm:text-base text-neutral-600 leading-relaxed">
+          <p className="text-sm sm:text-base text-neutral-400 leading-relaxed">
             Direct, transparent answers to the questions every serious interior studio founder asks before switching.
           </p>
         </div>
@@ -57,18 +57,18 @@ export function TargetedFaq() {
             return (
               <div
                 key={idx}
-                className="rounded-2xl bg-white border border-black/5 overflow-hidden shadow-sm transition-all duration-200"
+                className="rounded-2xl bg-[#131319] border border-white/10 overflow-hidden shadow-lg transition-colors duration-200"
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : idx)}
-                  className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 hover:bg-neutral-50/50 transition-colors"
+                  className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 hover:bg-white/[0.03] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-1 focus-visible:ring-offset-neutral-950"
                 >
-                  <span className="text-sm sm:text-base font-bold text-neutral-900 tracking-tight">
+                  <span className="text-sm sm:text-base font-bold text-white tracking-tight">
                     {faq.q}
                   </span>
                   <div
-                    className={`w-6 h-6 rounded-full bg-neutral-100 flex items-center justify-center shrink-0 transition-transform duration-200 ${
-                      isOpen ? "rotate-180 bg-black text-white" : "text-neutral-500"
+                    className={`w-6 h-6 rounded-full flex items-center justify-center shrink-0 transition-transform duration-200 ${
+                      isOpen ? "rotate-180 bg-white text-black" : "bg-white/10 text-neutral-300"
                     }`}
                   >
                     <ChevronDown className="w-4 h-4" />
@@ -76,7 +76,7 @@ export function TargetedFaq() {
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 sm:px-6 pb-6 text-xs sm:text-sm text-neutral-600 leading-relaxed border-t border-neutral-100 pt-3 animate-in fade-in duration-200">
+                  <div className="px-5 sm:px-6 pb-6 text-xs sm:text-sm text-neutral-300 leading-relaxed border-t border-white/10 pt-4 animate-in fade-in duration-200">
                     {faq.a}
                   </div>
                 )}
@@ -86,25 +86,25 @@ export function TargetedFaq() {
         </div>
 
         {/* Bottom Reassurance Banner */}
-        <div className="mt-12 p-5 rounded-2xl bg-neutral-100/80 border border-neutral-200/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+        <div className="mt-12 p-5 rounded-2xl bg-[#15151e] border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-black text-white flex items-center justify-center shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
               <ShieldCheck className="w-5 h-5 text-emerald-400" />
             </div>
             <div>
-              <span className="text-xs font-bold text-neutral-900 block">
-                Have a specific studio workflow requirement?
+              <span className="text-xs font-bold text-white block">
+                Have a unique studio workflow or custom ERP requirement?
               </span>
-              <span className="text-xs text-neutral-500">
-                Talk directly with our architecture systems team.
+              <span className="text-xs text-neutral-400">
+                Speak directly with our engineering founders. We customize schemas for multi-city turnkey operations.
               </span>
             </div>
           </div>
           <a
-            href="mailto:contact@demgrow.online"
-            className="text-xs font-semibold px-4 py-2 rounded-full bg-white border border-neutral-200 text-neutral-800 hover:bg-neutral-50 shadow-sm"
+            href="mailto:contact@vertexos.com"
+            className="px-4 py-2 rounded-full bg-white text-black font-semibold text-xs hover:bg-neutral-200 transition-colors whitespace-nowrap"
           >
-            Direct Founder Inquiry
+            Ask Founder Team
           </a>
         </div>
       </div>

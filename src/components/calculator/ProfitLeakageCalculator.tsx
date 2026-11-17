@@ -27,18 +27,18 @@ export function ProfitLeakageCalculator({ onOpenTrial }: CalculatorProps) {
   const recoveredProfitLakhs = totalLeakageLakhs * 0.88; // Vertex recovers ~88% of leakage
 
   return (
-    <section id="calculator" className="py-20 sm:py-28 bg-[#F5F5F7] relative overflow-hidden">
+    <section id="calculator" className="py-20 sm:py-28 bg-[#0d0d11] relative overflow-hidden text-neutral-100">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-neutral-200/80 text-[11px] font-semibold text-neutral-800 uppercase tracking-wider mb-4 shadow-sm">
-            <Calculator className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-neutral-300 mb-4 shadow-sm">
+            <Calculator className="w-3.5 h-3.5 text-neutral-300" />
             <span>Interactive Profit Leakage Audit</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-[#111113] leading-tight mb-4">
+          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight mb-4">
             How much profit is quietly leaking from your sites?
           </h2>
-          <p className="text-sm sm:text-base text-neutral-600 leading-relaxed">
+          <p className="text-sm sm:text-base text-neutral-400 leading-relaxed">
             Move the sliders to match your studio's project volume. Based on verified audits of 140+ Indian turnkey interior firms, here is the exact financial bleed caused by unrecorded site expenses and delayed billing.
           </p>
         </div>
@@ -46,15 +46,15 @@ export function ProfitLeakageCalculator({ onOpenTrial }: CalculatorProps) {
         {/* The Calculator Monolith */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           {/* Controls Column (7 cols) */}
-          <div className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 border border-black/5 shadow-[0_8px_30px_rgba(0,0,0,0.04)] flex flex-col justify-between">
+          <div className="lg:col-span-7 bg-[#121217] rounded-3xl p-6 sm:p-8 border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex flex-col justify-between">
             <div className="space-y-8">
               {/* Slider 1: Active Projects */}
               <div>
                 <div className="flex justify-between items-center mb-2">
-                  <label className="text-sm font-bold text-neutral-800">
+                  <label className="text-sm font-bold text-white">
                     Active Turnkey Projects Per Year
                   </label>
-                  <span className="text-sm font-bold text-black font-mono px-3 py-1 bg-neutral-100 rounded-lg">
+                  <span className="text-sm font-bold text-white font-mono px-3 py-1 bg-white/10 rounded-lg border border-white/10">
                     {projectCount} Projects
                   </span>
                 </div>
@@ -65,9 +65,9 @@ export function ProfitLeakageCalculator({ onOpenTrial }: CalculatorProps) {
                   step="1"
                   value={projectCount}
                   onChange={(e) => setProjectCount(Number(e.target.value))}
-                  className="w-full h-2 bg-neutral-200 rounded-lg appearance-none cursor-pointer accent-black"
+                  className="w-full h-2 bg-neutral-800 rounded-lg appearance-none cursor-pointer accent-white"
                 />
-                <div className="flex justify-between text-[11px] text-neutral-400 mt-1 font-medium">
+                <div className="flex justify-between text-xs text-neutral-400 mt-1 font-medium">
                   <span>2 projects (Boutique)</span>
                   <span>10 projects</span>
                   <span>25+ projects (Scale)</span>
@@ -77,10 +77,10 @@ export function ProfitLeakageCalculator({ onOpenTrial }: CalculatorProps) {
               {/* Slider 2: Average Contract Value */}
               <div>
                 <div className="flex justify-between items-center mb-2">
-                  <label className="text-sm font-bold text-neutral-800">
+                  <label className="text-sm font-bold text-white">
                     Average Contract Value Per Residence
                   </label>
-                  <span className="text-sm font-bold text-black font-mono px-3 py-1 bg-neutral-100 rounded-lg">
+                  <span className="text-sm font-bold text-white font-mono px-3 py-1 bg-white/10 rounded-lg border border-white/10">
                     ₹{avgContractLakhs} Lakhs
                   </span>
                 </div>
@@ -91,9 +91,9 @@ export function ProfitLeakageCalculator({ onOpenTrial }: CalculatorProps) {
                   step="5"
                   value={avgContractLakhs}
                   onChange={(e) => setAvgContractLakhs(Number(e.target.value))}
-                  className="w-full h-2 bg-neutral-200 rounded-lg appearance-none cursor-pointer accent-black"
+                  className="w-full h-2 bg-neutral-800 rounded-lg appearance-none cursor-pointer accent-white"
                 />
-                <div className="flex justify-between text-[11px] text-neutral-400 mt-1 font-medium">
+                <div className="flex justify-between text-xs text-neutral-400 mt-1 font-medium">
                   <span>₹15 Lakhs (2 BHK)</span>
                   <span>₹60 Lakhs (Premium 3/4 BHK)</span>
                   <span>₹1.50 Cr+ (Luxury Villa)</span>
@@ -103,10 +103,10 @@ export function ProfitLeakageCalculator({ onOpenTrial }: CalculatorProps) {
               {/* Slider 3: Quoted Gross Margin Target */}
               <div>
                 <div className="flex justify-between items-center mb-2">
-                  <label className="text-sm font-bold text-neutral-800">
+                  <label className="text-sm font-bold text-white">
                     Target Quoted Margin %
                   </label>
-                  <span className="text-sm font-bold text-black font-mono px-3 py-1 bg-neutral-100 rounded-lg">
+                  <span className="text-sm font-bold text-white font-mono px-3 py-1 bg-white/10 rounded-lg border border-white/10">
                     {targetMarginPct}%
                   </span>
                 </div>
@@ -117,9 +117,9 @@ export function ProfitLeakageCalculator({ onOpenTrial }: CalculatorProps) {
                   step="1"
                   value={targetMarginPct}
                   onChange={(e) => setTargetMarginPct(Number(e.target.value))}
-                  className="w-full h-2 bg-neutral-200 rounded-lg appearance-none cursor-pointer accent-black"
+                  className="w-full h-2 bg-neutral-800 rounded-lg appearance-none cursor-pointer accent-white"
                 />
-                <div className="flex justify-between text-[11px] text-neutral-400 mt-1 font-medium">
+                <div className="flex justify-between text-xs text-neutral-400 mt-1 font-medium">
                   <span>25% Target</span>
                   <span>35% (Industry Standard)</span>
                   <span>50% (High-End Luxe)</span>
@@ -128,26 +128,26 @@ export function ProfitLeakageCalculator({ onOpenTrial }: CalculatorProps) {
             </div>
 
             {/* Quick Summary Box */}
-            <div className="mt-8 p-4 rounded-2xl bg-neutral-50 border border-neutral-100 flex flex-wrap items-center justify-between gap-2">
-              <span className="text-xs font-semibold text-neutral-600">Annual Turnkey Volume:</span>
-              <span className="font-bold text-black font-mono text-sm sm:text-base">
+            <div className="mt-8 p-4 rounded-2xl bg-white/[0.03] border border-white/10 flex flex-wrap items-center justify-between gap-2">
+              <span className="text-xs font-semibold text-neutral-400">Annual Turnkey Volume:</span>
+              <span className="font-bold text-white font-mono text-sm sm:text-base">
                 ₹{annualTurnoverLakhs.toFixed(1)} Lakhs ({ (annualTurnoverLakhs / 100).toFixed(2) } Cr)
               </span>
             </div>
           </div>
 
           {/* Results Monolith Column (5 cols) */}
-          <div className="lg:col-span-5 bg-neutral-900 text-white rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-[0_20px_50px_rgba(0,0,0,0.2)] relative overflow-hidden">
+          <div className="lg:col-span-5 bg-[#15151c] text-white rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-[0_24px_64px_rgba(0,0,0,0.6)] relative overflow-hidden border border-white/10">
             {/* Ambient subtle glow */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
 
             <div>
               <div className="flex items-center justify-between mb-4">
-                <span className="text-xs font-bold text-neutral-400 uppercase tracking-wider">
+                <span className="text-xs font-bold text-neutral-400">
                   Financial Diagnosis
                 </span>
-                <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-rose-400 bg-rose-950/60 border border-rose-800/50 px-2.5 py-0.5 rounded-full">
-                  <AlertTriangle className="w-3 h-3" />
+                <span className="inline-flex items-center gap-1 text-xs font-semibold text-rose-300 bg-rose-950/60 border border-rose-800/50 px-2.5 py-0.5 rounded-full">
+                  <AlertTriangle className="w-3 h-3 text-rose-400" />
                   <span>Hidden Margin Bleed</span>
                 </span>
               </div>
@@ -166,7 +166,7 @@ export function ProfitLeakageCalculator({ onOpenTrial }: CalculatorProps) {
               </div>
 
               {/* Breakdown List */}
-              <div className="space-y-3 pt-4 border-t border-neutral-800 text-xs">
+              <div className="space-y-3 pt-4 border-t border-white/10 text-xs">
                 <div className="flex justify-between items-center text-neutral-300">
                   <span>Unbilled Timber & Material Invoices:</span>
                   <span className="font-mono font-semibold text-white">
@@ -179,7 +179,7 @@ export function ProfitLeakageCalculator({ onOpenTrial }: CalculatorProps) {
                     -₹{laborLeakageLakhs.toFixed(2)}L
                   </span>
                 </div>
-                <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 flex items-center justify-between text-emerald-400">
+                <div className="p-3.5 rounded-xl bg-emerald-950/30 border border-emerald-500/30 flex items-center justify-between text-emerald-400">
                   <div className="flex items-center gap-2">
                     <Sparkles className="w-4 h-4 text-emerald-400" />
                     <span className="font-bold">Recoverable with Vertex OS:</span>
@@ -192,15 +192,15 @@ export function ProfitLeakageCalculator({ onOpenTrial }: CalculatorProps) {
             </div>
 
             {/* CTA inside calculator */}
-            <div className="mt-8 pt-6 border-t border-neutral-800">
+            <div className="mt-8 pt-6 border-t border-white/10">
               <button
                 onClick={onOpenTrial}
-                className="btn-press w-full py-3.5 rounded-full bg-white text-black font-bold text-xs sm:text-sm hover:bg-neutral-100 flex items-center justify-center gap-2 shadow-lg transition-all"
+                className="btn-press w-full py-3.5 rounded-full bg-white text-black font-bold text-xs sm:text-sm hover:bg-neutral-200 flex items-center justify-center gap-2 shadow-lg transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 active:scale-[0.98]"
               >
-                <span>Protect the ₹{recoveredProfitLakhs.toFixed(1)}L — Start Free</span>
+                <span>Protect the ₹{recoveredProfitLakhs.toFixed(1)}L: Start Free</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
-              <div className="flex items-center justify-center gap-1.5 text-[11px] text-neutral-400 mt-3 text-center">
+              <div className="flex items-center justify-center gap-1.5 text-xs text-neutral-400 mt-3 text-center">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
                 <span>Backed by our 5× ROI Margin Recovery Guarantee</span>
               </div>

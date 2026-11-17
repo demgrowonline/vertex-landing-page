@@ -1,18 +1,20 @@
+/* Hallmark · theme: modern-minimal · critique: P5 H5 E5 S5 R5 V5 */
 @import "tailwindcss";
 
 @layer base {
   :root {
-    --canvas: #ffffff;
-    --canvas-subtle: #fbfbfd;
-    --canvas-muted: #f5f5f7;
-    --ink: #111113;
-    --ink-secondary: #6e6e73;
-    --ink-tertiary: #86868b;
-    --hairline: rgba(0, 0, 0, 0.08);
-    --hairline-strong: rgba(0, 0, 0, 0.16);
-    --glass-bg: rgba(255, 255, 255, 0.72);
-    --glass-border: rgba(0, 0, 0, 0.06);
-    --glass-card: rgba(255, 255, 255, 0.85);
+    --canvas: #09090b;
+    --canvas-subtle: #0d0d10;
+    --canvas-muted: #141418;
+    --ink: #f4f4f5;
+    --ink-secondary: #a1a1aa;
+    --ink-tertiary: #71717a;
+    --hairline: rgba(255, 255, 255, 0.08);
+    --hairline-strong: rgba(255, 255, 255, 0.16);
+    --glass-bg: rgba(18, 18, 22, 0.78);
+    --glass-border: rgba(255, 255, 255, 0.10);
+    --glass-card: rgba(22, 22, 26, 0.85);
+    color-scheme: dark;
   }
 
   * {
@@ -24,12 +26,16 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    overflow-x: clip;
+    background-color: var(--canvas);
+    color: var(--ink);
   }
 
   body {
-    background-color: var(--canvas-subtle);
+    background-color: var(--canvas);
     color: var(--ink);
     font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", system-ui, sans-serif;
+    overflow-x: clip;
   }
 }
 
@@ -37,52 +43,54 @@
   font-family: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace !important;
 }
 
-/* Glassmorphism primitives */
+/* Glassmorphism primitives (Obsidian Dark Luxury) */
 .glass-nav {
-  background: rgba(255, 255, 255, 0.82);
+  background: rgba(13, 13, 16, 0.82);
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.09);
 }
 
 .glass-surface {
-  background: rgba(255, 255, 255, 0.82);
+  background: rgba(18, 18, 22, 0.82);
   backdrop-filter: blur(24px) saturate(190%);
   -webkit-backdrop-filter: blur(24px) saturate(190%);
-  border: 1px solid rgba(0, 0, 0, 0.07);
-  box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.5);
 }
 
 .glass-card-hover {
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-property: transform, background-color, border-color, box-shadow;
+  transition-duration: 220ms;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .glass-card-hover:hover {
   transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.96);
-  border-color: rgba(0, 0, 0, 0.12);
-  box-shadow: 0 16px 36px -4px rgba(0, 0, 0, 0.08);
+  background: rgba(26, 26, 32, 0.95);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 16px 36px -4px rgba(0, 0, 0, 0.6);
 }
 
 .glass-dark {
-  background: rgba(12, 12, 14, 0.82);
+  background: rgba(10, 10, 13, 0.90);
   backdrop-filter: blur(24px) saturate(190%);
   -webkit-backdrop-filter: blur(24px) saturate(190%);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 20px 48px -12px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 20px 48px -12px rgba(0, 0, 0, 0.7);
 }
 
 .glass-inset {
-  background: rgba(0, 0, 0, 0.025);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .ambient-glow {
-  background: radial-gradient(circle at 50% 0%, rgba(0, 0, 0, 0.035) 0%, transparent 70%);
+  background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.04) 0%, transparent 70%);
 }
 
 .ambient-glow-dark {
-  background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.08) 0%, transparent 75%);
+  background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.06) 0%, transparent 75%);
 }
 
 /* Number display with tabular spacing */
@@ -90,10 +98,21 @@
   font-variant-numeric: tabular-nums;
 }
 
-/* Press state as per Apple fluid interfaces */
+/* Press state as per fluid interfaces */
 .btn-press {
-  transition: transform 120ms ease-out, opacity 120ms ease-out, background-color 150ms ease-out;
+  transition-property: transform, opacity, background-color, border-color;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
 }
 .btn-press:active {
   transform: scale(0.97);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

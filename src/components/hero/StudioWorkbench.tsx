@@ -7,12 +7,9 @@ import {
   FileSpreadsheet,
   Plus,
   CheckCircle2,
-  Clock,
   ShieldCheck,
   Send,
   FileText,
-  DollarSign,
-  Package,
 } from "lucide-react";
 
 interface StudioWorkbenchProps {
@@ -110,115 +107,115 @@ export function StudioWorkbench({ onOpenTrial }: StudioWorkbenchProps) {
   return (
     <div className="relative mx-auto max-w-5xl">
       {/* Workbench Container */}
-      <div className="rounded-2xl bg-white border border-neutral-200/90 shadow-sm overflow-hidden text-neutral-900">
+      <div className="rounded-2xl bg-[#0f0f13] border border-white/10 shadow-[0_24px_64px_rgba(0,0,0,0.6)] overflow-hidden text-neutral-100">
         
         {/* Authentic Studio Header Chrome */}
-        <div className="px-5 py-3.5 bg-neutral-50/90 border-b border-neutral-200/80 flex flex-wrap items-center justify-between gap-3">
+        <div className="px-5 py-3.5 bg-[#14141a]/90 border-b border-white/10 flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-3">
-            <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-neutral-900 text-white">
+            <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-white text-black">
               Studio OS
             </span>
-            <div className="flex items-center gap-2 text-xs font-medium text-neutral-800">
-              <span className="font-semibold text-neutral-950">The Grand Penthouse 402</span>
-              <span className="text-neutral-400">/</span>
-              <span className="text-neutral-600">3,450 sq ft turnkey</span>
-              <span className="text-neutral-400">/</span>
-              <span className="text-neutral-500">Alipore Residences</span>
+            <div className="flex items-center gap-2 text-xs font-medium text-neutral-200">
+              <span className="font-semibold text-white">The Grand Penthouse 402</span>
+              <span className="text-neutral-600">/</span>
+              <span className="text-neutral-400">3,450 sq ft turnkey</span>
+              <span className="text-neutral-600">/</span>
+              <span className="text-neutral-400">Alipore Residences</span>
             </div>
           </div>
 
           <div className="flex items-center gap-3 text-xs">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-neutral-100 text-neutral-800 font-medium border border-neutral-200/60">
-              <ShieldCheck className="w-3.5 h-3.5 text-neutral-700" />
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white/5 text-neutral-200 font-medium border border-white/10">
+              <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
               <span>{marginPercentage}% margin protected</span>
             </span>
-            <span className="hidden sm:inline-block text-neutral-500">
+            <span className="hidden sm:inline-block text-neutral-400">
               Contract PRJ-4029-WB
             </span>
           </div>
         </div>
 
         {/* Primary Financial Telemetry Ribbon */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-y lg:divide-y-0 divide-neutral-200/80 border-b border-neutral-200/80 bg-neutral-50/40">
+        <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-y lg:divide-y-0 divide-white/10 border-b border-white/10 bg-[#121217]">
           
           <div className="p-4 sm:p-5">
-            <span className="text-xs font-medium text-neutral-500 block mb-1">
+            <span className="text-xs font-medium text-neutral-400 block mb-1">
               Quoted contract
             </span>
             <div className="flex items-baseline gap-2">
-              <span className="text-xl sm:text-2xl font-bold tracking-tight text-neutral-950 tabular-nums">
+              <span className="text-xl sm:text-2xl font-bold tracking-tight text-white tabular-nums">
                 ₹54,20,000
               </span>
-              <span className="text-xs text-neutral-700 font-semibold bg-neutral-200/70 px-1.5 py-0.5 rounded">
+              <span className="text-xs text-neutral-300 font-semibold bg-white/10 px-1.5 py-0.5 rounded border border-white/10">
                 +₹3.2L variation
               </span>
             </div>
-            <span className="text-xs text-neutral-500 block mt-1">
+            <span className="text-xs text-neutral-400 block mt-1">
               4 bedrooms and modular kitchen
             </span>
           </div>
 
           <div className="p-4 sm:p-5">
-            <span className="text-xs font-medium text-neutral-500 block mb-1">
+            <span className="text-xs font-medium text-neutral-400 block mb-1">
               Incurred site costs
             </span>
             <div className="flex items-baseline gap-2">
-              <span className="text-xl sm:text-2xl font-bold tracking-tight text-neutral-950 tabular-nums">
+              <span className="text-xl sm:text-2xl font-bold tracking-tight text-white tabular-nums">
                 ₹{totalIncurred.toLocaleString("en-IN")}
               </span>
-              <span className="text-xs text-neutral-500 tabular-nums">
+              <span className="text-xs text-neutral-400 tabular-nums">
                 {((totalIncurred / contractValue) * 100).toFixed(1)}% burn
               </span>
             </div>
-            <span className="text-xs text-neutral-500 block mt-1">
+            <span className="text-xs text-neutral-400 block mt-1">
               Materials, trade wages and freight
             </span>
           </div>
 
-          <div className="p-4 sm:p-5 bg-neutral-950 text-white">
-            <span className="text-xs font-medium text-neutral-400 block mb-1">
+          <div className="p-4 sm:p-5 bg-white text-neutral-950">
+            <span className="text-xs font-medium text-neutral-600 block mb-1">
               Live net margin
             </span>
             <div className="flex items-baseline gap-2">
-              <span className="text-xl sm:text-2xl font-bold tracking-tight text-white tabular-nums">
+              <span className="text-xl sm:text-2xl font-bold tracking-tight text-black tabular-nums">
                 +₹{netMargin.toLocaleString("en-IN")}
               </span>
-              <span className="text-xs text-emerald-400 font-semibold">
+              <span className="text-xs text-emerald-700 font-bold bg-emerald-100 px-1.5 py-0.5 rounded">
                 {marginPercentage}%
               </span>
             </div>
-            <span className="text-xs text-neutral-400 block mt-1">
+            <span className="text-xs text-neutral-600 block mt-1">
               Target was 35.0%, zero leakage
             </span>
           </div>
 
           <div className="p-4 sm:p-5">
-            <span className="text-xs font-medium text-neutral-500 block mb-1">
+            <span className="text-xs font-medium text-neutral-400 block mb-1">
               Client receivables
             </span>
             <div className="flex items-baseline gap-2">
-              <span className="text-xl sm:text-2xl font-bold tracking-tight text-neutral-950 tabular-nums">
+              <span className="text-xl sm:text-2xl font-bold tracking-tight text-white tabular-nums">
                 ₹43,36,000
               </span>
-              <span className="text-xs text-neutral-700 font-semibold bg-neutral-200/70 px-1.5 py-0.5 rounded">
+              <span className="text-xs text-emerald-400 font-semibold bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-500/20">
                 Cleared
               </span>
             </div>
-            <span className="text-xs text-neutral-500 block mt-1">
+            <span className="text-xs text-neutral-400 block mt-1">
               Milestone 3 cleared via RTGS
             </span>
           </div>
         </div>
 
         {/* Tab Navigation */}
-        <div className="flex items-center justify-between px-5 pt-2 border-b border-neutral-200/80 bg-white">
+        <div className="flex items-center justify-between px-5 pt-2 border-b border-white/10 bg-[#0f0f13]">
           <div className="flex gap-1">
             <button
               onClick={() => setActiveTab("ledger")}
-              className={`pb-3 px-3 text-xs font-semibold border-b-2 flex items-center gap-1.5 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-1 active:scale-[0.99] ${
+              className={`pb-3 px-3 text-xs font-semibold border-b-2 flex items-center gap-1.5 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-1 focus-visible:ring-offset-neutral-950 active:scale-[0.99] ${
                 activeTab === "ledger"
-                  ? "border-neutral-950 text-neutral-950"
-                  : "border-transparent text-neutral-500 hover:text-neutral-900"
+                  ? "border-white text-white"
+                  : "border-transparent text-neutral-400 hover:text-white"
               }`}
             >
               <Receipt className="w-3.5 h-3.5" />
@@ -227,10 +224,10 @@ export function StudioWorkbench({ onOpenTrial }: StudioWorkbenchProps) {
 
             <button
               onClick={() => setActiveTab("boq")}
-              className={`pb-3 px-3 text-xs font-semibold border-b-2 flex items-center gap-1.5 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-1 active:scale-[0.99] ${
+              className={`pb-3 px-3 text-xs font-semibold border-b-2 flex items-center gap-1.5 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-1 focus-visible:ring-offset-neutral-950 active:scale-[0.99] ${
                 activeTab === "boq"
-                  ? "border-neutral-950 text-neutral-950"
-                  : "border-transparent text-neutral-500 hover:text-neutral-900"
+                  ? "border-white text-white"
+                  : "border-transparent text-neutral-400 hover:text-white"
               }`}
             >
               <TrendingUp className="w-3.5 h-3.5" />
@@ -239,10 +236,10 @@ export function StudioWorkbench({ onOpenTrial }: StudioWorkbenchProps) {
 
             <button
               onClick={() => setActiveTab("matrix")}
-              className={`pb-3 px-3 text-xs font-semibold border-b-2 flex items-center gap-1.5 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-1 active:scale-[0.99] ${
+              className={`pb-3 px-3 text-xs font-semibold border-b-2 flex items-center gap-1.5 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-1 focus-visible:ring-offset-neutral-950 active:scale-[0.99] ${
                 activeTab === "matrix"
-                  ? "border-neutral-950 text-neutral-950"
-                  : "border-transparent text-neutral-500 hover:text-neutral-900"
+                  ? "border-white text-white"
+                  : "border-transparent text-neutral-400 hover:text-white"
               }`}
             >
               <FileSpreadsheet className="w-3.5 h-3.5" />
@@ -250,23 +247,23 @@ export function StudioWorkbench({ onOpenTrial }: StudioWorkbenchProps) {
             </button>
           </div>
 
-          <div className="hidden sm:flex items-center gap-1.5 text-xs text-neutral-500 pb-2">
+          <div className="hidden sm:flex items-center gap-1.5 text-xs text-neutral-400 pb-2">
             <span>Direct supervisor capture</span>
           </div>
         </div>
 
         {/* Tab Content Panes */}
-        <div className="p-5 sm:p-6 bg-white min-h-[320px]">
+        <div className="p-5 sm:p-6 bg-[#0f0f13] min-h-[320px]">
           
           {/* TAB 1: Live Site Expense Ledger */}
           {activeTab === "ledger" && (
             <div className="space-y-4">
               <div className="flex flex-wrap items-center justify-between gap-3 pb-1">
                 <div>
-                  <h4 className="text-sm font-semibold text-neutral-950">
+                  <h4 className="text-sm font-semibold text-white">
                     Live Site Micro-Expenses
                   </h4>
-                  <p className="text-xs text-neutral-500">
+                  <p className="text-xs text-neutral-400">
                     Logged in under 10 seconds from site mobile. Auto-reconciled with procurement vouchers.
                   </p>
                 </div>
@@ -274,10 +271,10 @@ export function StudioWorkbench({ onOpenTrial }: StudioWorkbenchProps) {
                 <button
                   onClick={handleSimulateLog}
                   disabled={hasLoggedExtra}
-                  className={`text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors duration-150 flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-1 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed ${
+                  className={`text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors duration-150 flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-1 focus-visible:ring-offset-neutral-950 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed ${
                     hasLoggedExtra
-                      ? "bg-neutral-100 text-neutral-400"
-                      : "bg-neutral-950 text-white hover:bg-neutral-800"
+                      ? "bg-white/10 text-neutral-400"
+                      : "bg-white text-black hover:bg-neutral-200"
                   }`}
                 >
                   <Plus className="w-3.5 h-3.5" />
@@ -286,33 +283,33 @@ export function StudioWorkbench({ onOpenTrial }: StudioWorkbenchProps) {
               </div>
 
               {/* Transactions List */}
-              <div className="border border-neutral-200/80 rounded-xl overflow-hidden divide-y divide-neutral-100">
+              <div className="border border-white/10 rounded-xl overflow-hidden divide-y divide-white/10">
                 {items.map((item) => (
                   <div
                     key={item.id}
                     onClick={() => setSelectedItem(item)}
-                    className="p-3.5 sm:px-4 sm:py-3 flex items-center justify-between text-xs hover:bg-neutral-50/80 transition-colors duration-150 cursor-pointer"
+                    className="p-3.5 sm:px-4 sm:py-3 flex items-center justify-between text-xs hover:bg-white/[0.04] transition-colors duration-150 cursor-pointer"
                   >
                     <div className="flex items-center gap-3 min-w-0">
-                      <div className="w-8 h-8 rounded-lg bg-neutral-100 flex items-center justify-center text-neutral-700 shrink-0">
+                      <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-neutral-300 shrink-0">
                         <Receipt className="w-4 h-4" />
                       </div>
                       <div className="truncate">
-                        <span className="font-semibold text-neutral-950 block truncate">
+                        <span className="font-semibold text-white block truncate">
                           {item.title}
                         </span>
-                        <span className="text-neutral-500 text-xs">
+                        <span className="text-neutral-400 text-xs">
                           {item.vendor} · {item.trade}
                         </span>
                       </div>
                     </div>
 
                     <div className="text-right shrink-0 pl-3">
-                      <span className="font-bold text-neutral-950 block tabular-nums text-sm">
+                      <span className="font-bold text-white block tabular-nums text-sm">
                         ₹{item.amount.toLocaleString("en-IN")}
                       </span>
-                      <span className="text-xs text-neutral-500 flex items-center justify-end gap-1">
-                        <CheckCircle2 className="w-3 h-3 text-neutral-700" />
+                      <span className="text-xs text-neutral-400 flex items-center justify-end gap-1">
+                        <CheckCircle2 className="w-3 h-3 text-emerald-400" />
                         <span>Verified {item.timeAgo}</span>
                       </span>
                     </div>
@@ -322,22 +319,22 @@ export function StudioWorkbench({ onOpenTrial }: StudioWorkbenchProps) {
 
               {/* Live Slip Verification Drawer */}
               {selectedItem && (
-                <div className="p-3.5 rounded-xl bg-neutral-50 border border-neutral-200/80 flex flex-wrap items-center justify-between gap-3 text-xs">
+                <div className="p-3.5 rounded-xl bg-white/[0.03] border border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs">
                   <div className="flex items-center gap-2">
-                    <FileText className="w-4 h-4 text-neutral-700" />
-                    <span className="font-semibold text-neutral-900">
+                    <FileText className="w-4 h-4 text-emerald-400" />
+                    <span className="font-semibold text-white">
                       Active audit voucher: {selectedItem.slipNumber}
                     </span>
-                    <span className="text-neutral-400">/</span>
-                    <span className="text-neutral-600">
+                    <span className="text-neutral-600">/</span>
+                    <span className="text-neutral-400">
                       Signed off by {selectedItem.verifiedBy}
                     </span>
                   </div>
-                  <div className="flex items-center gap-2 font-medium text-neutral-700">
-                    <span className="px-2 py-0.5 rounded bg-white border border-neutral-200 text-xs">
+                  <div className="flex items-center gap-2 font-medium text-neutral-300">
+                    <span className="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-xs">
                       Tax invoice verified
                     </span>
-                    <span className="px-2 py-0.5 rounded bg-white border border-neutral-200 text-xs">
+                    <span className="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-xs">
                       100% cloud backed
                     </span>
                   </div>
@@ -350,29 +347,29 @@ export function StudioWorkbench({ onOpenTrial }: StudioWorkbenchProps) {
           {activeTab === "boq" && (
             <div className="space-y-4">
               <div>
-                <h4 className="text-sm font-semibold text-neutral-950">
+                <h4 className="text-sm font-semibold text-white">
                   Site-to-BOQ Variance Radar
                 </h4>
-                <p className="text-xs text-neutral-500">
+                <p className="text-xs text-neutral-400">
                   Where contractor profits quietly disappear: unrecorded material overrun and untracked client requests.
                 </p>
               </div>
 
-              <div className="border border-neutral-200/80 rounded-xl overflow-hidden divide-y divide-neutral-100">
-                <div className="p-3.5 bg-neutral-50/50 flex flex-wrap items-center justify-between gap-2 text-xs">
+              <div className="border border-white/10 rounded-xl overflow-hidden divide-y divide-white/10">
+                <div className="p-3.5 bg-white/[0.02] flex flex-wrap items-center justify-between gap-2 text-xs">
                   <div>
-                    <span className="font-semibold text-neutral-950 block">
+                    <span className="font-semibold text-white block">
                       Italian Botticino Marble (Master Bath Vanity & Flooring)
                     </span>
-                    <span className="text-neutral-500">
+                    <span className="text-neutral-400">
                       BOQ estimate: 240 sq ft @ ₹420 (₹1,00,800) | Actual site draw: 268 sq ft (₹1,12,560)
                     </span>
                   </div>
                   <div className="text-right">
-                    <span className="font-bold text-amber-700 block tabular-nums">
+                    <span className="font-bold text-amber-400 block tabular-nums">
                       +₹11,760 overage
                     </span>
-                    <span className="text-xs text-neutral-600">
+                    <span className="text-xs text-neutral-400">
                       Dry-cut waste accounted
                     </span>
                   </div>
@@ -380,39 +377,39 @@ export function StudioWorkbench({ onOpenTrial }: StudioWorkbenchProps) {
 
                 <div className="p-3.5 flex flex-wrap items-center justify-between gap-2 text-xs">
                   <div>
-                    <span className="font-semibold text-neutral-950 block">
+                    <span className="font-semibold text-white block">
                       Saint-Gobain Gypsum False Ceiling Framing (Drawing Hall)
                     </span>
-                    <span className="text-neutral-500">
+                    <span className="text-neutral-400">
                       BOQ estimate: 1,850 sq ft (₹1,94,250) | Actual site draw: 1,810 sq ft (₹1,90,050)
                     </span>
                   </div>
                   <div className="text-right">
-                    <span className="font-bold text-emerald-700 block tabular-nums">
+                    <span className="font-bold text-emerald-400 block tabular-nums">
                       -₹4,200 saved
                     </span>
-                    <span className="text-xs text-neutral-600">
+                    <span className="text-xs text-neutral-400">
                       Reconciled and closed
                     </span>
                   </div>
                 </div>
 
-                <div className="p-3.5 bg-neutral-50/50 flex flex-wrap items-center justify-between gap-2 text-xs">
+                <div className="p-3.5 bg-white/[0.02] flex flex-wrap items-center justify-between gap-2 text-xs">
                   <div>
-                    <span className="font-semibold text-neutral-950 block">
+                    <span className="font-semibold text-white block">
                       Client Scope Modification: Natural Teak Veneer Wall Panelling
                     </span>
-                    <span className="text-neutral-500">
+                    <span className="text-neutral-400">
                       Requested on site during client walkthrough on Tuesday. Unscheduled labor and premium veneer.
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="font-bold text-neutral-950 tabular-nums">
+                    <span className="font-bold text-white tabular-nums">
                       +₹36,000 variation
                     </span>
                     <button
                       onClick={onOpenTrial}
-                      className="px-2.5 py-1 rounded bg-neutral-950 text-white font-medium hover:bg-neutral-800 transition-colors duration-150 flex items-center gap-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-1 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+                      className="px-2.5 py-1 rounded bg-white text-black font-semibold hover:bg-neutral-200 transition-colors duration-150 flex items-center gap-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-1 focus-visible:ring-offset-neutral-950 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
                     >
                       <Send className="w-3 h-3" />
                       <span className="whitespace-nowrap">Send Approval</span>
@@ -428,23 +425,23 @@ export function StudioWorkbench({ onOpenTrial }: StudioWorkbenchProps) {
             <div className="space-y-4">
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <div>
-                  <h4 className="text-sm font-semibold text-neutral-950">
+                  <h4 className="text-sm font-semibold text-white">
                     Good, Better, Best Quotation Matrix
                   </h4>
-                  <p className="text-xs text-neutral-500">
+                  <p className="text-xs text-neutral-400">
                     Eliminates fee bargaining by letting clients choose between clear material tiers instead of shaving your margin.
                   </p>
                 </div>
 
-                <div className="inline-flex p-1 bg-neutral-100 rounded-lg border border-neutral-200/80">
+                <div className="inline-flex p-1 bg-white/5 rounded-lg border border-white/10">
                   {(["essential", "signature", "architectural"] as const).map((tier) => (
                     <button
                       key={tier}
                       onClick={() => setSelectedTier(tier)}
-                      className={`px-3 py-1 text-xs font-semibold rounded-md capitalize transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-1 active:scale-[0.98] ${
+                      className={`px-3 py-1 text-xs font-semibold rounded-md capitalize transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-1 focus-visible:ring-offset-neutral-950 active:scale-[0.98] ${
                         selectedTier === tier
-                          ? "bg-white text-neutral-950 shadow-sm"
-                          : "text-neutral-600 hover:text-neutral-950"
+                          ? "bg-white text-black shadow-sm"
+                          : "text-neutral-400 hover:text-white"
                       }`}
                     >
                       {tier === "signature" ? "Signature Line" : tier}
@@ -459,20 +456,20 @@ export function StudioWorkbench({ onOpenTrial }: StudioWorkbenchProps) {
                 <div
                   className={`p-4 rounded-xl border transition-colors duration-150 ${
                     selectedTier === "essential"
-                      ? "border-neutral-950 bg-neutral-50 shadow-sm"
-                      : "border-neutral-200/80 bg-white"
+                      ? "border-white bg-white/10 shadow-sm"
+                      : "border-white/10 bg-white/[0.02]"
                   }`}
                 >
-                  <span className="text-xs font-medium text-neutral-500 block mb-1">
+                  <span className="text-xs font-medium text-neutral-400 block mb-1">
                     Tier 1: Essential Line
                   </span>
-                  <div className="text-xl font-bold text-neutral-950 my-1 tabular-nums">
+                  <div className="text-xl font-bold text-white my-1 tabular-nums">
                     ₹38,50,000
                   </div>
-                  <p className="text-xs text-neutral-600 mb-3">
+                  <p className="text-xs text-neutral-300 mb-3">
                     Commercial MR Plywood, 0.8mm Matte Laminates, Ebco hardware.
                   </p>
-                  <ul className="text-xs space-y-1.5 text-neutral-600">
+                  <ul className="text-xs space-y-1.5 text-neutral-400">
                     <li>• IS 303 MR grade plywood</li>
                     <li>• 5-year hardware replacement warranty</li>
                     <li>• Studio margin: 32.0%</li>
@@ -482,39 +479,39 @@ export function StudioWorkbench({ onOpenTrial }: StudioWorkbenchProps) {
                 <div
                   className={`p-4 rounded-xl border transition-colors duration-150 ${
                     selectedTier === "signature"
-                      ? "border-neutral-950 bg-neutral-950 text-white shadow-sm"
-                      : "border-neutral-200/80 bg-white"
+                      ? "border-white bg-white text-black shadow-xl"
+                      : "border-white/10 bg-white/[0.02]"
                   }`}
                 >
                   <div className="flex items-center justify-between mb-1">
                     <span
                       className={`text-xs font-medium block ${
-                        selectedTier === "signature" ? "text-neutral-400" : "text-neutral-500"
+                        selectedTier === "signature" ? "text-neutral-700" : "text-neutral-400"
                       }`}
                     >
                       Tier 2: Signature Line
                     </span>
-                    <span className="text-xs bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 px-1.5 py-0.5 rounded font-medium">
+                    <span className="text-xs bg-emerald-500/20 text-emerald-800 border border-emerald-500/30 px-1.5 py-0.5 rounded font-bold">
                       Active Contract
                     </span>
                   </div>
                   <div
                     className={`text-xl font-bold my-1 tabular-nums ${
-                      selectedTier === "signature" ? "text-white" : "text-neutral-950"
+                      selectedTier === "signature" ? "text-black" : "text-white"
                     }`}
                   >
                     ₹54,20,000
                   </div>
                   <p
                     className={`text-xs mb-3 ${
-                      selectedTier === "signature" ? "text-neutral-300" : "text-neutral-600"
+                      selectedTier === "signature" ? "text-neutral-700" : "text-neutral-300"
                     }`}
                   >
                     Century BWR Marine Ply, Royale Touche 1mm Acrylic, Hettich Sensys.
                   </p>
                   <ul
                     className={`text-xs space-y-1.5 ${
-                      selectedTier === "signature" ? "text-neutral-300" : "text-neutral-600"
+                      selectedTier === "signature" ? "text-neutral-800" : "text-neutral-400"
                     }`}
                   >
                     <li>• Century BWR Marine Core (IS 710)</li>
@@ -526,20 +523,20 @@ export function StudioWorkbench({ onOpenTrial }: StudioWorkbenchProps) {
                 <div
                   className={`p-4 rounded-xl border transition-colors duration-150 ${
                     selectedTier === "architectural"
-                      ? "border-neutral-950 bg-neutral-50 shadow-sm"
-                      : "border-neutral-200/80 bg-white"
+                      ? "border-white bg-white/10 shadow-sm"
+                      : "border-white/10 bg-white/[0.02]"
                   }`}
                 >
-                  <span className="text-xs font-medium text-neutral-500 block mb-1">
+                  <span className="text-xs font-medium text-neutral-400 block mb-1">
                     Tier 3: Architectural Reserve
                   </span>
-                  <div className="text-xl font-bold text-neutral-950 my-1 tabular-nums">
+                  <div className="text-xl font-bold text-white my-1 tabular-nums">
                     ₹76,80,000
                   </div>
-                  <p className="text-xs text-neutral-600 mb-3">
+                  <p className="text-xs text-neutral-300 mb-3">
                     Natural Teak Veneer, PU Matt Polycoat, Blum Aventos servo-drive.
                   </p>
-                  <ul className="text-xs space-y-1.5 text-neutral-600">
+                  <ul className="text-xs space-y-1.5 text-neutral-400">
                     <li>• Hand-matched architectural veneer</li>
                     <li>• Blum motorized lift-up hardware</li>
                     <li>• Studio margin: 44.0%</li>
