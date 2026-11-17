@@ -52,8 +52,8 @@ export default function HomePage() {
         <FinalCtaMonolith onOpenTrial={() => setTrialModalOpen(true)} />
       </main>
 
-      {/* 11: Minimalist Apple/Mobbin Frosted Footer */}
-      <Footer />
+      {/* 11: Pushpin Tear Footer */}
+      <Footer onOpenTrial={() => setTrialModalOpen(true)} />
 
       {/* Interactive Modal */}
       <StudioTrialModal

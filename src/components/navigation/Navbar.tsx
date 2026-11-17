@@ -63,6 +63,12 @@ export function Navbar({ onOpenTrial }: NavbarProps) {
               Comparison
             </a>
             <a
+              href="/pricing"
+              className="hover:text-white transition-colors duration-150 whitespace-nowrap text-blue-400 font-bold"
+            >
+              Pricing
+            </a>
+            <a
               href="#proof"
               className="hover:text-white transition-colors duration-150 whitespace-nowrap"
             >
@@ -130,6 +136,13 @@ export function Navbar({ onOpenTrial }: NavbarProps) {
                 className="py-2 border-b border-white/10 hover:text-white transition-colors"
               >
                 Vertex vs. Alternatives
+              </a>
+              <a
+                href="/pricing"
+                onClick={() => setMobileMenuOpen(false)}
+                className="py-2 border-b border-white/10 hover:text-white transition-colors text-blue-400 font-bold"
+              >
+                Pricing Plans
               </a>
               <a
                 href="#proof"

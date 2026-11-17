@@ -1,144 +1,119 @@
 "use client";
 
 import React from "react";
+import PushpinTearFooter from "@/components/ui/pushpin-tear-footer";
 
-export function Footer() {
+interface FooterProps {
+  onOpenTrial?: () => void;
+}
+
+export function Footer({ onOpenTrial }: FooterProps) {
+  const handleConsultation = (e?: React.MouseEvent) => {
+    if (e && e.preventDefault) e.preventDefault();
+    if (onOpenTrial) {
+      onOpenTrial();
+    } else {
+      const el = document.getElementById("guarantee");
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const columns = [
+    {
+      title: "platform",
+      links: [
+        { label: "5-Min Voice Takeoff", href: "#capabilities" },
+        { label: "Sub-10s Site Logger", href: "#capabilities" },
+        { label: "BOQ Variance Radar", href: "#capabilities" },
+        { label: "3-Tier Proposal Matrix", href: "#capabilities" },
+      ],
+      cta: {
+        label: "start free.",
+        href: "#guarantee",
+        onClick: handleConsultation,
+      },
+    },
+    {
+      title: "intelligence",
+      links: [
+        { label: "Profit Leakage Math", href: "#calculator" },
+        { label: "The 80/20 Problem", href: "#problem" },
+        { label: "Vertex vs Spreadsheets", href: "#comparison" },
+        { label: "Pricing Tiers", href: "/pricing" },
+      ],
+      cta: {
+        label: "audit.",
+        href: "#calculator",
+      },
+    },
+  ];
+
+  const socials = [
+    {
+      icon: "chat" as const,
+      label: "WhatsApp Concierge",
+      href: "https://wa.me/917980817657?text=Hi%20Vertex%20OS%20team,%20I%20would%20like%20to%20know%20more%20about%20Vertex%20OS!",
+    },
+    {
+      icon: "mail" as const,
+      label: "Founder Direct",
+      href: "mailto:founders@vertexos.com",
+    },
+  ];
+
+  const sideLinks = [
+    { icon: "shield" as const, label: "privacy policy", href: "#" },
+    { icon: "doc" as const, label: "terms of service", href: "#" },
+  ];
+
   return (
-    <footer className="bg-[#070709] text-neutral-400 border-t border-white/10 pt-16 pb-12 text-xs">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
-          {/* Brand & Description (2 cols) */}
-          <div className="col-span-2 space-y-3">
-            <div className="flex items-center gap-2">
-              <div className="w-7 h-7 rounded-lg bg-white text-black flex items-center justify-center font-extrabold text-xs tracking-tighter">
-                VX
-              </div>
-              <span className="text-sm font-semibold tracking-tight text-white">
-                Vertex<span className="text-neutral-400 font-normal">OS</span>
-              </span>
+    <div className="w-full mt-10 sm:mt-16 overflow-hidden">
+      <PushpinTearFooter
+        brand="Vertex OS"
+        name="Vertex OS"
+        logo={
+          <div className="flex items-center gap-2.5 select-none">
+            <div className="w-8 h-8 rounded-xl bg-white text-black flex items-center justify-center font-extrabold text-xs tracking-tighter shadow-sm">
+              <span>VX</span>
             </div>
-            <p className="text-xs text-neutral-400 max-w-sm leading-relaxed">
-              The unified operating system for interior architecture and turnkey design-build firms. Unifying 5-minute voice takeoff directly into on-site expense tracking and real-time net P&L command.
-            </p>
-            <div className="flex items-center gap-2 text-xs font-medium text-neutral-400 pt-2">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span>All Systems Operational / Supabase RLS Enforced</span>
-            </div>
-          </div>
-
-          {/* Navigation Column 1: Platform */}
-          <div className="space-y-2.5">
-            <span className="text-xs font-bold text-white block mb-3">
-              Capabilities
+            <span className="text-xl font-bold tracking-tight text-white">
+              Vertex<span className="text-neutral-400 font-normal">OS</span>
             </span>
-            <ul className="space-y-2">
-              <li>
-                <a href="#capabilities" className="hover:text-white transition-colors">
-                  5-Min Voice Takeoff
-                </a>
-              </li>
-              <li>
-                <a href="#capabilities" className="hover:text-white transition-colors">
-                  Sub-10s Mobile Logger
-                </a>
-              </li>
-              <li>
-                <a href="#capabilities" className="hover:text-white transition-colors">
-                  3-Tier Proposal Matrix
-                </a>
-              </li>
-              <li>
-                <a href="#capabilities" className="hover:text-white transition-colors">
-                  Live Net Margin Guard
-                </a>
-              </li>
-              <li>
-                <a href="#capabilities" className="hover:text-white transition-colors">
-                  Client CRM & Billing
-                </a>
-              </li>
-            </ul>
           </div>
-
-          {/* Navigation Column 2: Studio Intelligence */}
-          <div className="space-y-2.5">
-            <span className="text-xs font-bold text-white block mb-3">
-              Intelligence
-            </span>
-            <ul className="space-y-2">
-              <li>
-                <a href="#calculator" className="hover:text-white transition-colors">
-                  Profit Leakage Calculator
-                </a>
-              </li>
-              <li>
-                <a href="#problem" className="hover:text-white transition-colors">
-                  The 80/20 Problem
-                </a>
-              </li>
-              <li>
-                <a href="#comparison" className="hover:text-white transition-colors">
-                  Vertex vs. Spreadsheets
-                </a>
-              </li>
-              <li>
-                <a href="#proof" className="hover:text-white transition-colors">
-                  Studio Case Studies
-                </a>
-              </li>
-              <li>
-                <a href="#faq" className="hover:text-white transition-colors">
-                  Objection FAQs
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Navigation Column 3: Trust & Security */}
-          <div className="space-y-2.5">
-            <span className="text-xs font-bold text-white block mb-3">
-              Trust & Guarantees
-            </span>
-            <ul className="space-y-2">
-              <li>
-                <a href="#guarantee" className="hover:text-white transition-colors">
-                  5× ROI Margin Guarantee
-                </a>
-              </li>
-              <li>
-                <a href="#guarantee" className="hover:text-white transition-colors">
-                  White-Glove Migration
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Multi-Tenant Security
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Privacy Policy
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Terms of Service
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Bottom Hairline & Legal Bar */}
-        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
-          <div>
-            © {new Date().getFullYear()} Vertex OS SaaS Inc. All rights reserved.
-          </div>
-          <div className="flex items-center gap-1.5">
-            <span>Built with architectural restraint for high-performing interior studios.</span>
-          </div>
-        </div>
-      </div>
-    </footer>
+        }
+        logoHref="/"
+        email="founders@vertexos.com"
+        newsletter={{
+          label: "get turnkey interior margin benchmarks",
+          placeholder: "founder@yourstudio.com",
+        }}
+        status={{
+          label: "open for studio VIP cohorts",
+          href: "#guarantee",
+          onClick: handleConsultation,
+        }}
+        mark="VERTEX OS / 2026"
+        timeZone="Asia/Kolkata"
+        timeLabel="IST"
+        columns={columns}
+        socials={socials}
+        sideLinks={sideLinks}
+        chat={{
+          label: "say hi on whatsapp",
+          href: "https://wa.me/917980817657?text=Hi%20Vertex%20OS%20team,%20I%20would%20like%20to%20know%20more%20about%20Vertex%20OS!",
+        }}
+        copyright={`© ${new Date().getFullYear()} Vertex OS SaaS Inc. All rights reserved.`}
+        credit="Turnkey Operating System for Interior Design & Build"
+        handle={{
+          label: "vertexos.com",
+          href: "/",
+        }}
+        sheet="#111116"
+        paper="#07070a"
+        sheetInk="#f4f4f5"
+        paperInk="#ffffff"
+      />
+    </div>
   );
 }
+export default Footer;
