@@ -18,15 +18,6 @@ export function HeroMonolith({ onOpenTrial }: HeroMonolithProps) {
       <div className="absolute top-0 left-0 right-0 h-96 bg-gradient-to-b from-white/[0.03] to-transparent pointer-events-none -z-10" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        {/* Top Eyebrow Badge */}
-        <div className="flex justify-center mb-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.06] border border-white/15 text-xs font-medium text-neutral-300 backdrop-blur-md">
-            <span className="flex h-2 w-2 rounded-full bg-emerald-400" />
-            <span className="font-semibold text-white">Built for Turnkey Interior Studios</span>
-            <span className="text-neutral-500">/</span>
-            <span className="text-neutral-300">Stop 15 to 20% on-site profit leakage</span>
-          </div>
-        </div>
 
         {/* The Hormozi Hook Headline */}
         <div className="text-center max-w-4xl mx-auto mb-8">
