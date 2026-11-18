@@ -20,12 +20,12 @@ export function Footer({ onOpenTrial }: FooterProps) {
 
   const columns = [
     {
-      title: "platform",
+      title: "features",
       links: [
-        { label: "5-Min Voice Takeoff", href: "#capabilities" },
-        { label: "Sub-10s Site Logger", href: "#capabilities" },
-        { label: "BOQ Variance Radar", href: "#capabilities" },
-        { label: "3-Tier Proposal Matrix", href: "#capabilities" },
+        { label: "Voice Quotes", href: "#capabilities" },
+        { label: "Mobile Site Logger", href: "#capabilities" },
+        { label: "Live Profit Guard", href: "#capabilities" },
+        { label: "Price Tiers", href: "#capabilities" },
       ],
       cta: {
         label: "start free.",
@@ -34,15 +34,15 @@ export function Footer({ onOpenTrial }: FooterProps) {
       },
     },
     {
-      title: "intelligence",
+      title: "overview",
       links: [
-        { label: "Profit Leakage Math", href: "#calculator" },
-        { label: "The 80/20 Problem", href: "#problem" },
+        { label: "Profit Calculator", href: "#calculator" },
+        { label: "Why Studios Lose Money", href: "#problem" },
         { label: "Vertex vs Spreadsheets", href: "#comparison" },
-        { label: "Pricing Tiers", href: "/pricing" },
+        { label: "Pricing Plans", href: "/pricing" },
       ],
       cta: {
-        label: "audit.",
+        label: "calculator.",
         href: "#calculator",
       },
     },
@@ -84,11 +84,11 @@ export function Footer({ onOpenTrial }: FooterProps) {
         logoHref="/"
         email="founders@vertexos.com"
         newsletter={{
-          label: "get turnkey interior margin benchmarks",
+          label: "get practical site tips and margin guides",
           placeholder: "founder@yourstudio.com",
         }}
         status={{
-          label: "open for studio VIP cohorts",
+          label: "available for new projects",
           href: "#guarantee",
           onClick: handleConsultation,
         }}
@@ -103,7 +103,7 @@ export function Footer({ onOpenTrial }: FooterProps) {
           href: "https://wa.me/917980817657?text=Hi%20Vertex%20OS%20team,%20I%20would%20like%20to%20know%20more%20about%20Vertex%20OS!",
         }}
         copyright={`© ${new Date().getFullYear()} Vertex OS SaaS Inc. All rights reserved.`}
-        credit="Turnkey Operating System for Interior Design & Build"
+        credit="Software for interior design & turnkey contracting"
         handle={{
           label: "vertexos.com",
           href: "/",

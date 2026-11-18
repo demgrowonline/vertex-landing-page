@@ -23,65 +23,65 @@ const defaultPlans: PricingPlan[] = [
   {
     name: "Starter Studio",
     description:
-      "For boutique interior studios executing 1 to 4 concurrent turnkey residences.",
+      "For boutique studios running 1 to 4 active sites.",
     price: 49,
     yearlyPrice: 39,
-    buttonText: "Start 14-day pass",
+    buttonText: "Start free trial",
     buttonVariant: "outline",
     features: [
-      { text: "Up to 4 concurrent sites", icon: <Briefcase size={18} /> },
-      { text: "Sub-10s mobile expense logger", icon: <Database size={18} /> },
-      { text: "5-min voice takeoff engine", icon: <Server size={18} /> },
+      { text: "Up to 4 active sites", icon: <Briefcase size={18} /> },
+      { text: "Mobile bill & wage logger", icon: <Database size={18} /> },
+      { text: "Voice quotes on site", icon: <Server size={18} /> },
     ],
     includes: [
       "Starter includes:",
-      "Unlimited BOQs and room assemblies",
-      "WhatsApp invoice and receipt OCR",
-      "Live project gross margin monitor",
-      "Two-factor authentication and team roles",
+      "Unlimited quotes and room budgets",
+      "Photo receipt scanning",
+      "Live project profit tracking",
+      "Team logins for supervisors",
     ],
   },
   {
     name: "Growth Studio",
     description:
-      "Best value for expanding design-build studios seeking zero on-site financial leakage.",
+      "For growing studios that want complete site cost and profit control.",
     price: 129,
     yearlyPrice: 99,
-    buttonText: "Claim studio pass",
+    buttonText: "Start free trial",
     buttonVariant: "default",
     popular: true,
     features: [
-      { text: "Unlimited concurrent turnkey sites", icon: <Briefcase size={18} /> },
-      { text: "Site-to-BOQ variance radar", icon: <Database size={18} /> },
+      { text: "Unlimited active sites", icon: <Briefcase size={18} /> },
+      { text: "Budget overrun alerts", icon: <Database size={18} /> },
       { text: "WhatsApp 1-click client approvals", icon: <Server size={18} /> },
     ],
     includes: [
       "Everything in Starter, plus:",
-      "Free White-Glove Excel migration",
-      "Pre-loaded 450+ Indian supplier benchmarks",
-      "Subcontractor milestone cash disbursals",
-      "5× ROI Margin Recovery Guarantee",
+      "Free project setup & data import",
+      "Ready material price lists",
+      "Contractor cash advance tracking",
+      "30-day money-back guarantee",
     ],
   },
   {
     name: "Enterprise Turnkey",
     description:
-      "For multi-city architectural practices and high-volume turnkey contracting firms.",
+      "For large design-build firms with multiple branches and dedicated project teams.",
     price: 299,
     yearlyPrice: 249,
-    buttonText: "Contact founders",
+    buttonText: "Contact team",
     buttonVariant: "outline",
     features: [
-      { text: "Multi-branch tax and entity separation", icon: <Briefcase size={18} /> },
-      { text: "Unlimited supervisor logins", icon: <Database size={18} /> },
-      { text: "Custom ERP and accounting webhooks", icon: <Server size={18} /> },
+      { text: "Multi-branch entity support", icon: <Briefcase size={18} /> },
+      { text: "Unlimited team logins", icon: <Database size={18} /> },
+      { text: "Accounting & ERP integration", icon: <Server size={18} /> },
     ],
     includes: [
       "Everything in Growth, plus:",
-      "Custom BOQ assembly rate matrices",
-      "Dedicated senior migration engineer",
-      "Role-based permission ledgers",
-      "Custom SLA and founder phone support",
+      "Custom rate catalogs for your city",
+      "Dedicated account manager",
+      "Custom permissions per role",
+      "Direct phone & WhatsApp support",
     ],
   },
 ];
@@ -193,43 +193,23 @@ export default function PricingSection({
 
       <div className="text-center mb-8 max-w-3xl mx-auto">
         <TimelineContent
-          as="div"
-          animationNum={0}
-          timelineRef={pricingRef}
-          customVariants={revealVariants}
-          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-neutral-300 mb-4"
-        >
-          <Sparkles className="w-3.5 h-3.5 text-blue-400" />
-          <span>Transparent Studio Investment</span>
-        </TimelineContent>
-
-        <TimelineContent
           as="h1"
-          animationNum={1}
+          animationNum={0}
           timelineRef={pricingRef}
           customVariants={revealVariants}
           className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-4 leading-tight"
         >
-          Plans that protect your{" "}
-          <TimelineContent
-            as="span"
-            animationNum={2}
-            timelineRef={pricingRef}
-            customVariants={revealVariants}
-            className="border border-dashed border-blue-400/60 px-3 py-1 rounded-xl bg-blue-500/10 text-blue-300 inline-block font-mono"
-          >
-            studio margin
-          </TimelineContent>
+          Simple, honest pricing.
         </TimelineContent>
 
         <TimelineContent
           as="p"
-          animationNum={3}
+          animationNum={1}
           timelineRef={pricingRef}
           customVariants={revealVariants}
           className="text-sm sm:text-base text-neutral-400 sm:w-[70%] w-[90%] mx-auto leading-relaxed"
         >
-          Trusted by 140+ turnkey studios across India. Every plan is backed by our unconditional 5× ROI Margin Recovery Guarantee.
+          Start with a 14-day free trial on your next site. No credit card required. Upgrade, downgrade, or cancel anytime.
         </TimelineContent>
       </div>
 

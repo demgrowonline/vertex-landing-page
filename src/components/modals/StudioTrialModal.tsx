@@ -42,15 +42,11 @@ export function StudioTrialModal({ isOpen, onClose }: ModalProps) {
           <div className="p-6 sm:p-8">
             {/* Header */}
             <div className="mb-6">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-emerald-400 text-xs font-semibold mb-2">
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>Cohort Access / 14-Day Free Studio Pass</span>
-              </div>
               <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-white">
-                Claim Your Studio Pass + White-Glove Migration
+                Start your 14-day free trial
               </h3>
               <p className="text-xs sm:text-sm text-neutral-400 mt-1">
-                Zero credit card required. Free Excel/WhatsApp data import included.
+                No credit card needed. We'll help you set up your existing projects.
               </p>
             </div>
 
@@ -151,14 +147,14 @@ export function StudioTrialModal({ isOpen, onClose }: ModalProps) {
                   type="submit"
                   className="btn-press w-full py-3.5 rounded-full bg-white text-black font-bold text-xs sm:text-sm hover:bg-neutral-200 shadow-md flex items-center justify-center gap-2 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 active:scale-[0.98]"
                 >
-                  <span>Activate 14-Day Free Studio Pass</span>
+                  <span>Start Free Trial</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
 
               <div className="flex items-center justify-center gap-2 text-xs text-neutral-400 text-center pt-2">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                <span>Protected by our 5× ROI Margin Recovery Guarantee</span>
+                <span>No credit card required · Cancel anytime</span>
               </div>
             </form>
           </div>

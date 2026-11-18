@@ -17,21 +17,13 @@ export function GrandSlamOffer({ onOpenTrial }: OfferProps) {
   return (
     <section id="guarantee" className="py-20 sm:py-28 bg-[#09090b] relative overflow-hidden text-neutral-100">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
-        {/* Top Scarcity Pill */}
-        <div className="flex justify-center mb-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-neutral-300">
-            <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
-            <span>Cohort Cap: 19 of 25 Studio Seats Reserved This Month</span>
-          </div>
-        </div>
-
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-14">
           <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight mb-4">
-            The Grand Slam Studio Offer.
+            Try it on your next project with zero risk.
           </h2>
           <p className="text-sm sm:text-base text-neutral-400 leading-relaxed">
-            We don't offer generic software discounts. Instead, we remove every single obstacle: switching friction, team adoption, and financial risk, so your decision is a no-brainer.
+            We help you set up your price lists, train your site team in 10 minutes, and give you 30 days to test it live on site.
           </p>
         </div>
 
@@ -44,11 +36,8 @@ export function GrandSlamOffer({ onOpenTrial }: OfferProps) {
             {/* The Deliverables Stack (7 cols) */}
             <div className="lg:col-span-7 space-y-6">
               <div>
-                <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider block mb-1">
-                  Everything Included in Your Studio Pass:
-                </span>
                 <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
-                  The Complete Turnkey OS + 3 Zero-Friction Bonuses
+                  Everything included with your trial
                 </h3>
               </div>
 
@@ -60,12 +49,11 @@ export function GrandSlamOffer({ onOpenTrial }: OfferProps) {
                 <div>
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-bold text-white">
-                      1. Full Vertex OS Studio Command Center
+                      1. Complete Site & Profit Software
                     </span>
-                    <span className="text-xs font-mono text-neutral-400">Core Engine</span>
                   </div>
                   <p className="text-xs text-neutral-300 mt-1">
-                    Multi-project command center, client CRM, 5-minute voice takeoff, 3-tier quoting, sub-10s mobile expense engine, and live net P&L tracking.
+                    Voice quotes on site, mobile expense logging for workers, live profit tracking, and WhatsApp change orders.
                   </p>
                 </div>
               </div>
@@ -78,12 +66,12 @@ export function GrandSlamOffer({ onOpenTrial }: OfferProps) {
                 <div>
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-bold text-white">
-                      Bonus #1: Free White-Glove Migration Concierge
+                      2. Free Setup & Data Migration
                     </span>
-                    <span className="text-xs font-mono text-emerald-400">₹25,000 Value · FREE</span>
+                    <span className="text-xs font-mono text-emerald-400">Included Free</span>
                   </div>
                   <p className="text-xs text-neutral-300 mt-1">
-                    Send us your messy Excel spreadsheets, WhatsApp price notes, and client lists. Our engineering team cleans, formats, and seeds your studio catalog within 24 hours.
+                    Send us your Excel sheets, WhatsApp notes, or vendor price lists. We set up your entire studio workspace within 24 hours.
                   </p>
                 </div>
               </div>
@@ -96,12 +84,12 @@ export function GrandSlamOffer({ onOpenTrial }: OfferProps) {
                 <div>
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-bold text-white">
-                      Bonus #2: Pre-Loaded 450+ Indian Supplier Benchmarks
+                      3. Ready Material Price Lists
                     </span>
-                    <span className="text-xs font-mono text-emerald-400">₹15,000 Value · FREE</span>
+                    <span className="text-xs font-mono text-emerald-400">Included Free</span>
                   </div>
                   <p className="text-xs text-neutral-300 mt-1">
-                    Instant access to verified market rates across CenturyPly, Greenply, Hettich, Ebco, Blum, Saint-Gobain, and Asian Paints. Never quote outdated rates.
+                    Current market rates for CenturyPly, Greenply, Hettich, Ebco, Blum, Saint-Gobain, and Asian Paints.
                   </p>
                 </div>
               </div>
@@ -114,12 +102,12 @@ export function GrandSlamOffer({ onOpenTrial }: OfferProps) {
                 <div>
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-bold text-white">
-                      Bonus #3: Site Supervisor 3-Minute Video Pack
+                      4. 2-Minute Worker Guide
                     </span>
-                    <span className="text-xs font-mono text-emerald-400">₹8,000 Value · FREE</span>
+                    <span className="text-xs font-mono text-emerald-400">Included Free</span>
                   </div>
                   <p className="text-xs text-neutral-300 mt-1">
-                    Micro-video lessons in plain Hindi & English showing site supervisors how to log bills and labor wages in under 10 seconds. 100% adoption guaranteed.
+                    Short videos in plain Hindi & English showing site supervisors how to photograph bills and daily wages in seconds.
                   </p>
                 </div>
               </div>
@@ -133,24 +121,24 @@ export function GrandSlamOffer({ onOpenTrial }: OfferProps) {
                 </div>
 
                 <span className="text-xs font-bold text-neutral-500 uppercase tracking-wider block mb-1">
-                  The Ironclad Guarantee
+                  Our Guarantee
                 </span>
                 <h4 className="text-xl sm:text-2xl font-extrabold text-neutral-950 leading-tight mb-3">
-                  The 5× ROI Margin Recovery Guarantee.
+                  If it doesn't save you money, you don't pay.
                 </h4>
 
                 <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed mb-4">
-                  Use Vertex OS on your active turnkey projects for 30 days.
+                  Test Vertex OS on your active sites for 30 days.
                 </p>
 
                 <p className="text-xs sm:text-sm text-neutral-800 leading-relaxed font-semibold bg-neutral-100 p-3.5 rounded-xl border border-neutral-200">
-                  If you don't recover at least <strong>5× your software cost</strong> in prevented material leakage, caught change orders, and verified labor disbursements, we will refund 100% of your fee immediately. No questions. No friction.
+                  If you don't save more money in caught expenses and unbilled client work than the software costs, we refund 100% of your fee immediately. No questions asked.
                 </p>
 
                 <div className="mt-4 space-y-2 text-xs text-neutral-700">
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-3.5 h-3.5 text-black shrink-0" />
-                    <span>Zero long-term lock-in contracts</span>
+                    <span>No locked-in contracts</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-3.5 h-3.5 text-black shrink-0" />
@@ -158,7 +146,7 @@ export function GrandSlamOffer({ onOpenTrial }: OfferProps) {
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-3.5 h-3.5 text-black shrink-0" />
-                    <span>Keep all your clean exported Excel data</span>
+                    <span>Keep all your project records</span>
                   </div>
                 </div>
               </div>
@@ -169,11 +157,11 @@ export function GrandSlamOffer({ onOpenTrial }: OfferProps) {
                   onClick={onOpenTrial}
                   className="btn-press w-full py-3.5 rounded-full bg-black text-white font-semibold text-xs sm:text-sm hover:bg-neutral-800 flex items-center justify-center gap-2 shadow-md transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 active:scale-[0.98]"
                 >
-                  <span>Claim Studio Pass + All 3 Bonuses</span>
+                  <span>Start Free 14-Day Trial</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
                 <span className="text-xs text-neutral-500 text-center block mt-2">
-                  14-Day Free Access / No Credit Card Required
+                  No credit card required
                 </span>
               </div>
             </div>

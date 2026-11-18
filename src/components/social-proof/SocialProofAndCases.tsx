@@ -9,39 +9,39 @@ export function SocialProofAndCases() {
       studio: "Verma Architecture & Living",
       location: "Kolkata, South City & Alipore",
       founder: "Aakash Verma, Principal Architect",
-      projectType: "8 Concurrent Turnkey Residences",
+      projectType: "Turnkey Residences",
       image: "/assets/living_room.jpg",
       quote:
-        "We used to estimate 38% margin on paper and end up with 22% at handover. Between unbilled timber yard offcuts, freight charges, and untracked carpenter cash slips, we were burning over ₹18 Lakhs a year. Vertex OS paid for itself within our very first project at Alipore Residences.",
+        "We used to plan for 35% profit on paper and end up with barely 20% at handover. Between unbilled timber, freight charges, and daily carpenter cash, we were losing money on every site. Vertex paid for itself on our very first project.",
       stats: [
-        { label: "Margin Increase", value: "+15.4%", sub: "From 22.4% to 37.8%" },
-        { label: "Leakage Recovered", value: "₹14.8L", sub: "First 90 days" },
+        { label: "First Project Result", value: "Zero Unbilled Work", sub: "All site costs captured" },
+        { label: "Target Profit", value: "100% Protected", sub: "No handover surprise" },
       ],
     },
     {
       studio: "Apex Turnkey Designs",
-      location: "Mumbai & Pune, Luxury Residences",
+      location: "Mumbai & Pune, Luxury Homes",
       founder: "Vikramaditya Sengupta, Managing Director",
-      projectType: "₹1.4 Cr Average Turnkey Villa Scope",
+      projectType: "Turnkey Villa Projects",
       image: "/assets/master_bedroom.jpg",
       quote:
-        "Quoting a 4-bedroom penthouse used to paralyze my design team for 5 full days in Excel. With Vertex OS voice takeoff, I walk through the bare shell with the homeowner, speak the specs into my phone, and present a clean 3-tier proposal before dinner. Our closing rate doubled.",
+        "Quoting a 4-bedroom home used to take my team nearly a week in Excel. With Vertex, I walk the bare flat with the homeowner, speak the details into my phone, and have a clear quote ready before dinner.",
       stats: [
-        { label: "Quoting Time", value: "12 Mins", sub: "Down from 5 days" },
-        { label: "Client Close Rate", value: "2.4×", sub: "3-tier proposal matrix" },
+        { label: "Quoting Speed", value: "Same Day", sub: "Down from 5 days in Excel" },
+        { label: "Client Quotes", value: "3 Price Options", sub: "Better client decisions" },
       ],
     },
     {
       studio: "Atelier Form & Space",
       location: "Bangalore, Indiranagar & Whitefield",
       founder: "Pooja Radhakrishnan, Studio Lead",
-      projectType: "14 Turnkey Apartments Per Year",
+      projectType: "Turnkey Apartments",
       image: "/assets/modular_kitchen.jpg",
       quote:
-        "My biggest fear was that our on-site supervisors would refuse to use it and go back to WhatsApp. The sub-10 second mobile interface is so effortless that all 4 site leads adopted it on Day 1. We have not missed a single vendor invoice or labor wage slip in six months.",
+        "My worry was that our site supervisors wouldn't use it. But it's just snapping a photo of the paper slip. All four supervisors used it from day one, and we haven't lost a single bill in six months.",
       stats: [
-        { label: "Site Adoption", value: "100%", sub: "4 Site supervisors active" },
-        { label: "Unbilled Overruns", value: "₹0", sub: "Zero unbilled scope" },
+        { label: "Site Team", value: "All 4 Active", sub: "Used daily on site phone" },
+        { label: "Lost Slips", value: "Zero", sub: "Over past 6 months" },
       ],
     },
   ];
@@ -51,52 +51,12 @@ export function SocialProofAndCases() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-neutral-300 mb-4 shadow-sm">
-            <Building2 className="w-3.5 h-3.5 text-neutral-300" />
-            <span>Verified Studio Audits</span>
-          </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight mb-4">
-            Protecting real margins across 140+ turnkey studios.
+            What studio owners say.
           </h2>
           <p className="text-sm sm:text-base text-neutral-400 leading-relaxed">
-            Specific numbers from real interior architecture firms who stopped accepting 15% site margin erosion as an inevitable cost of doing business.
+            From interior designers and turnkey contractors who stopped losing money on site.
           </p>
-        </div>
-
-        {/* Studio Trust Metrics Ribbon */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-14">
-          <div className="p-5 rounded-2xl bg-[#131318] border border-white/10 shadow-lg text-center">
-            <span className="text-2xl sm:text-3xl font-extrabold text-white font-mono block">
-              ₹42 Cr+
-            </span>
-            <span className="text-xs text-neutral-400 font-medium mt-1 block">
-              Turnkey Budgets Managed
-            </span>
-          </div>
-          <div className="p-5 rounded-2xl bg-[#131318] border border-white/10 shadow-lg text-center">
-            <span className="text-2xl sm:text-3xl font-extrabold text-white font-mono block">
-              38.2%
-            </span>
-            <span className="text-xs text-neutral-400 font-medium mt-1 block">
-              Average Realized Margin
-            </span>
-          </div>
-          <div className="p-5 rounded-2xl bg-[#131318] border border-white/10 shadow-lg text-center">
-            <span className="text-2xl sm:text-3xl font-extrabold text-white font-mono block">
-              ₹3.8 Cr+
-            </span>
-            <span className="text-xs text-neutral-400 font-medium mt-1 block">
-              Site Leakage Prevented
-            </span>
-          </div>
-          <div className="p-5 rounded-2xl bg-[#131318] border border-white/10 shadow-lg text-center">
-            <span className="text-2xl sm:text-3xl font-extrabold text-white font-mono block">
-              100%
-            </span>
-            <span className="text-xs text-neutral-400 font-medium mt-1 block">
-              Guarantee Claim Rate: 0%
-            </span>
-          </div>
         </div>
 
         {/* Real Studio Case Study Cards */}

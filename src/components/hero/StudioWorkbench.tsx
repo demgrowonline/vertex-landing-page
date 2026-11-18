@@ -140,41 +140,41 @@ export function StudioWorkbench({ onOpenTrial }: StudioWorkbenchProps) {
           
           <div className="p-4 sm:p-5">
             <span className="text-xs font-medium text-neutral-400 block mb-1">
-              Quoted contract
+              Total project price
             </span>
             <div className="flex items-baseline gap-2">
               <span className="text-xl sm:text-2xl font-bold tracking-tight text-white tabular-nums">
                 ₹54,20,000
               </span>
               <span className="text-xs text-neutral-300 font-semibold bg-white/10 px-1.5 py-0.5 rounded border border-white/10">
-                +₹3.2L variation
+                +₹3.2L extra work
               </span>
             </div>
             <span className="text-xs text-neutral-400 block mt-1">
-              4 bedrooms and modular kitchen
+              4-BHK penthouse project
             </span>
           </div>
 
           <div className="p-4 sm:p-5">
             <span className="text-xs font-medium text-neutral-400 block mb-1">
-              Incurred site costs
+              Money spent on site
             </span>
             <div className="flex items-baseline gap-2">
               <span className="text-xl sm:text-2xl font-bold tracking-tight text-white tabular-nums">
                 ₹{totalIncurred.toLocaleString("en-IN")}
               </span>
               <span className="text-xs text-neutral-400 tabular-nums">
-                {((totalIncurred / contractValue) * 100).toFixed(1)}% burn
+                {((totalIncurred / contractValue) * 100).toFixed(1)}% of budget
               </span>
             </div>
             <span className="text-xs text-neutral-400 block mt-1">
-              Materials, trade wages and freight
+              Materials, daily wages, transport
             </span>
           </div>
 
           <div className="p-4 sm:p-5 bg-white text-neutral-950">
             <span className="text-xs font-medium text-neutral-600 block mb-1">
-              Live net margin
+              Current profit
             </span>
             <div className="flex items-baseline gap-2">
               <span className="text-xl sm:text-2xl font-bold tracking-tight text-black tabular-nums">
@@ -185,24 +185,24 @@ export function StudioWorkbench({ onOpenTrial }: StudioWorkbenchProps) {
               </span>
             </div>
             <span className="text-xs text-neutral-600 block mt-1">
-              Target was 35.0%, zero leakage
+              Target profit was 35%
             </span>
           </div>
 
           <div className="p-4 sm:p-5">
             <span className="text-xs font-medium text-neutral-400 block mb-1">
-              Client receivables
+              Paid by client
             </span>
             <div className="flex items-baseline gap-2">
               <span className="text-xl sm:text-2xl font-bold tracking-tight text-white tabular-nums">
                 ₹43,36,000
               </span>
               <span className="text-xs text-emerald-400 font-semibold bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-500/20">
-                Cleared
+                Received
               </span>
             </div>
             <span className="text-xs text-neutral-400 block mt-1">
-              Milestone 3 cleared via RTGS
+              Milestone 3 cleared
             </span>
           </div>
         </div>
@@ -219,7 +219,7 @@ export function StudioWorkbench({ onOpenTrial }: StudioWorkbenchProps) {
               }`}
             >
               <Receipt className="w-3.5 h-3.5" />
-              <span>Live Site Expense Ledger</span>
+              <span>Live Site Expenses</span>
             </button>
 
             <button
@@ -231,7 +231,7 @@ export function StudioWorkbench({ onOpenTrial }: StudioWorkbenchProps) {
               }`}
             >
               <TrendingUp className="w-3.5 h-3.5" />
-              <span>BOQ Variance Radar</span>
+              <span>Budget vs Actual</span>
             </button>
 
             <button
@@ -243,12 +243,12 @@ export function StudioWorkbench({ onOpenTrial }: StudioWorkbenchProps) {
               }`}
             >
               <FileSpreadsheet className="w-3.5 h-3.5" />
-              <span>3-Tier Material Matrix</span>
+              <span>Material Price Tiers</span>
             </button>
           </div>
 
           <div className="hidden sm:flex items-center gap-1.5 text-xs text-neutral-400 pb-2">
-            <span>Direct supervisor capture</span>
+            <span>Updated live from site phone</span>
           </div>
         </div>
 
@@ -261,10 +261,10 @@ export function StudioWorkbench({ onOpenTrial }: StudioWorkbenchProps) {
               <div className="flex flex-wrap items-center justify-between gap-3 pb-1">
                 <div>
                   <h4 className="text-sm font-semibold text-white">
-                    Live Site Micro-Expenses
+                    Site bills & daily wages
                   </h4>
                   <p className="text-xs text-neutral-400">
-                    Logged in under 10 seconds from site mobile. Auto-reconciled with procurement vouchers.
+                    Logged in seconds from the site phone. Added instantly to project expenses.
                   </p>
                 </div>
 
@@ -278,7 +278,7 @@ export function StudioWorkbench({ onOpenTrial }: StudioWorkbenchProps) {
                   }`}
                 >
                   <Plus className="w-3.5 h-3.5" />
-                  <span>{hasLoggedExtra ? "Voucher Auto-Logged" : "Simulate WhatsApp Photo Log"}</span>
+                  <span>{hasLoggedExtra ? "Bill Added" : "+ Log a New Slip"}</span>
                 </button>
               </div>
 

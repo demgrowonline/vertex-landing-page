@@ -8,28 +8,28 @@ export function TargetedFaq() {
 
   const faqs = [
     {
-      q: "My on-site supervisors and mistris are not tech-savvy. Will they actually use this?",
-      a: "Yes. This was our primary engineering constraint. Site supervisors will never use bloated desktop software with 15 form fields. Vertex OS runs seamlessly in any smartphone mobile browser without installing anything. Logging a timber bill or labor wage takes 3 taps: Select Category, Enter Amount, Snap Receipt Photo. Average time: under 8 seconds. It also includes our 3-minute video walkthrough in plain Hindi and English.",
+      q: "Will our site mistris and supervisors actually use this?",
+      a: "Yes. It runs on any phone browser without installing anything. All your supervisor has to do is tap three times: choose category, type the amount, and take a photo of the bill. It takes 5 seconds. We also include a 2-minute video in plain Hindi and English showing them exactly what to do.",
     },
     {
-      q: "We run our studio on Excel and WhatsApp today. How painful is the migration?",
-      a: "Completely painless. Every studio receives our complimentary White-Glove Migration Concierge. You do not need to spend your weekend retyping spreadsheets. Simply upload your existing Excel price lists, client folders, and vendor contacts. Our engineering team cleans, formats, and seeds your entire studio workspace within 24 hours.",
+      q: "We run our studio on Excel and WhatsApp today. How do we switch?",
+      a: "It is completely free and hands-off for you. Send us your current spreadsheets, WhatsApp price notes, or vendor contacts. Our team cleans and sets up your entire studio workspace within 24 hours at no charge.",
     },
     {
-      q: "Is our vendor pricing, trade wage rates, and profit margin data strictly confidential?",
-      a: "100% confidential. Vertex OS enforces strict multi-tenant isolation via Supabase PostgreSQL and Row-Level Security (RLS). Your supplier discounts, labor wage agreements, client quotation rates, and profit margins are encrypted and accessible exclusively to authenticated members of your studio workspace. No other studio or platform user can ever view your data.",
+      q: "Is our pricing, labor rates, and profit data private?",
+      a: "Yes, 100% private. Your supplier discounts, worker wages, client rates, and profit margins are encrypted and strictly locked to your studio. Nobody outside your team can ever view your records.",
     },
     {
-      q: "Does the AI ever 'hallucinate' or guess material rates?",
-      a: "Never. In Vertex OS, the AI only handles voice transcription and entity structuring (via Groq Whisper). All mathematical calculations: unit conversions, square footage multipliers, GST calculations, and package totals, are executed by deterministic server code. The AI never invents rates; it strictly matches your spoken specifications to your approved studio catalog and verified supplier benchmarks.",
+      q: "Does the AI ever guess or make up material prices?",
+      a: "Never. The AI only transcribes what you speak into your phone. Every single price, formula, and tax total comes strictly from the price list you approved. The computer never invents rates.",
     },
     {
-      q: "What is the 5× ROI Margin Recovery Guarantee?",
-      a: "Run Vertex OS on your active turnkey projects for 30 days. If you don't recover at least 5× the cost of your subscription in prevented unbilled timber invoices, caught contractor change orders, and verified labor slips, simply notify us. We will refund 100% of your subscription payment immediately with zero friction. You keep all your clean exported data.",
+      q: "What is your 30-day money-back guarantee?",
+      a: "Try Vertex on your active sites for 30 days. If it doesn't help you catch unbilled expenses and protect your profit, let us know. We will refund 100% of your fee immediately. No questions asked.",
     },
     {
-      q: "Can we export all our project and financial records if we ever decide to leave?",
-      a: "Yes. You maintain 100% data ownership. You can export complete project P&L summaries, itemized site expense ledgers, client quotation line items, and vendor lists to standard Excel and CSV formats at any time with a single click.",
+      q: "Can we export our data if we ever decide to leave?",
+      a: "Yes, anytime with 1 click. You own all your data. You can download your complete project budgets, site bills, client quotes, and supplier lists to standard Excel or CSV files whenever you want.",
     },
   ];
 
@@ -38,15 +38,11 @@ export function TargetedFaq() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-neutral-300 mb-4 shadow-sm">
-            <HelpCircle className="w-3.5 h-3.5 text-neutral-300" />
-            <span>Objection Annihilation</span>
-          </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight mb-4">
             Frequently Asked Questions.
           </h2>
           <p className="text-sm sm:text-base text-neutral-400 leading-relaxed">
-            Direct, transparent answers to the questions every serious interior studio founder asks before switching.
+            Direct, honest answers to the questions interior studio owners ask before switching.
           </p>
         </div>
 
@@ -93,18 +89,18 @@ export function TargetedFaq() {
             </div>
             <div>
               <span className="text-xs font-bold text-white block">
-                Have a unique studio workflow or custom ERP requirement?
+                Have a question about your studio setup?
               </span>
               <span className="text-xs text-neutral-400">
-                Speak directly with our engineering founders. We customize schemas for multi-city turnkey operations.
+                Chat directly with our team. We'll show you how Vertex fits your active projects.
               </span>
             </div>
           </div>
           <a
-            href="mailto:contact@vertexos.com"
+            href="https://wa.me/917980817657?text=Hi%20Vertex%20OS%20team,%20I%20have%20a%20question%20about%20Vertex%20OS!"
             className="px-4 py-2 rounded-full bg-white text-black font-semibold text-xs hover:bg-neutral-200 transition-colors whitespace-nowrap"
           >
-            Ask Founder Team
+            Chat on WhatsApp
           </a>
         </div>
       </div>

@@ -31,15 +31,11 @@ export function ProfitLeakageCalculator({ onOpenTrial }: CalculatorProps) {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-neutral-300 mb-4 shadow-sm">
-            <Calculator className="w-3.5 h-3.5 text-neutral-300" />
-            <span>Interactive Profit Leakage Audit</span>
-          </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight mb-4">
-            How much profit is quietly leaking from your sites?
+            How much money slips through the cracks?
           </h2>
           <p className="text-sm sm:text-base text-neutral-400 leading-relaxed">
-            Move the sliders to match your studio's project volume. Based on verified audits of 140+ Indian turnkey interior firms, here is the exact financial bleed caused by unrecorded site expenses and delayed billing.
+            Small expenses on site add up fast: extra plywood, worker overtime, and client changes that were never billed. Move the sliders to see what it costs your studio each year.
           </p>
         </div>
 
@@ -144,37 +140,33 @@ export function ProfitLeakageCalculator({ onOpenTrial }: CalculatorProps) {
             <div>
               <div className="flex items-center justify-between mb-4">
                 <span className="text-xs font-bold text-neutral-400">
-                  Financial Diagnosis
-                </span>
-                <span className="inline-flex items-center gap-1 text-xs font-semibold text-rose-300 bg-rose-950/60 border border-rose-800/50 px-2.5 py-0.5 rounded-full">
-                  <AlertTriangle className="w-3 h-3 text-rose-400" />
-                  <span>Hidden Margin Bleed</span>
+                  Estimated Loss
                 </span>
               </div>
 
               {/* The Big Leak Number */}
               <div className="mb-6">
                 <span className="text-xs text-neutral-400 block mb-1">
-                  Estimated Annual On-Site Leakage:
+                  Estimated money lost each year:
                 </span>
                 <div className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white font-mono tabular-nums">
                   ₹{totalLeakageLakhs.toFixed(2)} Lakhs
                 </div>
                 <div className="text-xs text-neutral-400 mt-2 leading-relaxed">
-                  Your realized margin drops from <strong className="text-white">{targetMarginPct}%</strong> down to <strong className="text-rose-400">{realizedMarginPct.toFixed(1)}%</strong>.
+                  Your profit drops from <strong className="text-white">{targetMarginPct}%</strong> down to <strong className="text-rose-400">{realizedMarginPct.toFixed(1)}%</strong>.
                 </div>
               </div>
 
               {/* Breakdown List */}
               <div className="space-y-3 pt-4 border-t border-white/10 text-xs">
                 <div className="flex justify-between items-center text-neutral-300">
-                  <span>Unbilled Timber & Material Invoices:</span>
+                  <span>Unbilled materials & transport:</span>
                   <span className="font-mono font-semibold text-white">
                     -₹{materialLeakageLakhs.toFixed(2)}L
                   </span>
                 </div>
                 <div className="flex justify-between items-center text-neutral-300">
-                  <span>Untracked Cash Wages & Scope Drift:</span>
+                  <span>Unrecorded wages & extra work:</span>
                   <span className="font-mono font-semibold text-white">
                     -₹{laborLeakageLakhs.toFixed(2)}L
                   </span>
@@ -182,7 +174,7 @@ export function ProfitLeakageCalculator({ onOpenTrial }: CalculatorProps) {
                 <div className="p-3.5 rounded-xl bg-emerald-950/30 border border-emerald-500/30 flex items-center justify-between text-emerald-400">
                   <div className="flex items-center gap-2">
                     <Sparkles className="w-4 h-4 text-emerald-400" />
-                    <span className="font-bold">Recoverable with Vertex OS:</span>
+                    <span className="font-bold">What you can save with Vertex:</span>
                   </div>
                   <span className="font-mono font-extrabold text-base text-emerald-300">
                     +₹{recoveredProfitLakhs.toFixed(2)}L
@@ -197,12 +189,12 @@ export function ProfitLeakageCalculator({ onOpenTrial }: CalculatorProps) {
                 onClick={onOpenTrial}
                 className="btn-press w-full py-3.5 rounded-full bg-white text-black font-bold text-xs sm:text-sm hover:bg-neutral-200 flex items-center justify-center gap-2 shadow-lg transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 active:scale-[0.98]"
               >
-                <span>Protect the ₹{recoveredProfitLakhs.toFixed(1)}L: Start Free</span>
+                <span>Protect Your Profit: Start Free</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
               <div className="flex items-center justify-center gap-1.5 text-xs text-neutral-400 mt-3 text-center">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                <span>Backed by our 5× ROI Margin Recovery Guarantee</span>
+                <span>Simple 30-day money-back guarantee</span>
               </div>
             </div>
           </div>

@@ -45,16 +45,19 @@ export function Navbar({ onOpenTrial }: NavbarProps) {
               href="#capabilities"
               className="hover:text-white transition-colors duration-150 whitespace-nowrap"
             >
-              Capabilities
+              Features
             </a>
             <a
               href="#calculator"
-              className="hover:text-white transition-colors duration-150 flex items-center gap-1.5 whitespace-nowrap"
+              className="hover:text-white transition-colors duration-150 whitespace-nowrap"
             >
-              <span>The Math</span>
-              <span className="text-[10px] bg-white/10 text-neutral-200 px-1.5 py-0.5 rounded-full font-mono font-bold border border-white/10">
-                ROI
-              </span>
+              Calculator
+            </a>
+            <a
+              href="#problem"
+              className="hover:text-white transition-colors duration-150 whitespace-nowrap"
+            >
+              Why Vertex
             </a>
             <a
               href="#comparison"
@@ -72,13 +75,7 @@ export function Navbar({ onOpenTrial }: NavbarProps) {
               href="#proof"
               className="hover:text-white transition-colors duration-150 whitespace-nowrap"
             >
-              Studio Proof
-            </a>
-            <a
-              href="#guarantee"
-              className="hover:text-white transition-colors duration-150 whitespace-nowrap"
-            >
-              Guarantee
+              Reviews
             </a>
             <a
               href="#faq"
@@ -94,7 +91,7 @@ export function Navbar({ onOpenTrial }: NavbarProps) {
               onClick={onOpenTrial}
               className="btn-press inline-flex items-center gap-1.5 px-4 sm:px-5 py-2 rounded-full text-xs font-bold bg-white text-black hover:bg-neutral-200 shadow-[0_2px_16px_rgba(255,255,255,0.15)] transition-colors duration-150 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 active:scale-[0.98]"
             >
-              <span>Get Studio Pass</span>
+              <span>Start Free</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
 
@@ -118,45 +115,42 @@ export function Navbar({ onOpenTrial }: NavbarProps) {
                 onClick={() => setMobileMenuOpen(false)}
                 className="py-2 border-b border-white/10 hover:text-white transition-colors"
               >
-                Capabilities
+                Features
               </a>
               <a
                 href="#calculator"
                 onClick={() => setMobileMenuOpen(false)}
-                className="py-2 border-b border-white/10 hover:text-white transition-colors flex items-center justify-between"
+                className="py-2 border-b border-white/10 hover:text-white transition-colors"
               >
-                <span>Profit Leakage Calculator</span>
-                <span className="text-xs bg-white/10 text-neutral-200 px-2 py-0.5 rounded-full font-mono">
-                  ROI
-                </span>
+                Profit Calculator
+              </a>
+              <a
+                href="#problem"
+                onClick={() => setMobileMenuOpen(false)}
+                className="py-2 border-b border-white/10 hover:text-white transition-colors"
+              >
+                Why Vertex
               </a>
               <a
                 href="#comparison"
                 onClick={() => setMobileMenuOpen(false)}
                 className="py-2 border-b border-white/10 hover:text-white transition-colors"
               >
-                Vertex vs. Alternatives
+                Comparison
               </a>
               <a
                 href="/pricing"
                 onClick={() => setMobileMenuOpen(false)}
                 className="py-2 border-b border-white/10 hover:text-white transition-colors text-blue-400 font-bold"
               >
-                Pricing Plans
+                Pricing
               </a>
               <a
                 href="#proof"
                 onClick={() => setMobileMenuOpen(false)}
                 className="py-2 border-b border-white/10 hover:text-white transition-colors"
               >
-                Verified Case Studies
-              </a>
-              <a
-                href="#guarantee"
-                onClick={() => setMobileMenuOpen(false)}
-                className="py-2 border-b border-white/10 hover:text-white transition-colors"
-              >
-                5× ROI Guarantee
+                Reviews
               </a>
               <a
                 href="#faq"

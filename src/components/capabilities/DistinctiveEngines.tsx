@@ -16,18 +16,18 @@ export function DistinctiveEngines() {
     {
       id: "voice-takeoff",
       number: "01",
-      badge: "Speed Advantage",
-      title: "5-Minute Voice-to-Quote Takeoff",
-      highlight: "From spoken site walk-through to complete 3-tier client proposal before you reach your car.",
+      badge: "Fast Quotes",
+      title: "Voice Quotes on Site",
+      highlight: "Walk through the bare flat, speak into your phone, and have a finished quote ready in minutes.",
       description:
-        "Speak your observations into your phone while inspecting the bare flat. Groq Whisper AI transcribes and structures your spoken requirements directly into room assemblies, finishes, quantities, and line items.",
-      metric: "95% Reduction in Quoting Time",
-      metricSub: "From 4 days in Excel to 5 minutes on-site",
+        "Speak your observations while inspecting the site. Vertex automatically turns your spoken notes into a clean estimate with current material rates.",
+      metric: "Ready in Minutes",
+      metricSub: "Instead of days of typing in Excel",
       features: [
-        "Turns spoken Hindi/English site notes into structured BOQs",
-        "Auto-generates 3 standardized tiers: Essential, Signature, Architectural Luxe",
-        "Deterministic pricing mapped to verified supplier benchmarks (CenturyPly, Hettich, Asian Paints)",
-        "Zero manual formula errors or broken spreadsheet cells",
+        "Turns spoken site notes into a clean, itemized estimate",
+        "Creates 3 clear budget options: Essential, Signature, and Luxury",
+        "Includes real supplier prices for CenturyPly, Hettich, Asian Paints, and hardware",
+        "Zero broken formulas or calculation mistakes",
       ],
       uiPreview: {
         type: "voice",
@@ -41,18 +41,18 @@ export function DistinctiveEngines() {
     {
       id: "mobile-expense",
       number: "02",
-      badge: "Site Adoption",
-      title: "Sub-10-Second Mobile Site Logger",
-      highlight: "The only site logger simple enough that on-site supervisors actually use it every single day.",
+      badge: "Easy for Site",
+      title: "Quick Mobile Site Logger",
+      highlight: "Simple enough that on-site supervisors actually use it every single day.",
       description:
-        "Construction and interior supervisors will never adopt complex desktop software. Vertex OS runs instantly on any smartphone browser with 3 simple taps: Category, Amount, Vendor Receipt. Done in 8 seconds.",
-      metric: "< 10 Seconds",
-      metricSub: "Average time to record a site expense on mobile",
+        "Site supervisors don't want complicated apps. Vertex runs on any phone browser in 3 simple taps: select category, enter amount, and take a photo of the bill.",
+      metric: "5 Seconds",
+      metricSub: "To photograph and log any site bill",
       features: [
-        "1-tap receipt capture with camera OCR",
-        "Categorizes Vendor Materials, Trade Wages, and Site Logistics",
-        "Directly assigns costs to specific rooms and contract line items",
-        "Automatically debits from client site cash advances",
+        "1-tap receipt photo with automatic amount reading",
+        "Tracks vendor bills, daily carpenter wages, and transport",
+        "Assigns costs directly to the right room and item",
+        "Keeps a clear ledger of site cash advances",
       ],
       uiPreview: {
         type: "expense",
@@ -66,18 +66,18 @@ export function DistinctiveEngines() {
     {
       id: "margin-guard",
       number: "03",
-      badge: "Financial Moat",
-      title: "Real-Time Margin Guard and P&L",
-      highlight: "Know your exact net profit on Day 14 of site execution, not 3 months after handover.",
+      badge: "Profit Guard",
+      title: "Live Daily Profit",
+      highlight: "Know your exact profit today, not two months after handover.",
       description:
-        "Vertex OS continuously reconciles Quoted Contract Value vs. Incurred Costs vs. Collected Client Advances. If carpentry materials or labor wages drift beyond the projected margin threshold, you are alerted immediately.",
-      metric: "38.4% Realized Margin",
-      metricSub: "Average gross margin retained by Vertex studios",
+        "Vertex compares your contract price against actual site bills and client payments in real time. If materials or labor costs drift beyond your target, you are alerted immediately.",
+      metric: "Real Profit",
+      metricSub: "Updated with every site bill and wage slip",
       features: [
-        "Live status indicators: Thriving (35%+), Healthy, Warning, Critical",
-        "Instant cash position: Client Advances vs. Total Site Expenses Paid",
-        "Automated milestone billing alerts linked to project progress",
-        "Exportable P&L statements for studio accounting and tax audits",
+        "Clear status indicators: healthy, warning, or over budget",
+        "Live cash position: client advances vs site money spent",
+        "Alerts you before any trade or room exceeds its budget",
+        "Clean financial summaries for your accountant",
       ],
       uiPreview: {
         type: "pnl",
@@ -92,18 +92,18 @@ export function DistinctiveEngines() {
     {
       id: "proposal-conversion",
       number: "04",
-      badge: "Operational Bridge",
-      title: "1-Click Proposal Conversion",
-      highlight: "Quotation and site execution are the same business object. Zero retyping. Zero lost scope.",
+      badge: "Zero Retyping",
+      title: "1-Click Project Setup",
+      highlight: "One click turns an approved quote into an active site budget.",
       description:
-        "Proposals begin unattached to any project. The moment the client signs off and pays the advance, 1 click creates the active project workspace, automatically populating the BOQ, hardware warranties, milestones, and contractor work orders.",
-      metric: "100% Data Continuity",
-      metricSub: "Zero double-entry between estimating and execution",
+        "The moment your client signs off and pays the advance, 1 click creates the active project workspace, automatically setting up the material budget, checklists, and payment milestones.",
+      metric: "Zero Retyping",
+      metricSub: "From quotation straight into site execution",
       features: [
-        "Idempotent database conversion protects against duplicate projects",
-        "Imports approved rooms, items, unit prices, and quantities directly into site budget",
-        "Client lookbook and warranty specification sheet auto-generated",
-        "Locks the financial baseline so scope revisions require explicit client sign-off",
+        "No copying numbers between different spreadsheets or files",
+        "Seeds approved rooms, quantities, and budgets directly to the site",
+        "Generates clean specification sheets for the client",
+        "Locks the agreed budget so extra client requests are billed properly",
       ],
       uiPreview: {
         type: "conversion",
@@ -122,18 +122,11 @@ export function DistinctiveEngines() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-neutral-300 mb-4 shadow-sm">
-            <Cpu className="w-3.5 h-3.5 text-neutral-300" />
-            <span>Core Architecture</span>
-          </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight mb-4">
-            Built for what interior studios actually need.{" "}
-            <span className="text-neutral-400 font-medium block sm:inline">
-              What others could never provide.
-            </span>
+            Built for how sites actually run.
           </h2>
           <p className="text-sm sm:text-base text-neutral-400 leading-relaxed">
-            Generic CRM tools don't understand timber grades. Construction ERPs take 6 months of training and cost $10K. Vertex OS is purposefully engineered for turnkey interior design firms.
+            No complicated software. No training courses. Just simple tools your team will actually use every day.
           </p>
         </div>
 
