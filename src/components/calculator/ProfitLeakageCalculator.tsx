@@ -1,7 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
-import { ArrowRight, Calculator, AlertTriangle, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowRight, ShieldCheck, Sparkles } from "lucide-react";
+import { Slider } from "@/components/ui/slider";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 
 interface CalculatorProps {
   onOpenTrial: () => void;
@@ -42,28 +47,30 @@ export function ProfitLeakageCalculator({ onOpenTrial }: CalculatorProps) {
         {/* The Calculator Monolith */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           {/* Controls Column (7 cols) */}
-          <div className="lg:col-span-7 bg-[#121217] rounded-3xl p-6 sm:p-8 border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex flex-col justify-between">
-            <div className="space-y-8">
+          <Card className="lg:col-span-7 bg-[#121217] rounded-3xl p-6 sm:p-8 border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex flex-col justify-between">
+            <CardContent className="p-0 space-y-8">
               {/* Slider 1: Active Projects */}
-              <div>
-                <div className="flex justify-between items-center mb-2">
+              <div className="space-y-3">
+                <div className="flex justify-between items-center">
                   <label className="text-sm font-bold text-white">
                     Active Turnkey Projects Per Year
                   </label>
-                  <span className="text-sm font-bold text-white font-mono px-3 py-1 bg-white/10 rounded-lg border border-white/10">
+                  <Badge variant="outline" className="text-sm font-bold text-white font-mono px-3 py-1 bg-white/10 border-white/10">
                     {projectCount} Projects
-                  </span>
+                  </Badge>
                 </div>
-                <input
-                  type="range"
-                  min="2"
-                  max="25"
-                  step="1"
-                  value={projectCount}
-                  onChange={(e) => setProjectCount(Number(e.target.value))}
-                  className="w-full h-2 bg-neutral-800 rounded-lg appearance-none cursor-pointer accent-white"
+                <Slider
+                  min={2}
+                  max={25}
+                  step={1}
+                  value={[projectCount]}
+                  onValueChange={(val) => {
+                    const next = Array.isArray(val) ? val[0] : val;
+                    if (typeof next === "number") setProjectCount(next);
+                  }}
+                  className="py-2"
                 />
-                <div className="flex justify-between text-xs text-neutral-400 mt-1 font-medium">
+                <div className="flex justify-between text-xs text-neutral-400 font-medium">
                   <span>2 projects (Boutique)</span>
                   <span>10 projects</span>
                   <span>25+ projects (Scale)</span>
@@ -71,25 +78,27 @@ export function ProfitLeakageCalculator({ onOpenTrial }: CalculatorProps) {
               </div>
 
               {/* Slider 2: Average Contract Value */}
-              <div>
-                <div className="flex justify-between items-center mb-2">
+              <div className="space-y-3">
+                <div className="flex justify-between items-center">
                   <label className="text-sm font-bold text-white">
                     Average Contract Value Per Residence
                   </label>
-                  <span className="text-sm font-bold text-white font-mono px-3 py-1 bg-white/10 rounded-lg border border-white/10">
+                  <Badge variant="outline" className="text-sm font-bold text-white font-mono px-3 py-1 bg-white/10 border-white/10">
                     ₹{avgContractLakhs} Lakhs
-                  </span>
+                  </Badge>
                 </div>
-                <input
-                  type="range"
-                  min="15"
-                  max="150"
-                  step="5"
-                  value={avgContractLakhs}
-                  onChange={(e) => setAvgContractLakhs(Number(e.target.value))}
-                  className="w-full h-2 bg-neutral-800 rounded-lg appearance-none cursor-pointer accent-white"
+                <Slider
+                  min={15}
+                  max={150}
+                  step={5}
+                  value={[avgContractLakhs]}
+                  onValueChange={(val) => {
+                    const next = Array.isArray(val) ? val[0] : val;
+                    if (typeof next === "number") setAvgContractLakhs(next);
+                  }}
+                  className="py-2"
                 />
-                <div className="flex justify-between text-xs text-neutral-400 mt-1 font-medium">
+                <div className="flex justify-between text-xs text-neutral-400 font-medium">
                   <span>₹15 Lakhs (2 BHK)</span>
                   <span>₹60 Lakhs (Premium 3/4 BHK)</span>
                   <span>₹1.50 Cr+ (Luxury Villa)</span>
@@ -97,31 +106,33 @@ export function ProfitLeakageCalculator({ onOpenTrial }: CalculatorProps) {
               </div>
 
               {/* Slider 3: Quoted Gross Margin Target */}
-              <div>
-                <div className="flex justify-between items-center mb-2">
+              <div className="space-y-3">
+                <div className="flex justify-between items-center">
                   <label className="text-sm font-bold text-white">
                     Target Quoted Margin %
                   </label>
-                  <span className="text-sm font-bold text-white font-mono px-3 py-1 bg-white/10 rounded-lg border border-white/10">
+                  <Badge variant="outline" className="text-sm font-bold text-white font-mono px-3 py-1 bg-white/10 border-white/10">
                     {targetMarginPct}%
-                  </span>
+                  </Badge>
                 </div>
-                <input
-                  type="range"
-                  min="25"
-                  max="50"
-                  step="1"
-                  value={targetMarginPct}
-                  onChange={(e) => setTargetMarginPct(Number(e.target.value))}
-                  className="w-full h-2 bg-neutral-800 rounded-lg appearance-none cursor-pointer accent-white"
+                <Slider
+                  min={25}
+                  max={50}
+                  step={1}
+                  value={[targetMarginPct]}
+                  onValueChange={(val) => {
+                    const next = Array.isArray(val) ? val[0] : val;
+                    if (typeof next === "number") setTargetMarginPct(next);
+                  }}
+                  className="py-2"
                 />
-                <div className="flex justify-between text-xs text-neutral-400 mt-1 font-medium">
+                <div className="flex justify-between text-xs text-neutral-400 font-medium">
                   <span>25% Target</span>
                   <span>35% (Industry Standard)</span>
                   <span>50% (High-End Luxe)</span>
                 </div>
               </div>
-            </div>
+            </CardContent>
 
             {/* Quick Summary Box */}
             <div className="mt-8 p-4 rounded-2xl bg-white/[0.03] border border-white/10 flex flex-wrap items-center justify-between gap-2">
@@ -130,18 +141,18 @@ export function ProfitLeakageCalculator({ onOpenTrial }: CalculatorProps) {
                 ₹{annualTurnoverLakhs.toFixed(1)} Lakhs ({ (annualTurnoverLakhs / 100).toFixed(2) } Cr)
               </span>
             </div>
-          </div>
+          </Card>
 
           {/* Results Monolith Column (5 cols) */}
-          <div className="lg:col-span-5 bg-[#15151c] text-white rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-[0_24px_64px_rgba(0,0,0,0.6)] relative overflow-hidden border border-white/10">
+          <Card className="lg:col-span-5 bg-[#15151c] text-white rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-[0_24px_64px_rgba(0,0,0,0.6)] relative overflow-hidden border-white/10">
             {/* Ambient subtle glow */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
 
-            <div>
+            <CardContent className="p-0">
               <div className="flex items-center justify-between mb-4">
-                <span className="text-xs font-bold text-neutral-400">
+                <Badge variant="outline" className="text-xs font-bold text-neutral-400 border-white/10 bg-white/5">
                   Estimated Loss
-                </span>
+                </Badge>
               </div>
 
               {/* The Big Leak Number */}
@@ -173,7 +184,7 @@ export function ProfitLeakageCalculator({ onOpenTrial }: CalculatorProps) {
                 </div>
                 <div className="p-3.5 rounded-xl bg-emerald-950/30 border border-emerald-500/30 flex items-center justify-between text-emerald-400">
                   <div className="flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-emerald-400" />
+                    <Sparkles className="size-4 text-emerald-400" />
                     <span className="font-bold">What you can save with Vertex:</span>
                   </div>
                   <span className="font-mono font-extrabold text-base text-emerald-300">
@@ -181,23 +192,24 @@ export function ProfitLeakageCalculator({ onOpenTrial }: CalculatorProps) {
                   </span>
                 </div>
               </div>
-            </div>
+            </CardContent>
 
             {/* CTA inside calculator */}
             <div className="mt-8 pt-6 border-t border-white/10">
-              <button
+              <Button
+                size="lg"
                 onClick={onOpenTrial}
-                className="btn-press w-full py-3.5 rounded-full bg-white text-black font-bold text-xs sm:text-sm hover:bg-neutral-200 flex items-center justify-center gap-2 shadow-lg transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 active:scale-[0.98]"
+                className="w-full h-12 rounded-full bg-white text-black font-bold text-xs sm:text-sm hover:bg-neutral-200 shadow-lg group"
               >
                 <span>Protect Your Profit: Start Free</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
+                <ArrowRight data-icon="inline-end" className="group-hover:translate-x-0.5 transition-transform duration-150" />
+              </Button>
               <div className="flex items-center justify-center gap-1.5 text-xs text-neutral-400 mt-3 text-center">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+                <ShieldCheck className="size-3.5 text-emerald-400" />
                 <span>Simple 30-day money-back guarantee</span>
               </div>
             </div>
-          </div>
+          </Card>
         </div>
       </div>
     </section>

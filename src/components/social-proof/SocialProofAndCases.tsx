@@ -2,6 +2,8 @@
 
 import React from "react";
 import { Star, Building2 } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 export function SocialProofAndCases() {
   const caseStudies = [
@@ -62,9 +64,9 @@ export function SocialProofAndCases() {
         {/* Real Studio Case Study Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
           {caseStudies.map((cs, idx) => (
-            <div
+            <Card
               key={idx}
-              className="rounded-3xl bg-[#131319] border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col justify-between group hover:border-white/20 transition-colors duration-200"
+              className="rounded-3xl bg-[#131319] border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col justify-between group hover:border-white/20 transition-colors duration-200 p-0 gap-0"
             >
               <div>
                 {/* Project Showcase Image */}
@@ -88,7 +90,9 @@ export function SocialProofAndCases() {
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="w-3.5 h-3.5 fill-white text-white" />
                     ))}
-                    <span className="text-xs font-semibold ml-1.5 text-neutral-300">Verified Firm</span>
+                    <Badge variant="outline" className="text-xs font-semibold ml-1.5 text-neutral-300 border-white/10 bg-white/5">
+                      Verified Firm
+                    </Badge>
                   </div>
 
                   <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed italic mb-6">
@@ -117,7 +121,7 @@ export function SocialProofAndCases() {
                   </div>
                 ))}
               </div>
-            </div>
+            </Card>
           ))}
         </div>
       </div>

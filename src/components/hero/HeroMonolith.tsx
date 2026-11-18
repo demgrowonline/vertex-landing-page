@@ -5,6 +5,7 @@ import {
   ArrowRight,
   CheckCircle2,
 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { StudioWorkbench } from "./StudioWorkbench";
 
 interface HeroMonolithProps {
@@ -32,19 +33,22 @@ export function HeroMonolith({ onOpenTrial }: HeroMonolithProps) {
 
         {/* Primary Action Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-12">
-          <button
+          <Button
+            size="lg"
             onClick={onOpenTrial}
-            className="btn-press w-full sm:w-auto px-8 py-3.5 rounded-full bg-white text-black text-sm font-semibold hover:bg-neutral-200 shadow-[0_4px_30px_rgba(255,255,255,0.15)] flex items-center justify-center gap-2 group transition-colors duration-150 transition-transform duration-150 motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+            className="w-full sm:w-auto h-12 px-8 rounded-full bg-white text-black text-sm font-semibold hover:bg-neutral-200 shadow-[0_4px_30px_rgba(255,255,255,0.15)] group"
           >
             <span>Start Free Trial</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-150 motion-reduce:transition-none" />
-          </button>
-          <a
-            href="#calculator"
-            className="btn-press w-full sm:w-auto px-7 py-3.5 rounded-full bg-white/5 border border-white/15 text-white text-sm font-semibold hover:bg-white/10 hover:border-white/25 transition-colors duration-150 transition-transform duration-150 motion-reduce:transition-none flex items-center justify-center gap-2 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 active:scale-[0.98] whitespace-nowrap"
+            <ArrowRight data-icon="inline-end" className="group-hover:translate-x-0.5 transition-transform duration-150" />
+          </Button>
+          <Button
+            size="lg"
+            variant="outline"
+            render={<a href="#calculator" />}
+            className="w-full sm:w-auto h-12 px-7 rounded-full bg-white/5 border-white/15 text-white text-sm font-semibold hover:bg-white/10 hover:border-white/25 hover:text-white"
           >
-            <span>See Profit Calculator</span>
-          </a>
+            See Profit Calculator
+          </Button>
         </div>
 
         {/* Trust Proof Micro-Strip */}

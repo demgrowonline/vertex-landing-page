@@ -1,5 +1,17 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { Geist, Geist_Mono } from "next/font/google";
+import { cn } from "@/lib/utils";
+
+const geistSans = Geist({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
+
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+});
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -10,15 +22,15 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: "Vertex OS — The Operating System for Interior Design & Turnkey Execution",
-  description: "Protect your 38% margins. Eliminate unbilled site micro-expenses and runaway contractor labor. 5-minute voice-to-quote, sub-10s site expense logging, and live project P&L.",
+  description: "Protect your project profit. Eliminate unbilled site micro-expenses and runaway contractor labor. Quick quotes, mobile site expense logging, and live project profit tracking.",
   keywords: [
     "interior design software",
     "turnkey interior project management",
     "interior quotation software",
     "interior contractor expense tracker",
-    "interior design p&l",
+    "interior design profit",
     "interior studio operating system",
-    "voice takeoff interior boq",
+    "site expense logger",
   ],
   authors: [{ name: "Vertex OS" }],
 };
@@ -29,16 +41,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth dark">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className="antialiased min-h-screen bg-[#09090b] text-[#f4f4f5] selection:bg-white selection:text-black">
+    <html
+      lang="en"
+      className={cn(
+        "scroll-smooth dark",
+        geistSans.variable,
+        geistMono.variable
+      )}
+    >
+      <body className="antialiased min-h-screen bg-[#09090b] text-[#f4f4f5] font-sans selection:bg-white selection:text-black">
         {children}
       </body>
     </html>

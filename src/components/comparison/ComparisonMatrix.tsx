@@ -1,7 +1,9 @@
 "use client";
 
 import React from "react";
-import { Check, X, Minus, Scale } from "lucide-react";
+import { Check, X, Minus } from "lucide-react";
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 export function ComparisonMatrix() {
   const features = [
@@ -93,7 +95,7 @@ export function ComparisonMatrix() {
         </div>
 
         {/* The Comparison Table Container */}
-        <div className="border border-white/10 rounded-3xl overflow-hidden shadow-[0_24px_64px_rgba(0,0,0,0.6)] bg-[#121217]">
+        <Card className="border-white/10 rounded-3xl overflow-hidden shadow-[0_24px_64px_rgba(0,0,0,0.6)] bg-[#121217] p-0 gap-0">
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse min-w-[720px]">
               <thead>
@@ -102,11 +104,11 @@ export function ComparisonMatrix() {
                     Capability
                   </th>
                   <th className="p-4 sm:p-5 text-xs font-bold text-white w-1/3 bg-white/10 border-x border-white/10">
-                    <div className="flex items-center gap-1.5">
+                    <div className="flex items-center gap-2">
                       <span>Vertex OS</span>
-                      <span className="text-xs bg-white text-black px-2 py-0.5 rounded-full font-bold">
+                      <Badge className="bg-white text-black hover:bg-white text-[11px] font-bold">
                         Purpose-built
-                      </span>
+                      </Badge>
                     </div>
                   </th>
                   <th className="p-4 sm:p-5 text-xs font-bold text-neutral-400 w-1/4">
@@ -154,7 +156,7 @@ export function ComparisonMatrix() {
               </tbody>
             </table>
           </div>
-        </div>
+        </Card>
       </div>
     </section>
   );

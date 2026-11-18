@@ -8,6 +8,8 @@ import {
   ShieldCheck,
   Cpu,
 } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
 
 export function DistinctiveEngines() {
   const [activeEngine, setActiveEngine] = useState<number>(0);
@@ -173,15 +175,16 @@ export function DistinctiveEngines() {
         </div>
 
         {/* The Active Engine Showcase Monolith */}
-        <div className="rounded-3xl bg-[#121217] border border-white/10 p-6 sm:p-10 shadow-[0_24px_64px_rgba(0,0,0,0.6)]">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            {/* Left Column: Narrative & Specifics (6 cols) */}
-            <div className="lg:col-span-6 space-y-5">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-neutral-300">
-                <span>ENGINE {engines[activeEngine].number}</span>
-                <span className="text-neutral-500">/</span>
-                <span>{engines[activeEngine].badge}</span>
-              </div>
+        <Card className="rounded-3xl bg-[#121217] border-white/10 p-6 sm:p-10 shadow-[0_24px_64px_rgba(0,0,0,0.6)]">
+          <CardContent className="p-0">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              {/* Left Column: Narrative & Specifics (6 cols) */}
+              <div className="lg:col-span-6 space-y-5">
+                <Badge variant="outline" className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border-white/10 text-xs font-semibold text-neutral-300">
+                  <span>ENGINE {engines[activeEngine].number}</span>
+                  <span className="text-neutral-500">/</span>
+                  <span>{engines[activeEngine].badge}</span>
+                </Badge>
 
               <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white leading-snug">
                 {engines[activeEngine].title}
@@ -334,13 +337,14 @@ export function DistinctiveEngines() {
                     ))}
                   </div>
                   <div className="p-3 rounded-xl bg-white/5 border border-white/10 text-neutral-300 text-xs text-center">
-                    Idempotent transaction verified: project linked with zero data duplication.
+                    Verified transaction: project linked cleanly with zero duplicate entries.
                   </div>
                 </div>
               )}
             </div>
           </div>
-        </div>
+        </CardContent>
+      </Card>
       </div>
     </section>
   );

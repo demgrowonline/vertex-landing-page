@@ -3,8 +3,10 @@
 import React, { useRef, useState } from "react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { TimelineContent } from "@/components/ui/timeline-animation";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import NumberFlow from "@number-flow/react";
-import { Briefcase, CheckCheck, Database, Server, Sparkles } from "lucide-react";
+import { Briefcase, CheckCheck, Database, Server } from "lucide-react";
 import { motion } from "motion/react";
 
 export interface PricingPlan {
@@ -246,9 +248,9 @@ export default function PricingSection({
                     {plan.name}
                   </h3>
                   {plan.popular && (
-                    <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-bold tracking-tight">
+                    <Badge className="bg-blue-500 text-white hover:bg-blue-500 text-xs font-bold px-3 py-1 rounded-full">
                       Most Popular
-                    </span>
+                    </Badge>
                   )}
                 </div>
                 <p className="text-xs text-neutral-400 mb-6 leading-relaxed min-h-[36px]">
@@ -270,16 +272,17 @@ export default function PricingSection({
 
               <CardContent className="p-6 sm:p-7 pt-0 flex flex-col justify-between flex-1">
                 <div>
-                  <button
+                  <Button
+                    size="lg"
                     onClick={onOpenTrial}
-                    className={`w-full mb-6 py-3.5 rounded-xl font-bold text-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white active:scale-[0.98] ${
+                    className={`w-full mb-6 h-12 rounded-xl font-bold text-sm ${
                       plan.popular
                         ? "bg-blue-600 text-white hover:bg-blue-500 shadow-lg shadow-blue-600/30 border border-blue-400/40"
                         : "bg-white text-black hover:bg-neutral-200 shadow-md"
                     }`}
                   >
                     {plan.buttonText}
-                  </button>
+                  </Button>
 
                   <ul className="space-y-3 py-4 text-xs font-medium text-neutral-300 border-t border-white/10">
                     {plan.features.map((feature, featureIndex) => (

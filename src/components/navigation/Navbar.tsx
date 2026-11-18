@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import { ArrowRight, Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 
 interface NavbarProps {
   onOpenTrial: () => void;
@@ -87,22 +89,25 @@ export function Navbar({ onOpenTrial }: NavbarProps) {
 
           {/* Single High-Converting CTA */}
           <div className="flex items-center gap-2 shrink-0">
-            <button
+            <Button
               onClick={onOpenTrial}
-              className="btn-press inline-flex items-center gap-1.5 px-4 sm:px-5 py-2 rounded-full text-xs font-bold bg-white text-black hover:bg-neutral-200 shadow-[0_2px_16px_rgba(255,255,255,0.15)] transition-colors duration-150 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 active:scale-[0.98]"
+              size="sm"
+              className="rounded-full text-xs font-bold bg-white text-black hover:bg-neutral-200 shadow-[0_2px_16px_rgba(255,255,255,0.15)]"
             >
               <span>Start Free</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </button>
+              <ArrowRight data-icon="inline-end" />
+            </Button>
 
             {/* Mobile Menu Trigger */}
-            <button
+            <Button
+              variant="ghost"
+              size="icon-sm"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 rounded-full hover:bg-white/10 text-neutral-300 transition-colors"
+              className="md:hidden rounded-full text-neutral-300 hover:text-white hover:bg-white/10"
               aria-label="Toggle menu"
             >
-              {mobileMenuOpen ? <X className="w-5 h-5 text-white" /> : <Menu className="w-5 h-5" />}
-            </button>
+              {mobileMenuOpen ? <X className="size-4" /> : <Menu className="size-4" />}
+            </Button>
           </div>
         </nav>
 
@@ -159,15 +164,15 @@ export function Navbar({ onOpenTrial }: NavbarProps) {
               >
                 FAQ
               </a>
-              <button
+              <Button
                 onClick={() => {
                   setMobileMenuOpen(false);
                   onOpenTrial();
                 }}
-                className="w-full mt-2 py-3 rounded-full text-center text-xs font-bold bg-white text-black hover:bg-neutral-200 shadow-md transition-colors"
+                className="w-full mt-2 rounded-full text-xs font-bold bg-white text-black hover:bg-neutral-200"
               >
-                Start 14-Day Free Studio Pass
-              </button>
+                Start Free Trial
+              </Button>
             </div>
           </div>
         )}

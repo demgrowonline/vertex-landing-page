@@ -8,6 +8,9 @@ import {
   CheckCircle2,
   Zap,
 } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 
 interface OfferProps {
   onOpenTrial: () => void;
@@ -28,7 +31,7 @@ export function GrandSlamOffer({ onOpenTrial }: OfferProps) {
         </div>
 
         {/* The Offer Monolith Box */}
-        <div className="rounded-3xl bg-[#121218] text-white p-6 sm:p-12 shadow-[0_24px_64px_rgba(0,0,0,0.6)] relative overflow-hidden border border-white/10">
+        <Card className="rounded-3xl bg-[#121218] text-white p-6 sm:p-12 shadow-[0_24px_64px_rgba(0,0,0,0.6)] relative overflow-hidden border-white/10 gap-0">
           <div className="absolute top-0 right-0 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
 
           {/* Core + Value Stack Grid */}
@@ -68,7 +71,7 @@ export function GrandSlamOffer({ onOpenTrial }: OfferProps) {
                     <span className="text-sm font-bold text-white">
                       2. Free Setup & Data Migration
                     </span>
-                    <span className="text-xs font-mono text-emerald-400">Included Free</span>
+                    <Badge variant="outline" className="text-xs font-mono text-emerald-400 border-emerald-500/30 bg-emerald-500/10">Included Free</Badge>
                   </div>
                   <p className="text-xs text-neutral-300 mt-1">
                     Send us your Excel sheets, WhatsApp notes, or vendor price lists. We set up your entire studio workspace within 24 hours.
@@ -86,7 +89,7 @@ export function GrandSlamOffer({ onOpenTrial }: OfferProps) {
                     <span className="text-sm font-bold text-white">
                       3. Ready Material Price Lists
                     </span>
-                    <span className="text-xs font-mono text-emerald-400">Included Free</span>
+                    <Badge variant="outline" className="text-xs font-mono text-emerald-400 border-emerald-500/30 bg-emerald-500/10">Included Free</Badge>
                   </div>
                   <p className="text-xs text-neutral-300 mt-1">
                     Current market rates for CenturyPly, Greenply, Hettich, Ebco, Blum, Saint-Gobain, and Asian Paints.
@@ -104,7 +107,7 @@ export function GrandSlamOffer({ onOpenTrial }: OfferProps) {
                     <span className="text-sm font-bold text-white">
                       4. 2-Minute Worker Guide
                     </span>
-                    <span className="text-xs font-mono text-emerald-400">Included Free</span>
+                    <Badge variant="outline" className="text-xs font-mono text-emerald-400 border-emerald-500/30 bg-emerald-500/10">Included Free</Badge>
                   </div>
                   <p className="text-xs text-neutral-300 mt-1">
                     Short videos in plain Hindi & English showing site supervisors how to photograph bills and daily wages in seconds.
@@ -114,15 +117,15 @@ export function GrandSlamOffer({ onOpenTrial }: OfferProps) {
             </div>
 
             {/* The 100% Margin Recovery Guarantee (5 cols) */}
-            <div className="lg:col-span-5 bg-white text-neutral-950 rounded-2xl p-6 sm:p-8 flex flex-col justify-between shadow-2xl">
+            <Card className="lg:col-span-5 bg-white text-neutral-950 rounded-2xl p-6 sm:p-8 flex flex-col justify-between shadow-2xl border-transparent">
               <div>
                 <div className="w-12 h-12 rounded-2xl bg-black text-white flex items-center justify-center mb-4">
                   <ShieldCheck className="w-6 h-6 text-emerald-400" />
                 </div>
 
-                <span className="text-xs font-bold text-neutral-500 uppercase tracking-wider block mb-1">
+                <Badge variant="outline" className="text-xs font-bold text-neutral-500 uppercase tracking-wider block mb-2 border-neutral-300">
                   Our Guarantee
-                </span>
+                </Badge>
                 <h4 className="text-xl sm:text-2xl font-extrabold text-neutral-950 leading-tight mb-3">
                   If it doesn't save you money, you don't pay.
                 </h4>
@@ -153,20 +156,21 @@ export function GrandSlamOffer({ onOpenTrial }: OfferProps) {
 
               {/* Action Button */}
               <div className="mt-6 pt-6 border-t border-neutral-200">
-                <button
+                <Button
+                  size="lg"
                   onClick={onOpenTrial}
-                  className="btn-press w-full py-3.5 rounded-full bg-black text-white font-semibold text-xs sm:text-sm hover:bg-neutral-800 flex items-center justify-center gap-2 shadow-md transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 active:scale-[0.98]"
+                  className="w-full h-12 rounded-full bg-black text-white font-semibold text-xs sm:text-sm hover:bg-neutral-800 shadow-md group"
                 >
                   <span>Start Free 14-Day Trial</span>
-                  <ArrowRight className="w-4 h-4" />
-                </button>
+                  <ArrowRight data-icon="inline-end" className="group-hover:translate-x-0.5 transition-transform duration-150" />
+                </Button>
                 <span className="text-xs text-neutral-500 text-center block mt-2">
                   No credit card required
                 </span>
               </div>
-            </div>
+            </Card>
           </div>
-        </div>
+        </Card>
       </div>
     </section>
   );

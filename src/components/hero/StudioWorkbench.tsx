@@ -11,6 +11,8 @@ import {
   Send,
   FileText,
 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 
 interface StudioWorkbenchProps {
   onOpenTrial?: () => void;
@@ -125,10 +127,10 @@ export function StudioWorkbench({ onOpenTrial }: StudioWorkbenchProps) {
           </div>
 
           <div className="flex items-center gap-3 text-xs">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white/5 text-neutral-200 font-medium border border-white/10">
-              <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+            <Badge variant="outline" className="gap-1.5 px-2.5 py-1 rounded-md bg-white/5 text-neutral-200 font-medium border-white/10">
+              <ShieldCheck className="size-3.5 text-emerald-400" />
               <span>{marginPercentage}% margin protected</span>
-            </span>
+            </Badge>
             <span className="hidden sm:inline-block text-neutral-400">
               Contract PRJ-4029-WB
             </span>
@@ -146,9 +148,9 @@ export function StudioWorkbench({ onOpenTrial }: StudioWorkbenchProps) {
               <span className="text-xl sm:text-2xl font-bold tracking-tight text-white tabular-nums">
                 ₹54,20,000
               </span>
-              <span className="text-xs text-neutral-300 font-semibold bg-white/10 px-1.5 py-0.5 rounded border border-white/10">
+              <Badge variant="outline" className="text-xs text-neutral-300 font-semibold bg-white/10 border-white/10">
                 +₹3.2L extra work
-              </span>
+              </Badge>
             </div>
             <span className="text-xs text-neutral-400 block mt-1">
               4-BHK penthouse project
@@ -180,9 +182,9 @@ export function StudioWorkbench({ onOpenTrial }: StudioWorkbenchProps) {
               <span className="text-xl sm:text-2xl font-bold tracking-tight text-black tabular-nums">
                 +₹{netMargin.toLocaleString("en-IN")}
               </span>
-              <span className="text-xs text-emerald-700 font-bold bg-emerald-100 px-1.5 py-0.5 rounded">
+              <Badge className="text-xs text-emerald-700 font-bold bg-emerald-100 hover:bg-emerald-100">
                 {marginPercentage}%
-              </span>
+              </Badge>
             </div>
             <span className="text-xs text-neutral-600 block mt-1">
               Target profit was 35%
@@ -197,9 +199,9 @@ export function StudioWorkbench({ onOpenTrial }: StudioWorkbenchProps) {
               <span className="text-xl sm:text-2xl font-bold tracking-tight text-white tabular-nums">
                 ₹43,36,000
               </span>
-              <span className="text-xs text-emerald-400 font-semibold bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-500/20">
+              <Badge variant="outline" className="text-xs text-emerald-400 font-semibold bg-emerald-500/10 border-emerald-500/20">
                 Received
-              </span>
+              </Badge>
             </div>
             <span className="text-xs text-neutral-400 block mt-1">
               Milestone 3 cleared
@@ -268,18 +270,19 @@ export function StudioWorkbench({ onOpenTrial }: StudioWorkbenchProps) {
                   </p>
                 </div>
 
-                <button
+                <Button
                   onClick={handleSimulateLog}
                   disabled={hasLoggedExtra}
-                  className={`text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors duration-150 flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-1 focus-visible:ring-offset-neutral-950 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed ${
+                  size="xs"
+                  className={
                     hasLoggedExtra
                       ? "bg-white/10 text-neutral-400"
                       : "bg-white text-black hover:bg-neutral-200"
-                  }`}
+                  }
                 >
-                  <Plus className="w-3.5 h-3.5" />
+                  <Plus data-icon="inline-start" />
                   <span>{hasLoggedExtra ? "Bill Added" : "+ Log a New Slip"}</span>
-                </button>
+                </Button>
               </div>
 
               {/* Transactions List */}
@@ -407,13 +410,14 @@ export function StudioWorkbench({ onOpenTrial }: StudioWorkbenchProps) {
                     <span className="font-bold text-white tabular-nums">
                       +₹36,000 variation
                     </span>
-                    <button
+                    <Button
+                      size="xs"
                       onClick={onOpenTrial}
-                      className="px-2.5 py-1 rounded bg-white text-black font-semibold hover:bg-neutral-200 transition-colors duration-150 flex items-center gap-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-1 focus-visible:ring-offset-neutral-950 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+                      className="bg-white text-black hover:bg-neutral-200"
                     >
-                      <Send className="w-3 h-3" />
-                      <span className="whitespace-nowrap">Send Approval</span>
-                    </button>
+                      <Send data-icon="inline-start" />
+                      <span>Send Approval</span>
+                    </Button>
                   </div>
                 </div>
               </div>
@@ -491,9 +495,9 @@ export function StudioWorkbench({ onOpenTrial }: StudioWorkbenchProps) {
                     >
                       Tier 2: Signature Line
                     </span>
-                    <span className="text-xs bg-emerald-500/20 text-emerald-800 border border-emerald-500/30 px-1.5 py-0.5 rounded font-bold">
+                    <Badge className="text-xs bg-emerald-500/20 text-emerald-800 border-emerald-500/30 hover:bg-emerald-500/20 font-bold">
                       Active Contract
-                    </span>
+                    </Badge>
                   </div>
                   <div
                     className={`text-xl font-bold my-1 tabular-nums ${
