@@ -67,7 +67,7 @@ export function Footer({ onOpenTrial }: FooterProps) {
   ];
 
   return (
-    <div className="w-full mt-10 sm:mt-16 overflow-hidden">
+    <div className="w-full relative overflow-hidden bg-[#09090b]">
       <PushpinTearFooter
         brand="Vertex OS"
         name="Vertex OS"

@@ -375,7 +375,8 @@ function useReducedMotion() {
 }
 
 const CSS =
-  ".tpf{position:relative;overflow:hidden;container-type:size;min-height:620px;background:var(--tpf-sheet);color:var(--tpf-on-sheet);font-family:var(--tpf-sans);isolation:isolate;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;--ease:cubic-bezier(.22,1,.36,1);--fs:max(12px,1.85cqmin)}" +
+  ".tpf{position:relative;overflow:hidden;container-type:size;min-height:620px;background:linear-gradient(to bottom,#09090b 0%,var(--tpf-sheet) max(140px,22cqmin));color:var(--tpf-on-sheet);font-family:var(--tpf-sans);isolation:isolate;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;--ease:cubic-bezier(.22,1,.36,1);--fs:max(12px,1.85cqmin)}" +
+  ".tpf-dissolve{position:absolute;top:0;left:0;right:0;height:max(140px,22cqmin);background:linear-gradient(to bottom,#09090b 0%,rgba(9,9,11,.96) 20%,rgba(9,9,11,.7) 50%,rgba(9,9,11,.25) 80%,transparent 100%);pointer-events:none;z-index:1}" +
   ".tpf *,.tpf *::before,.tpf *::after{box-sizing:border-box}" +
   ":where(.tpf) a{color:inherit;text-decoration:none}" +
   ":where(.tpf) button{font:inherit;color:inherit;background:none;border:0;padding:0;margin:0;cursor:pointer}" +
@@ -906,8 +907,8 @@ export default function PushpinTearFooter({
             <stop offset="1" stopColor="#000000" stopOpacity=".08" />
           </radialGradient>
           <linearGradient id={uid + "l"} x1="0" y1="0" x2=".35" y2="1">
-            <stop offset="0" stopColor="#fff" stopOpacity=".12" />
-            <stop offset=".55" stopColor="#fff" stopOpacity="0" />
+            <stop offset="0" stopColor="#09090b" stopOpacity=".95" />
+            <stop offset=".35" stopColor="#09090b" stopOpacity="0" />
             <stop offset="1" stopColor="#000000" stopOpacity=".15" />
           </linearGradient>
           {grain && (
@@ -945,6 +946,9 @@ export default function PushpinTearFooter({
           ))}
         </g>
       </svg>
+
+      {/* ---- top dissolve bridge: melts the sheet and grain into canvas ---- */}
+      <div className="tpf-dissolve" aria-hidden="true" />
 
       {/* ---- on the sheet ---- */}
       <div className="tpf-z tpf-top">
