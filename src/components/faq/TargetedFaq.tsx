@@ -45,14 +45,14 @@ export function TargetedFaq() {
   ];
 
   return (
-    <section id="faq" className="py-20 sm:py-28 bg-[#0d0d11] relative overflow-hidden text-neutral-100">
+    <section id="faq" className="py-20 sm:py-28 bg-[#fafafa] relative overflow-hidden text-neutral-900 border-t border-b border-neutral-200/60">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight mb-4">
+          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-neutral-950 leading-tight mb-4">
             Frequently Asked Questions.
           </h2>
-          <p className="text-sm sm:text-base text-neutral-400 leading-relaxed">
+          <p className="text-sm sm:text-base text-neutral-500 leading-relaxed">
             Direct, honest answers to the questions interior studio owners ask before switching.
           </p>
         </div>
@@ -63,12 +63,12 @@ export function TargetedFaq() {
             <AccordionItem
               key={faq.id}
               value={faq.id}
-              className="rounded-2xl bg-[#131319] border border-white/10 overflow-hidden shadow-lg px-5 sm:px-6 py-1 data-open:border-white/25 transition-colors"
+              className="rounded-2xl bg-white border border-neutral-200/80 overflow-hidden shadow-xs px-5 sm:px-6 py-1 data-open:border-neutral-400 transition-colors"
             >
-              <AccordionTrigger className="text-sm sm:text-base font-bold text-white tracking-tight hover:no-underline py-4">
+              <AccordionTrigger className="text-sm sm:text-base font-semibold text-neutral-950 tracking-tight hover:no-underline py-4">
                 {faq.q}
               </AccordionTrigger>
-              <AccordionContent className="text-xs sm:text-sm text-neutral-300 leading-relaxed pt-1 pb-4">
+              <AccordionContent className="text-xs sm:text-sm text-neutral-600 leading-relaxed pt-1 pb-4">
                 {faq.a}
               </AccordionContent>
             </AccordionItem>
@@ -76,17 +76,17 @@ export function TargetedFaq() {
         </Accordion>
 
         {/* Bottom Reassurance Banner */}
-        <div className="mt-12 p-5 rounded-2xl bg-[#15151e] border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+        <div className="mt-12 p-5 rounded-2xl bg-white border border-neutral-200/80 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
-              <ShieldCheck className="w-5 h-5 text-emerald-400" />
+            <div className="w-10 h-10 rounded-xl bg-neutral-100 flex items-center justify-center shrink-0">
+              <ShieldCheck className="w-5 h-5 text-emerald-600" />
             </div>
             <div>
-              <span className="text-xs font-bold text-white block">
+              <span className="text-xs font-bold text-neutral-950 block">
                 Have a question about your studio setup?
               </span>
-              <span className="text-xs text-neutral-400">
-                Chat directly with our team. We'll show you how Vertex fits your active projects.
+              <span className="text-xs text-neutral-500">
+                Chat directly with our team. We&apos;ll show you how Vertex fits your active projects.
               </span>
             </div>
           </div>
@@ -99,7 +99,7 @@ export function TargetedFaq() {
                 rel="noopener noreferrer"
               />
             }
-            className="rounded-full bg-white text-black font-semibold text-xs hover:bg-neutral-200"
+            className="rounded-full bg-black text-white font-semibold text-xs hover:bg-neutral-800"
           >
             Chat on WhatsApp
           </Button>

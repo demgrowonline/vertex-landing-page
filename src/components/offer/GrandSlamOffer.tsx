@@ -18,20 +18,20 @@ interface OfferProps {
 
 export function GrandSlamOffer({ onOpenTrial }: OfferProps) {
   return (
-    <section id="guarantee" className="py-20 sm:py-28 bg-[#09090b] relative overflow-hidden text-neutral-100">
+    <section id="guarantee" className="py-20 sm:py-28 bg-white relative overflow-hidden text-neutral-900">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight mb-4">
+          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-neutral-950 leading-tight mb-4">
             Try it on your next project with zero risk.
           </h2>
-          <p className="text-sm sm:text-base text-neutral-400 leading-relaxed">
+          <p className="text-sm sm:text-base text-neutral-500 leading-relaxed">
             We help you set up your price lists, train your site team in 10 minutes, and give you 30 days to test it live on site.
           </p>
         </div>
 
         {/* The Offer Monolith Box */}
-        <Card className="rounded-3xl bg-[#121218] text-white p-6 sm:p-12 shadow-[0_24px_64px_rgba(0,0,0,0.6)] relative overflow-hidden border-white/10 gap-0">
+        <Card className="rounded-3xl bg-neutral-950 text-white p-6 sm:p-12 shadow-[0_24px_64px_rgba(0,0,0,0.15)] relative overflow-hidden border-neutral-800 gap-0">
           <div className="absolute top-0 right-0 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
 
           {/* Core + Value Stack Grid */}

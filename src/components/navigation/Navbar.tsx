@@ -34,75 +34,80 @@ export function Navbar({ onOpenTrial }: NavbarProps) {
         <nav
           className={`flex items-center justify-between px-5 sm:px-7 py-2.5 rounded-full transition-all duration-300 ${
             scrolled
-              ? "glass-nav shadow-[0_8px_30px_rgba(0,0,0,0.6)]"
-              : "bg-[#0d0d10]/90 backdrop-blur-md border border-white/10"
+              ? "bg-white/95 backdrop-blur-md border border-neutral-200/90 shadow-[0_8px_30px_rgba(0,0,0,0.06)]"
+              : "bg-white/80 backdrop-blur-md border border-neutral-200/70 shadow-[0_2px_12px_rgba(0,0,0,0.03)]"
           }`}
         >
           {/* Brand Mark */}
           <a href="#" className="flex items-center gap-2.5 group shrink-0">
-            <div className="w-8 h-8 rounded-xl bg-white flex items-center justify-center text-black font-extrabold text-xs tracking-tighter shadow-sm group-hover:scale-105 transition-transform duration-200">
+            <div className="w-7 h-7 rounded-lg bg-black flex items-center justify-center text-white font-extrabold text-xs tracking-tighter shadow-xs group-hover:scale-105 transition-transform duration-200">
               <span>VX</span>
             </div>
-            <span className="text-sm font-bold tracking-tight text-white">
-              Vertex<span className="text-neutral-400 font-normal">OS</span>
+            <span className="text-sm font-bold tracking-tight text-neutral-950">
+              Vertex<span className="text-neutral-500 font-normal">OS</span>
             </span>
           </a>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden md:flex items-center gap-7 text-xs font-semibold text-neutral-300">
+          <div className="hidden md:flex items-center gap-7 text-xs font-medium text-neutral-600">
             <a
               href="#capabilities"
-              className="hover:text-white transition-colors duration-150 whitespace-nowrap"
+              className="hover:text-black transition-colors duration-150 whitespace-nowrap"
             >
               Features
             </a>
             <a
               href="#calculator"
-              className="hover:text-white transition-colors duration-150 whitespace-nowrap"
+              className="hover:text-black transition-colors duration-150 whitespace-nowrap"
             >
               Calculator
             </a>
             <a
               href="#problem"
-              className="hover:text-white transition-colors duration-150 whitespace-nowrap"
+              className="hover:text-black transition-colors duration-150 whitespace-nowrap"
             >
               Why Vertex
             </a>
             <a
               href="#comparison"
-              className="hover:text-white transition-colors duration-150 whitespace-nowrap"
+              className="hover:text-black transition-colors duration-150 whitespace-nowrap"
             >
               Comparison
             </a>
             <a
               href="/pricing"
-              className="hover:text-white transition-colors duration-150 whitespace-nowrap text-blue-400 font-bold"
+              className="hover:text-black transition-colors duration-150 whitespace-nowrap font-semibold text-neutral-950"
             >
               Pricing
             </a>
             <a
               href="#proof"
-              className="hover:text-white transition-colors duration-150 whitespace-nowrap"
+              className="hover:text-black transition-colors duration-150 whitespace-nowrap"
             >
               Reviews
             </a>
             <a
               href="#faq"
-              className="hover:text-white transition-colors duration-150 whitespace-nowrap"
+              className="hover:text-black transition-colors duration-150 whitespace-nowrap"
             >
               FAQ
             </a>
           </div>
 
           {/* Single High-Converting CTA */}
-          <div className="flex items-center gap-2 shrink-0">
+          <div className="flex items-center gap-3 shrink-0">
+            <button
+              onClick={onOpenTrial}
+              className="hidden sm:inline-block text-xs font-medium text-neutral-600 hover:text-black transition-colors"
+            >
+              Log in
+            </button>
             <Button
               onClick={onOpenTrial}
               size="sm"
-              className="rounded-full text-xs font-bold bg-white text-black hover:bg-neutral-200 shadow-[0_2px_16px_rgba(255,255,255,0.15)]"
+              className="rounded-full text-xs font-semibold bg-black text-white hover:bg-neutral-800 shadow-xs px-4"
             >
-              <span>Start Free</span>
-              <ArrowRight data-icon="inline-end" />
+              <span>Join for free</span>
             </Button>
 
             {/* Mobile Sheet Navigation */}
@@ -112,66 +117,66 @@ export function Navbar({ onOpenTrial }: NavbarProps) {
                   <Button
                     variant="ghost"
                     size="icon-sm"
-                    className="md:hidden rounded-full text-neutral-300 hover:text-white hover:bg-white/10"
+                    className="md:hidden rounded-full text-neutral-600 hover:text-black hover:bg-neutral-100"
                     aria-label="Toggle menu"
                   />
                 }
               >
                 <Menu className="size-4" />
               </SheetTrigger>
-              <SheetContent side="right" className="bg-[#0e0e12] border-white/15 text-white p-6 w-80">
+              <SheetContent side="right" className="bg-white border-neutral-200 text-neutral-900 p-6 w-80">
                 <SheetHeader className="mb-6 text-left">
-                  <SheetTitle className="text-white font-bold text-lg">
+                  <SheetTitle className="text-neutral-950 font-bold text-lg">
                     Vertex<span className="text-neutral-400 font-normal">OS</span>
                   </SheetTitle>
                 </SheetHeader>
-                <div className="flex flex-col gap-4 text-sm font-semibold text-neutral-200">
+                <div className="flex flex-col gap-4 text-sm font-medium text-neutral-700">
                   <a
                     href="#capabilities"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="py-2 border-b border-white/10 hover:text-white transition-colors"
+                    className="py-2 border-b border-neutral-100 hover:text-black transition-colors"
                   >
                     Features
                   </a>
                   <a
                     href="#calculator"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="py-2 border-b border-white/10 hover:text-white transition-colors"
+                    className="py-2 border-b border-neutral-100 hover:text-black transition-colors"
                   >
                     Profit Calculator
                   </a>
                   <a
                     href="#problem"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="py-2 border-b border-white/10 hover:text-white transition-colors"
+                    className="py-2 border-b border-neutral-100 hover:text-black transition-colors"
                   >
                     Why Vertex
                   </a>
                   <a
                     href="#comparison"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="py-2 border-b border-white/10 hover:text-white transition-colors"
+                    className="py-2 border-b border-neutral-100 hover:text-black transition-colors"
                   >
                     Comparison
                   </a>
                   <a
                     href="/pricing"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="py-2 border-b border-white/10 hover:text-white transition-colors text-blue-400 font-bold"
+                    className="py-2 border-b border-neutral-100 hover:text-black transition-colors font-bold text-black"
                   >
                     Pricing
                   </a>
                   <a
                     href="#proof"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="py-2 border-b border-white/10 hover:text-white transition-colors"
+                    className="py-2 border-b border-neutral-100 hover:text-black transition-colors"
                   >
                     Reviews
                   </a>
                   <a
                     href="#faq"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="py-2 border-b border-white/10 hover:text-white transition-colors"
+                    className="py-2 border-b border-neutral-100 hover:text-black transition-colors"
                   >
                     FAQ
                   </a>
@@ -180,9 +185,9 @@ export function Navbar({ onOpenTrial }: NavbarProps) {
                       setMobileMenuOpen(false);
                       onOpenTrial();
                     }}
-                    className="w-full mt-2 rounded-full text-xs font-bold bg-white text-black hover:bg-neutral-200"
+                    className="w-full mt-2 rounded-full text-xs font-semibold bg-black text-white hover:bg-neutral-800"
                   >
-                    Start Free Trial
+                    Join for free
                   </Button>
                 </div>
               </SheetContent>

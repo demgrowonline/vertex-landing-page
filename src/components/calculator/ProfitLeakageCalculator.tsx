@@ -33,14 +33,14 @@ export function ProfitLeakageCalculator({ onOpenTrial }: CalculatorProps) {
   const recoveredProfitLakhs = totalLeakageLakhs * 0.88; // Vertex recovers ~88% of leakage
 
   return (
-    <section id="calculator" className="py-20 sm:py-28 bg-[#0d0d11] relative overflow-hidden text-neutral-100">
+    <section id="calculator" className="py-20 sm:py-28 bg-[#fafafa] relative overflow-hidden text-neutral-900 border-t border-b border-neutral-200/60">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight mb-4">
+          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-neutral-950 leading-tight mb-4">
             How much money slips through the cracks?
           </h2>
-          <p className="text-sm sm:text-base text-neutral-400 leading-relaxed">
+          <p className="text-sm sm:text-base text-neutral-500 leading-relaxed">
             Small expenses on site add up fast: extra plywood, worker overtime, and client changes that were never billed. Move the sliders to see what it costs your studio each year.
           </p>
         </div>
@@ -48,15 +48,15 @@ export function ProfitLeakageCalculator({ onOpenTrial }: CalculatorProps) {
         {/* The Calculator Monolith */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           {/* Controls Column (7 cols) */}
-          <Card className="lg:col-span-7 bg-[#121217] rounded-3xl p-6 sm:p-8 border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex flex-col justify-between">
+          <Card className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 border-neutral-200/80 shadow-[0_4px_24px_rgba(0,0,0,0.03)] flex flex-col justify-between">
             <CardContent className="p-0 space-y-8">
               {/* Slider 1: Active Projects */}
               <div className="space-y-3">
                 <div className="flex justify-between items-center">
-                  <Label className="text-sm font-bold text-white">
+                  <Label className="text-sm font-semibold text-neutral-900">
                     Active Turnkey Projects Per Year
                   </Label>
-                  <Badge variant="outline" className="text-sm font-bold text-white font-mono px-3 py-1 bg-white/10 border-white/10">
+                  <Badge variant="outline" className="text-sm font-bold text-neutral-900 font-mono px-3 py-1 bg-neutral-100 border-neutral-200">
                     {projectCount} Projects
                   </Badge>
                 </div>
@@ -81,10 +81,10 @@ export function ProfitLeakageCalculator({ onOpenTrial }: CalculatorProps) {
               {/* Slider 2: Average Contract Value */}
               <div className="space-y-3">
                 <div className="flex justify-between items-center">
-                  <Label className="text-sm font-bold text-white">
+                  <Label className="text-sm font-semibold text-neutral-900">
                     Average Contract Value Per Residence
                   </Label>
-                  <Badge variant="outline" className="text-sm font-bold text-white font-mono px-3 py-1 bg-white/10 border-white/10">
+                  <Badge variant="outline" className="text-sm font-bold text-neutral-900 font-mono px-3 py-1 bg-neutral-100 border-neutral-200">
                     ₹{avgContractLakhs} Lakhs
                   </Badge>
                 </div>
@@ -109,10 +109,10 @@ export function ProfitLeakageCalculator({ onOpenTrial }: CalculatorProps) {
               {/* Slider 3: Quoted Gross Margin Target */}
               <div className="space-y-3">
                 <div className="flex justify-between items-center">
-                  <Label className="text-sm font-bold text-white">
+                  <Label className="text-sm font-semibold text-neutral-900">
                     Target Quoted Margin %
                   </Label>
-                  <Badge variant="outline" className="text-sm font-bold text-white font-mono px-3 py-1 bg-white/10 border-white/10">
+                  <Badge variant="outline" className="text-sm font-bold text-neutral-900 font-mono px-3 py-1 bg-neutral-100 border-neutral-200">
                     {targetMarginPct}%
                   </Badge>
                 </div>
@@ -136,16 +136,16 @@ export function ProfitLeakageCalculator({ onOpenTrial }: CalculatorProps) {
             </CardContent>
 
             {/* Quick Summary Box */}
-            <div className="mt-8 p-4 rounded-2xl bg-white/[0.03] border border-white/10 flex flex-wrap items-center justify-between gap-2">
-              <span className="text-xs font-semibold text-neutral-400">Annual Turnkey Volume:</span>
-              <span className="font-bold text-white font-mono text-sm sm:text-base">
+            <div className="mt-8 p-4 rounded-2xl bg-neutral-50 border border-neutral-200/80 flex flex-wrap items-center justify-between gap-2">
+              <span className="text-xs font-semibold text-neutral-500">Annual Turnkey Volume:</span>
+              <span className="font-bold text-neutral-900 font-mono text-sm sm:text-base">
                 ₹{annualTurnoverLakhs.toFixed(1)} Lakhs ({ (annualTurnoverLakhs / 100).toFixed(2) } Cr)
               </span>
             </div>
           </Card>
 
           {/* Results Monolith Column (5 cols) */}
-          <Card className="lg:col-span-5 bg-[#15151c] text-white rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-[0_24px_64px_rgba(0,0,0,0.6)] relative overflow-hidden border-white/10">
+          <Card className="lg:col-span-5 bg-neutral-950 text-white rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-[0_20px_50px_rgba(0,0,0,0.15)] relative overflow-hidden border-neutral-800">
             {/* Ambient subtle glow */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
 

@@ -90,71 +90,71 @@ export function ComparisonMatrix() {
   ];
 
   return (
-    <section id="comparison" className="py-20 sm:py-28 bg-[#09090b] relative overflow-hidden text-neutral-100">
+    <section id="comparison" className="py-20 sm:py-28 bg-white relative overflow-hidden text-neutral-900">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight mb-4">
+          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-neutral-950 leading-tight mb-4">
             How Vertex compares.
           </h2>
-          <p className="text-sm sm:text-base text-neutral-400 leading-relaxed">
+          <p className="text-sm sm:text-base text-neutral-500 leading-relaxed">
             Why interior studios switch away from manual spreadsheets and complex enterprise software.
           </p>
         </div>
 
         {/* The Comparison Table Container with shadcn Table */}
-        <Card className="border-white/10 rounded-3xl overflow-hidden shadow-[0_24px_64px_rgba(0,0,0,0.6)] bg-[#121217] p-0 gap-0">
+        <Card className="border-neutral-200/80 rounded-3xl overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.04)] bg-white p-0 gap-0">
           <Table className="min-w-[720px]">
-            <TableHeader className="bg-[#16161c]">
-              <TableRow className="border-b border-white/10 hover:bg-transparent">
-                <TableHead className="p-4 sm:p-5 text-xs font-bold text-neutral-400 w-1/4">
+            <TableHeader className="bg-neutral-50 border-b border-neutral-200/80">
+              <TableRow className="border-b border-neutral-200/80 hover:bg-transparent">
+                <TableHead className="p-4 sm:p-5 text-xs font-bold text-neutral-500 w-1/4">
                   Capability
                 </TableHead>
-                <TableHead className="p-4 sm:p-5 text-xs font-bold text-white w-1/3 bg-white/10 border-x border-white/10">
+                <TableHead className="p-4 sm:p-5 text-xs font-bold text-neutral-950 w-1/3 bg-neutral-100/80 border-x border-neutral-200">
                   <div className="flex items-center gap-2">
                     <span>Vertex OS</span>
-                    <Badge className="bg-white text-black hover:bg-white text-[11px] font-bold">
+                    <Badge className="bg-black text-white hover:bg-black text-[11px] font-semibold">
                       Purpose-built
                     </Badge>
                   </div>
                 </TableHead>
-                <TableHead className="p-4 sm:p-5 text-xs font-bold text-neutral-400 w-1/4">
+                <TableHead className="p-4 sm:p-5 text-xs font-bold text-neutral-500 w-1/4">
                   Spreadsheets + WhatsApp
                 </TableHead>
-                <TableHead className="p-4 sm:p-5 text-xs font-bold text-neutral-400 w-1/4">
+                <TableHead className="p-4 sm:p-5 text-xs font-bold text-neutral-500 w-1/4">
                   Generic Construction ERPs
                 </TableHead>
               </TableRow>
             </TableHeader>
-            <TableBody className="divide-y divide-white/10 text-xs sm:text-sm">
+            <TableBody className="divide-y divide-neutral-100 text-xs sm:text-sm">
               {features.map((feat, idx) => (
                 <TableRow
                   key={idx}
-                  className={`border-b border-white/10 hover:bg-white/[0.04] transition-colors duration-150 ${
-                    feat.highlight ? "bg-white/[0.02]" : ""
+                  className={`border-b border-neutral-100 hover:bg-neutral-50/70 transition-colors duration-150 ${
+                    feat.highlight ? "bg-neutral-50/40" : ""
                   }`}
                 >
-                  <TableCell className="p-4 sm:p-5 font-semibold text-neutral-200">
+                  <TableCell className="p-4 sm:p-5 font-semibold text-neutral-900">
                     <div>{feat.name}</div>
-                    <span className="text-xs font-normal text-neutral-500">
+                    <span className="text-xs font-normal text-neutral-400">
                       {feat.category}
                     </span>
                   </TableCell>
-                  <TableCell className="p-4 sm:p-5 font-bold text-white bg-white/[0.04] border-x border-white/10">
+                  <TableCell className="p-4 sm:p-5 font-bold text-neutral-950 bg-neutral-50/60 border-x border-neutral-200">
                     <div className="flex items-start gap-2">
-                      <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                      <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                       <span>{feat.vertex}</span>
                     </div>
                   </TableCell>
-                  <TableCell className="p-4 sm:p-5 text-neutral-400">
+                  <TableCell className="p-4 sm:p-5 text-neutral-500">
                     <div className="flex items-start gap-2">
-                      <X className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
+                      <X className="w-4 h-4 text-rose-500 shrink-0 mt-0.5" />
                       <span>{feat.sheets}</span>
                     </div>
                   </TableCell>
                   <TableCell className="p-4 sm:p-5 text-neutral-400">
                     <div className="flex items-start gap-2">
-                      <Minus className="w-4 h-4 text-neutral-600 shrink-0 mt-0.5" />
+                      <Minus className="w-4 h-4 text-neutral-400 shrink-0 mt-0.5" />
                       <span>{feat.legacy}</span>
                     </div>
                   </TableCell>

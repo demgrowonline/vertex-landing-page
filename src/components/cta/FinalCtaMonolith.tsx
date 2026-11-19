@@ -11,9 +11,9 @@ interface FinalCtaProps {
 
 export function FinalCtaMonolith({ onOpenTrial }: FinalCtaProps) {
   return (
-    <section className="py-20 sm:py-28 bg-[#09090b] relative overflow-hidden text-neutral-100">
+    <section className="py-20 sm:py-28 bg-white relative overflow-hidden text-neutral-900">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
-        <Card className="rounded-[32px] bg-[#121217] text-white p-8 sm:p-16 relative overflow-hidden shadow-[0_32px_80px_rgba(0,0,0,0.8)] border-white/10 text-center gap-0">
+        <Card className="rounded-[32px] bg-neutral-950 text-white p-8 sm:p-16 relative overflow-hidden shadow-[0_32px_80px_rgba(0,0,0,0.18)] border-neutral-800 text-center gap-0">
           <CardContent className="p-0">
             {/* Subtle Ambient Radial Glow */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-80 bg-gradient-to-b from-white/10 to-transparent blur-3xl pointer-events-none" />

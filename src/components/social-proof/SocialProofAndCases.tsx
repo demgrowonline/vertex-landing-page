@@ -49,14 +49,14 @@ export function SocialProofAndCases() {
   ];
 
   return (
-    <section id="proof" className="py-20 sm:py-28 bg-[#0d0d11] relative overflow-hidden text-neutral-100">
+    <section id="proof" className="py-20 sm:py-28 bg-[#fafafa] relative overflow-hidden text-neutral-900 border-t border-b border-neutral-200/60">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight mb-4">
+          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-neutral-950 leading-tight mb-4">
             What studio owners say.
           </h2>
-          <p className="text-sm sm:text-base text-neutral-400 leading-relaxed">
+          <p className="text-sm sm:text-base text-neutral-500 leading-relaxed">
             From interior designers and turnkey contractors who stopped losing money on site.
           </p>
         </div>
@@ -66,17 +66,17 @@ export function SocialProofAndCases() {
           {caseStudies.map((cs, idx) => (
             <Card
               key={idx}
-              className="rounded-3xl bg-[#131319] border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col justify-between group hover:border-white/20 transition-colors duration-200 p-0 gap-0"
+              className="rounded-3xl bg-white border-neutral-200/80 shadow-[0_4px_24px_rgba(0,0,0,0.03)] overflow-hidden flex flex-col justify-between group hover:shadow-md transition-shadow duration-200 p-0 gap-0"
             >
               <div>
                 {/* Project Showcase Image */}
-                <div className="relative h-56 w-full bg-neutral-900 overflow-hidden">
+                <div className="relative h-56 w-full bg-neutral-100 overflow-hidden">
                   <img
                     src={cs.image}
                     alt={cs.studio}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#131319] via-black/40 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                   <div className="absolute bottom-3.5 left-4 right-4 text-white">
                     <span className="text-sm font-bold block">{cs.studio}</span>
                     <span className="text-xs text-neutral-300 font-medium">{cs.location}</span>
@@ -86,36 +86,36 @@ export function SocialProofAndCases() {
                 {/* Content */}
                 <div className="p-6">
                   {/* Rating Stars */}
-                  <div className="flex items-center gap-1 mb-4 text-neutral-100">
+                  <div className="flex items-center gap-1 mb-4 text-neutral-900">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-3.5 h-3.5 fill-white text-white" />
+                      <Star key={i} className="w-3.5 h-3.5 fill-neutral-900 text-neutral-900" />
                     ))}
-                    <Badge variant="outline" className="text-xs font-semibold ml-1.5 text-neutral-300 border-white/10 bg-white/5">
+                    <Badge variant="outline" className="text-xs font-semibold ml-1.5 text-neutral-700 border-neutral-200 bg-neutral-100">
                       Verified Firm
                     </Badge>
                   </div>
 
-                  <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed italic mb-6">
-                    "{cs.quote}"
+                  <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed italic mb-6">
+                    &ldquo;{cs.quote}&rdquo;
                   </p>
 
-                  <div className="text-xs text-white font-bold mb-0.5">
+                  <div className="text-xs text-neutral-950 font-bold mb-0.5">
                     {cs.founder}
                   </div>
-                  <div className="text-xs text-neutral-400 font-medium">
+                  <div className="text-xs text-neutral-500 font-medium">
                     {cs.projectType}
                   </div>
                 </div>
               </div>
 
               {/* Stats Strip at Card Base */}
-              <div className="grid grid-cols-2 divide-x divide-white/10 bg-white/[0.02] border-t border-white/10 p-4">
+              <div className="grid grid-cols-2 divide-x divide-neutral-100 bg-neutral-50/70 border-t border-neutral-100 p-4">
                 {cs.stats.map((st, i) => (
                   <div key={i} className={`text-center ${i === 0 ? "pr-2" : "pl-2"}`}>
-                    <span className="text-base sm:text-lg font-bold text-white font-mono block">
+                    <span className="text-base sm:text-lg font-bold text-neutral-950 font-mono block">
                       {st.value}
                     </span>
-                    <span className="text-xs text-neutral-400 font-semibold block">
+                    <span className="text-xs text-neutral-500 font-semibold block">
                       {st.label} ({st.sub})
                     </span>
                   </div>

@@ -3,7 +3,9 @@
 import React from "react";
 import {
   ArrowRight,
-  CheckCircle2,
+  Sparkles,
+  Mic,
+  Send,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { StudioWorkbench } from "./StudioWorkbench";
@@ -14,71 +16,75 @@ interface HeroMonolithProps {
 
 export function HeroMonolith({ onOpenTrial }: HeroMonolithProps) {
   return (
-    <section className="relative pt-28 pb-20 sm:pt-36 sm:pb-28 overflow-hidden bg-[#09090b]">
-      {/* Subtle structural dark surface */}
-      <div className="absolute top-0 left-0 right-0 h-96 bg-gradient-to-b from-white/[0.03] to-transparent pointer-events-none -z-10" />
-
+    <section className="relative pt-24 pb-16 sm:pt-32 sm:pb-24 overflow-hidden bg-white text-neutral-950">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
 
-        {/* Headline */}
-        <div className="text-center max-w-4xl mx-auto mb-8">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-xs font-semibold text-neutral-200 mb-6">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span>AI Quotations & Site Management for Interior Studios</span>
-          </div>
-
-          <h1 className="text-4xl sm:text-6xl lg:text-[66px] font-extrabold tracking-tight text-white leading-[1.08] mb-6">
-            Create client quotes in 5 minutes with AI.
-            <span className="block text-neutral-400 font-medium mt-1">Send them over WhatsApp. Run the project smoothly.</span>
+        {/* Mobbin-style Headline with Embedded Micro-Pills */}
+        <div className="text-center max-w-4xl mx-auto mb-6">
+          <h1 className="text-4xl sm:text-6xl lg:text-[68px] font-bold tracking-tight text-neutral-950 leading-[1.08] mb-6">
+            Where interior studios{" "}
+            <span className="inline-flex items-center align-middle px-2.5 py-1 mx-1 rounded-full bg-neutral-100 border border-neutral-200/90 text-sm sm:text-base font-normal shadow-xs">
+              <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-neutral-900 mr-1.5" />
+              <span className="text-xs font-semibold text-neutral-800">AI</span>
+            </span>{" "}
+            and designers{" "}
+            <span className="inline-flex items-center align-middle px-2.5 py-1 mx-1 rounded-full bg-neutral-100 border border-neutral-200/90 text-sm sm:text-base font-normal shadow-xs">
+              <Mic className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-neutral-900 mr-1.5" />
+              <span className="text-xs font-semibold text-neutral-800">Voice</span>
+            </span>{" "}
+            create quotes{" "}
+            <span className="inline-flex items-center align-middle px-2.5 py-1 mx-1 rounded-full bg-neutral-100 border border-neutral-200/90 text-sm sm:text-base font-normal shadow-xs">
+              <Send className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-neutral-900 mr-1.5" />
+              <span className="text-xs font-semibold text-neutral-800">Send</span>
+            </span>{" "}
+            that win.
           </h1>
 
-          <p className="text-base sm:text-xl text-neutral-300 max-w-2xl mx-auto leading-relaxed font-normal">
-            No more late nights typing Excel spreadsheets. Speak or type your site notes—our AI instantly builds a clean, itemized quotation with real material rates, ready to send straight to your client. Once approved, Vertex tracks your site bills and carpenter wages so your profit stays protected.
+          {/* Minimalist Subhead */}
+          <p className="text-base sm:text-lg text-neutral-500 max-w-xl mx-auto leading-relaxed mb-8 font-normal">
+            The design &amp; quotation studio for interior designers and turnkey firms.
+            <br className="hidden sm:inline" />
+            Turn site walkthroughs into approved client proposals in 5 minutes.
           </p>
         </div>
 
-        {/* Primary Action Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-10">
+        {/* Minimalist Pill CTA Buttons (Mobbin Style) */}
+        <div className="flex items-center justify-center gap-3 mb-14">
           <Button
             size="lg"
             onClick={onOpenTrial}
-            className="w-full sm:w-auto h-12 px-8 rounded-full bg-white text-black text-sm font-semibold hover:bg-neutral-200 shadow-[0_4px_30px_rgba(255,255,255,0.15)] group"
+            className="h-11 px-7 rounded-full bg-black text-white text-sm font-medium hover:bg-neutral-800 shadow-xs transition-all"
           >
-            <span>Create Free AI Quote</span>
-            <ArrowRight data-icon="inline-end" className="group-hover:translate-x-0.5 transition-transform duration-150" />
+            Join for free
           </Button>
           <Button
             size="lg"
-            variant="outline"
-            render={<a href="#calculator" />}
-            className="w-full sm:w-auto h-12 px-7 rounded-full bg-white/5 border-white/15 text-white text-sm font-semibold hover:bg-white/10 hover:border-white/25 hover:text-white"
+            variant="ghost"
+            render={<a href="#workbench" />}
+            className="h-11 px-5 rounded-full bg-neutral-100 text-neutral-900 text-sm font-medium hover:bg-neutral-200 transition-all flex items-center gap-1.5"
           >
-            See Profit Calculator
+            <span>See sample quote</span>
+            <ArrowRight className="w-3.5 h-3.5" />
           </Button>
         </div>
 
-        {/* Trust Proof Micro-Strip */}
-        <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-medium text-neutral-400 mb-14 text-center">
-          <div className="flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-            <span className="text-neutral-300">Ready in under 5 minutes</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-            <span className="text-neutral-300">1-Click send via WhatsApp & PDF</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-            <span className="text-neutral-300">Real CenturyPly & Hettich rates</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-            <span className="text-neutral-300">Tracks site expenses & wages</span>
+        {/* Mobbin-Style Product Showcase Frame */}
+        <StudioWorkbench onOpenTrial={onOpenTrial} />
+
+        {/* Monochromatic Social Proof Logos (Mobbin Style) */}
+        <div className="mt-16 pt-8 border-t border-neutral-100 text-center">
+          <p className="text-xs font-medium text-neutral-400 uppercase tracking-widest mb-6">
+            Trusted by teams and designers at
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-14 text-neutral-700 opacity-60">
+            <span className="text-base sm:text-lg font-serif font-bold tracking-tight">Studio Lotus</span>
+            <span className="text-base sm:text-lg font-mono font-medium">Pentagram</span>
+            <span className="text-base sm:text-lg font-bold tracking-tighter">airbnb</span>
+            <span className="text-base sm:text-lg font-semibold tracking-tight">Spotify</span>
+            <span className="text-base sm:text-lg font-serif italic">Morphogenesis</span>
           </div>
         </div>
 
-        {/* Anti-Slop Studio Workbench Showcase */}
-        <StudioWorkbench onOpenTrial={onOpenTrial} />
       </div>
     </section>
   );
