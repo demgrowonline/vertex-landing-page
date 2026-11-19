@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export function DistinctiveEngines() {
   const [activeEngine, setActiveEngine] = useState<number>(0);
@@ -132,47 +133,35 @@ export function DistinctiveEngines() {
           </p>
         </div>
 
-        {/* Engine Switcher Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 mb-10">
-          {engines.map((eng, idx) => (
-            <button
-              key={eng.id}
-              onClick={() => setActiveEngine(idx)}
-              className={`btn-press text-left p-4 sm:p-5 rounded-2xl border transition-colors duration-150 flex flex-col justify-between min-h-[108px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 active:scale-[0.98] ${
-                activeEngine === idx
-                  ? "bg-white text-black border-white shadow-xl"
-                  : "bg-[#131318] text-neutral-300 border-white/10 hover:border-white/20 hover:bg-white/[0.04]"
-              }`}
-            >
-              <div>
-                <div className="flex justify-between items-center mb-2">
-                  <span
-                    className={`text-xs font-mono font-bold ${
-                      activeEngine === idx ? "text-neutral-600" : "text-neutral-400"
-                    }`}
-                  >
-                    ENGINE {eng.number}
-                  </span>
-                  {activeEngine === idx && (
-                    <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                  )}
-                </div>
-                <div className="text-xs sm:text-sm font-bold tracking-tight line-clamp-2">
-                  {eng.title}
-                </div>
-              </div>
-              <div
-                className={`text-xs font-medium mt-3 pt-2 border-t ${
-                  activeEngine === idx
-                    ? "border-neutral-200 text-neutral-700"
-                    : "border-white/10 text-neutral-400"
-                }`}
+        {/* Engine Switcher Grid using shadcn Tabs */}
+        <Tabs value={String(activeEngine)} onValueChange={(val) => setActiveEngine(Number(val))}>
+          <TabsList className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 mb-10 bg-transparent p-0 h-auto">
+            {engines.map((eng, idx) => (
+              <TabsTrigger
+                key={eng.id}
+                value={String(idx)}
+                className="text-left p-4 sm:p-5 rounded-2xl border transition-colors duration-150 flex flex-col justify-between min-h-[108px] h-auto data-active:bg-white data-active:text-black data-active:border-white data-active:shadow-xl bg-[#131318] text-neutral-300 border-white/10 hover:border-white/20 hover:bg-white/[0.04]"
               >
-                {eng.badge}
-              </div>
-            </button>
-          ))}
-        </div>
+                <div className="w-full">
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="text-xs font-mono font-bold opacity-70">
+                      ENGINE {eng.number}
+                    </span>
+                    {activeEngine === idx && (
+                      <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                    )}
+                  </div>
+                  <div className="text-xs sm:text-sm font-bold tracking-tight line-clamp-2">
+                    {eng.title}
+                  </div>
+                </div>
+                <div className="text-xs font-medium mt-3 pt-2 border-t border-current/20 w-full opacity-80">
+                  {eng.badge}
+                </div>
+              </TabsTrigger>
+            ))}
+          </TabsList>
+        </Tabs>
 
         {/* The Active Engine Showcase Monolith */}
         <Card className="rounded-3xl bg-[#121217] border-white/10 p-6 sm:p-10 shadow-[0_24px_64px_rgba(0,0,0,0.6)]">

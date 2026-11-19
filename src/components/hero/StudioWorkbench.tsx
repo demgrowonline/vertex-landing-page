@@ -13,6 +13,8 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Card, CardContent } from "@/components/ui/card";
 
 interface StudioWorkbenchProps {
   onOpenTrial?: () => void;
@@ -209,50 +211,40 @@ export function StudioWorkbench({ onOpenTrial }: StudioWorkbenchProps) {
           </div>
         </div>
 
-        {/* Tab Navigation */}
-        <div className="flex items-center justify-between px-5 pt-2 border-b border-white/10 bg-[#0f0f13]">
-          <div className="flex gap-1">
-            <button
-              onClick={() => setActiveTab("ledger")}
-              className={`pb-3 px-3 text-xs font-semibold border-b-2 flex items-center gap-1.5 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-1 focus-visible:ring-offset-neutral-950 active:scale-[0.99] ${
-                activeTab === "ledger"
-                  ? "border-white text-white"
-                  : "border-transparent text-neutral-400 hover:text-white"
-              }`}
-            >
-              <Receipt className="w-3.5 h-3.5" />
-              <span>Live Site Expenses</span>
-            </button>
+        {/* Tab Navigation with shadcn Tabs */}
+        <Tabs value={activeTab} onValueChange={(val) => setActiveTab(val as TabType)}>
+          <div className="flex items-center justify-between px-5 pt-2 border-b border-white/10 bg-[#0f0f13]">
+            <TabsList className="bg-transparent p-0 gap-1 h-auto border-0">
+              <TabsTrigger
+                value="ledger"
+                className="pb-3 px-3 text-xs font-semibold rounded-none border-b-2 border-transparent data-active:border-white data-active:text-white text-neutral-400 hover:text-white flex items-center gap-1.5 bg-transparent shadow-none"
+              >
+                <Receipt className="size-3.5" />
+                <span>Live Site Expenses</span>
+              </TabsTrigger>
 
-            <button
-              onClick={() => setActiveTab("boq")}
-              className={`pb-3 px-3 text-xs font-semibold border-b-2 flex items-center gap-1.5 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-1 focus-visible:ring-offset-neutral-950 active:scale-[0.99] ${
-                activeTab === "boq"
-                  ? "border-white text-white"
-                  : "border-transparent text-neutral-400 hover:text-white"
-              }`}
-            >
-              <TrendingUp className="w-3.5 h-3.5" />
-              <span>Budget vs Actual</span>
-            </button>
+              <TabsTrigger
+                value="boq"
+                className="pb-3 px-3 text-xs font-semibold rounded-none border-b-2 border-transparent data-active:border-white data-active:text-white text-neutral-400 hover:text-white flex items-center gap-1.5 bg-transparent shadow-none"
+              >
+                <TrendingUp className="size-3.5" />
+                <span>Budget vs Actual</span>
+              </TabsTrigger>
 
-            <button
-              onClick={() => setActiveTab("matrix")}
-              className={`pb-3 px-3 text-xs font-semibold border-b-2 flex items-center gap-1.5 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-1 focus-visible:ring-offset-neutral-950 active:scale-[0.99] ${
-                activeTab === "matrix"
-                  ? "border-white text-white"
-                  : "border-transparent text-neutral-400 hover:text-white"
-              }`}
-            >
-              <FileSpreadsheet className="w-3.5 h-3.5" />
-              <span>Material Price Tiers</span>
-            </button>
+              <TabsTrigger
+                value="matrix"
+                className="pb-3 px-3 text-xs font-semibold rounded-none border-b-2 border-transparent data-active:border-white data-active:text-white text-neutral-400 hover:text-white flex items-center gap-1.5 bg-transparent shadow-none"
+              >
+                <FileSpreadsheet className="size-3.5" />
+                <span>Material Price Tiers</span>
+              </TabsTrigger>
+            </TabsList>
+
+            <div className="hidden sm:flex items-center gap-1.5 text-xs text-neutral-400 pb-2">
+              <span>Updated live from site phone</span>
+            </div>
           </div>
-
-          <div className="hidden sm:flex items-center gap-1.5 text-xs text-neutral-400 pb-2">
-            <span>Updated live from site phone</span>
-          </div>
-        </div>
+        </Tabs>
 
         {/* Tab Content Panes */}
         <div className="p-5 sm:p-6 bg-[#0f0f13] min-h-[320px]">
@@ -437,19 +429,21 @@ export function StudioWorkbench({ onOpenTrial }: StudioWorkbenchProps) {
                   </p>
                 </div>
 
-                <div className="inline-flex p-1 bg-white/5 rounded-lg border border-white/10">
+                <div className="inline-flex p-1 bg-white/5 rounded-lg border border-white/10 gap-1">
                   {(["essential", "signature", "architectural"] as const).map((tier) => (
-                    <button
+                    <Button
                       key={tier}
+                      variant="ghost"
+                      size="xs"
                       onClick={() => setSelectedTier(tier)}
-                      className={`px-3 py-1 text-xs font-semibold rounded-md capitalize transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-1 focus-visible:ring-offset-neutral-950 active:scale-[0.98] ${
+                      className={`capitalize font-semibold rounded-md ${
                         selectedTier === tier
-                          ? "bg-white text-black shadow-sm"
-                          : "text-neutral-400 hover:text-white"
+                          ? "bg-white text-black hover:bg-white hover:text-black shadow-sm"
+                          : "text-neutral-400 hover:text-white hover:bg-white/10"
                       }`}
                     >
                       {tier === "signature" ? "Signature Line" : tier}
-                    </button>
+                    </Button>
                   ))}
                 </div>
               </div>
@@ -457,95 +451,101 @@ export function StudioWorkbench({ onOpenTrial }: StudioWorkbenchProps) {
               {/* Tiers Grid */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-3 pt-1">
                 
-                <div
-                  className={`p-4 rounded-xl border transition-colors duration-150 ${
+                <Card
+                  className={`p-4 rounded-xl border transition-colors duration-150 gap-0 ${
                     selectedTier === "essential"
                       ? "border-white bg-white/10 shadow-sm"
                       : "border-white/10 bg-white/[0.02]"
                   }`}
                 >
-                  <span className="text-xs font-medium text-neutral-400 block mb-1">
-                    Tier 1: Essential Line
-                  </span>
-                  <div className="text-xl font-bold text-white my-1 tabular-nums">
-                    ₹38,50,000
-                  </div>
-                  <p className="text-xs text-neutral-300 mb-3">
-                    Commercial MR Plywood, 0.8mm Matte Laminates, Ebco hardware.
-                  </p>
-                  <ul className="text-xs space-y-1.5 text-neutral-400">
-                    <li>• IS 303 MR grade plywood</li>
-                    <li>• 5-year hardware replacement warranty</li>
-                    <li>• Studio margin: 32.0%</li>
-                  </ul>
-                </div>
+                  <CardContent className="p-0">
+                    <span className="text-xs font-medium text-neutral-400 block mb-1">
+                      Tier 1: Essential Line
+                    </span>
+                    <div className="text-xl font-bold text-white my-1 tabular-nums font-mono">
+                      ₹38,50,000
+                    </div>
+                    <p className="text-xs text-neutral-300 mb-3">
+                      Commercial MR Plywood, 0.8mm Matte Laminates, Ebco hardware.
+                    </p>
+                    <ul className="text-xs space-y-1.5 text-neutral-400">
+                      <li>• IS 303 MR grade plywood</li>
+                      <li>• 5-year hardware replacement warranty</li>
+                      <li>• Studio margin: 32.0%</li>
+                    </ul>
+                  </CardContent>
+                </Card>
 
-                <div
-                  className={`p-4 rounded-xl border transition-colors duration-150 ${
+                <Card
+                  className={`p-4 rounded-xl border transition-colors duration-150 gap-0 ${
                     selectedTier === "signature"
                       ? "border-white bg-white text-black shadow-xl"
                       : "border-white/10 bg-white/[0.02]"
                   }`}
                 >
-                  <div className="flex items-center justify-between mb-1">
-                    <span
-                      className={`text-xs font-medium block ${
-                        selectedTier === "signature" ? "text-neutral-700" : "text-neutral-400"
+                  <CardContent className="p-0">
+                    <div className="flex items-center justify-between mb-1">
+                      <span
+                        className={`text-xs font-medium block ${
+                          selectedTier === "signature" ? "text-neutral-700" : "text-neutral-400"
+                        }`}
+                      >
+                        Tier 2: Signature Line
+                      </span>
+                      <Badge className="text-xs bg-emerald-500/20 text-emerald-800 border-emerald-500/30 hover:bg-emerald-500/20 font-bold">
+                        Active Contract
+                      </Badge>
+                    </div>
+                    <div
+                      className={`text-xl font-bold my-1 tabular-nums font-mono ${
+                        selectedTier === "signature" ? "text-black" : "text-white"
                       }`}
                     >
-                      Tier 2: Signature Line
-                    </span>
-                    <Badge className="text-xs bg-emerald-500/20 text-emerald-800 border-emerald-500/30 hover:bg-emerald-500/20 font-bold">
-                      Active Contract
-                    </Badge>
-                  </div>
-                  <div
-                    className={`text-xl font-bold my-1 tabular-nums ${
-                      selectedTier === "signature" ? "text-black" : "text-white"
-                    }`}
-                  >
-                    ₹54,20,000
-                  </div>
-                  <p
-                    className={`text-xs mb-3 ${
-                      selectedTier === "signature" ? "text-neutral-700" : "text-neutral-300"
-                    }`}
-                  >
-                    Century BWR Marine Ply, Royale Touche 1mm Acrylic, Hettich Sensys.
-                  </p>
-                  <ul
-                    className={`text-xs space-y-1.5 ${
-                      selectedTier === "signature" ? "text-neutral-800" : "text-neutral-400"
-                    }`}
-                  >
-                    <li>• Century BWR Marine Core (IS 710)</li>
-                    <li>• Hettich Quadro soft-close drawer runners</li>
-                    <li>• Studio margin: 38.0% protected</li>
-                  </ul>
-                </div>
+                      ₹54,20,000
+                    </div>
+                    <p
+                      className={`text-xs mb-3 ${
+                        selectedTier === "signature" ? "text-neutral-700" : "text-neutral-300"
+                      }`}
+                    >
+                      Century BWR Marine Ply, Royale Touche 1mm Acrylic, Hettich Sensys.
+                    </p>
+                    <ul
+                      className={`text-xs space-y-1.5 ${
+                        selectedTier === "signature" ? "text-neutral-800" : "text-neutral-400"
+                      }`}
+                    >
+                      <li>• Century BWR Marine Core (IS 710)</li>
+                      <li>• Hettich Quadro soft-close drawer runners</li>
+                      <li>• Studio margin: 38.0% protected</li>
+                    </ul>
+                  </CardContent>
+                </Card>
 
-                <div
-                  className={`p-4 rounded-xl border transition-colors duration-150 ${
+                <Card
+                  className={`p-4 rounded-xl border transition-colors duration-150 gap-0 ${
                     selectedTier === "architectural"
                       ? "border-white bg-white/10 shadow-sm"
                       : "border-white/10 bg-white/[0.02]"
                   }`}
                 >
-                  <span className="text-xs font-medium text-neutral-400 block mb-1">
-                    Tier 3: Architectural Reserve
-                  </span>
-                  <div className="text-xl font-bold text-white my-1 tabular-nums">
-                    ₹76,80,000
-                  </div>
-                  <p className="text-xs text-neutral-300 mb-3">
-                    Natural Teak Veneer, PU Matt Polycoat, Blum Aventos servo-drive.
-                  </p>
-                  <ul className="text-xs space-y-1.5 text-neutral-400">
-                    <li>• Hand-matched architectural veneer</li>
-                    <li>• Blum motorized lift-up hardware</li>
-                    <li>• Studio margin: 44.0%</li>
-                  </ul>
-                </div>
+                  <CardContent className="p-0">
+                    <span className="text-xs font-medium text-neutral-400 block mb-1">
+                      Tier 3: Architectural Reserve
+                    </span>
+                    <div className="text-xl font-bold text-white my-1 tabular-nums font-mono">
+                      ₹76,80,000
+                    </div>
+                    <p className="text-xs text-neutral-300 mb-3">
+                      Natural Teak Veneer, PU Matt Polycoat, Blum Aventos servo-drive.
+                    </p>
+                    <ul className="text-xs space-y-1.5 text-neutral-400">
+                      <li>• Hand-matched architectural veneer</li>
+                      <li>• Blum motorized lift-up hardware</li>
+                      <li>• Studio margin: 44.0%</li>
+                    </ul>
+                  </CardContent>
+                </Card>
               </div>
             </div>
           )}

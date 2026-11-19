@@ -4,6 +4,14 @@ import React from "react";
 import { Check, X, Minus } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
 export function ComparisonMatrix() {
   const features = [
@@ -94,68 +102,66 @@ export function ComparisonMatrix() {
           </p>
         </div>
 
-        {/* The Comparison Table Container */}
+        {/* The Comparison Table Container with shadcn Table */}
         <Card className="border-white/10 rounded-3xl overflow-hidden shadow-[0_24px_64px_rgba(0,0,0,0.6)] bg-[#121217] p-0 gap-0">
-          <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse min-w-[720px]">
-              <thead>
-                <tr className="border-b border-white/10 bg-[#16161c]">
-                  <th className="p-4 sm:p-5 text-xs font-bold text-neutral-400 w-1/4">
-                    Capability
-                  </th>
-                  <th className="p-4 sm:p-5 text-xs font-bold text-white w-1/3 bg-white/10 border-x border-white/10">
-                    <div className="flex items-center gap-2">
-                      <span>Vertex OS</span>
-                      <Badge className="bg-white text-black hover:bg-white text-[11px] font-bold">
-                        Purpose-built
-                      </Badge>
+          <Table className="min-w-[720px]">
+            <TableHeader className="bg-[#16161c]">
+              <TableRow className="border-b border-white/10 hover:bg-transparent">
+                <TableHead className="p-4 sm:p-5 text-xs font-bold text-neutral-400 w-1/4">
+                  Capability
+                </TableHead>
+                <TableHead className="p-4 sm:p-5 text-xs font-bold text-white w-1/3 bg-white/10 border-x border-white/10">
+                  <div className="flex items-center gap-2">
+                    <span>Vertex OS</span>
+                    <Badge className="bg-white text-black hover:bg-white text-[11px] font-bold">
+                      Purpose-built
+                    </Badge>
+                  </div>
+                </TableHead>
+                <TableHead className="p-4 sm:p-5 text-xs font-bold text-neutral-400 w-1/4">
+                  Spreadsheets + WhatsApp
+                </TableHead>
+                <TableHead className="p-4 sm:p-5 text-xs font-bold text-neutral-400 w-1/4">
+                  Generic Construction ERPs
+                </TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody className="divide-y divide-white/10 text-xs sm:text-sm">
+              {features.map((feat, idx) => (
+                <TableRow
+                  key={idx}
+                  className={`border-b border-white/10 hover:bg-white/[0.04] transition-colors duration-150 ${
+                    feat.highlight ? "bg-white/[0.02]" : ""
+                  }`}
+                >
+                  <TableCell className="p-4 sm:p-5 font-semibold text-neutral-200">
+                    <div>{feat.name}</div>
+                    <span className="text-xs font-normal text-neutral-500">
+                      {feat.category}
+                    </span>
+                  </TableCell>
+                  <TableCell className="p-4 sm:p-5 font-bold text-white bg-white/[0.04] border-x border-white/10">
+                    <div className="flex items-start gap-2">
+                      <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                      <span>{feat.vertex}</span>
                     </div>
-                  </th>
-                  <th className="p-4 sm:p-5 text-xs font-bold text-neutral-400 w-1/4">
-                    Spreadsheets + WhatsApp
-                  </th>
-                  <th className="p-4 sm:p-5 text-xs font-bold text-neutral-400 w-1/4">
-                    Generic Construction ERPs
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-white/10 text-xs sm:text-sm">
-                {features.map((feat, idx) => (
-                  <tr
-                    key={idx}
-                    className={`hover:bg-white/[0.04] transition-colors duration-150 ${
-                      feat.highlight ? "bg-white/[0.02]" : ""
-                    }`}
-                  >
-                    <td className="p-4 sm:p-5 font-semibold text-neutral-200">
-                      <div>{feat.name}</div>
-                      <span className="text-xs font-normal text-neutral-500">
-                        {feat.category}
-                      </span>
-                    </td>
-                    <td className="p-4 sm:p-5 font-bold text-white bg-white/[0.04] border-x border-white/10">
-                      <div className="flex items-start gap-2">
-                        <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                        <span>{feat.vertex}</span>
-                      </div>
-                    </td>
-                    <td className="p-4 sm:p-5 text-neutral-400">
-                      <div className="flex items-start gap-2">
-                        <X className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
-                        <span>{feat.sheets}</span>
-                      </div>
-                    </td>
-                    <td className="p-4 sm:p-5 text-neutral-400">
-                      <div className="flex items-start gap-2">
-                        <Minus className="w-4 h-4 text-neutral-600 shrink-0 mt-0.5" />
-                        <span>{feat.legacy}</span>
-                      </div>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+                  </TableCell>
+                  <TableCell className="p-4 sm:p-5 text-neutral-400">
+                    <div className="flex items-start gap-2">
+                      <X className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
+                      <span>{feat.sheets}</span>
+                    </div>
+                  </TableCell>
+                  <TableCell className="p-4 sm:p-5 text-neutral-400">
+                    <div className="flex items-start gap-2">
+                      <Minus className="w-4 h-4 text-neutral-600 shrink-0 mt-0.5" />
+                      <span>{feat.legacy}</span>
+                    </div>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
         </Card>
       </div>
     </section>

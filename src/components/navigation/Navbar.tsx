@@ -1,9 +1,16 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { ArrowRight, Menu, X } from "lucide-react";
+import { ArrowRight, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 interface NavbarProps {
   onOpenTrial: () => void;
@@ -98,84 +105,90 @@ export function Navbar({ onOpenTrial }: NavbarProps) {
               <ArrowRight data-icon="inline-end" />
             </Button>
 
-            {/* Mobile Menu Trigger */}
-            <Button
-              variant="ghost"
-              size="icon-sm"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden rounded-full text-neutral-300 hover:text-white hover:bg-white/10"
-              aria-label="Toggle menu"
-            >
-              {mobileMenuOpen ? <X className="size-4" /> : <Menu className="size-4" />}
-            </Button>
+            {/* Mobile Sheet Navigation */}
+            <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+              <SheetTrigger
+                render={
+                  <Button
+                    variant="ghost"
+                    size="icon-sm"
+                    className="md:hidden rounded-full text-neutral-300 hover:text-white hover:bg-white/10"
+                    aria-label="Toggle menu"
+                  />
+                }
+              >
+                <Menu className="size-4" />
+              </SheetTrigger>
+              <SheetContent side="right" className="bg-[#0e0e12] border-white/15 text-white p-6 w-80">
+                <SheetHeader className="mb-6 text-left">
+                  <SheetTitle className="text-white font-bold text-lg">
+                    Vertex<span className="text-neutral-400 font-normal">OS</span>
+                  </SheetTitle>
+                </SheetHeader>
+                <div className="flex flex-col gap-4 text-sm font-semibold text-neutral-200">
+                  <a
+                    href="#capabilities"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="py-2 border-b border-white/10 hover:text-white transition-colors"
+                  >
+                    Features
+                  </a>
+                  <a
+                    href="#calculator"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="py-2 border-b border-white/10 hover:text-white transition-colors"
+                  >
+                    Profit Calculator
+                  </a>
+                  <a
+                    href="#problem"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="py-2 border-b border-white/10 hover:text-white transition-colors"
+                  >
+                    Why Vertex
+                  </a>
+                  <a
+                    href="#comparison"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="py-2 border-b border-white/10 hover:text-white transition-colors"
+                  >
+                    Comparison
+                  </a>
+                  <a
+                    href="/pricing"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="py-2 border-b border-white/10 hover:text-white transition-colors text-blue-400 font-bold"
+                  >
+                    Pricing
+                  </a>
+                  <a
+                    href="#proof"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="py-2 border-b border-white/10 hover:text-white transition-colors"
+                  >
+                    Reviews
+                  </a>
+                  <a
+                    href="#faq"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="py-2 border-b border-white/10 hover:text-white transition-colors"
+                  >
+                    FAQ
+                  </a>
+                  <Button
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      onOpenTrial();
+                    }}
+                    className="w-full mt-2 rounded-full text-xs font-bold bg-white text-black hover:bg-neutral-200"
+                  >
+                    Start Free Trial
+                  </Button>
+                </div>
+              </SheetContent>
+            </Sheet>
           </div>
         </nav>
-
-        {/* Mobile Dropdown Menu */}
-        {mobileMenuOpen && (
-          <div className="md:hidden mt-2 p-5 rounded-3xl bg-[#0e0e12]/95 backdrop-blur-2xl border border-white/15 shadow-[0_20px_50px_rgba(0,0,0,0.8)] animate-in fade-in slide-in-from-top-2 duration-200">
-            <div className="flex flex-col gap-4 text-sm font-semibold text-neutral-200">
-              <a
-                href="#capabilities"
-                onClick={() => setMobileMenuOpen(false)}
-                className="py-2 border-b border-white/10 hover:text-white transition-colors"
-              >
-                Features
-              </a>
-              <a
-                href="#calculator"
-                onClick={() => setMobileMenuOpen(false)}
-                className="py-2 border-b border-white/10 hover:text-white transition-colors"
-              >
-                Profit Calculator
-              </a>
-              <a
-                href="#problem"
-                onClick={() => setMobileMenuOpen(false)}
-                className="py-2 border-b border-white/10 hover:text-white transition-colors"
-              >
-                Why Vertex
-              </a>
-              <a
-                href="#comparison"
-                onClick={() => setMobileMenuOpen(false)}
-                className="py-2 border-b border-white/10 hover:text-white transition-colors"
-              >
-                Comparison
-              </a>
-              <a
-                href="/pricing"
-                onClick={() => setMobileMenuOpen(false)}
-                className="py-2 border-b border-white/10 hover:text-white transition-colors text-blue-400 font-bold"
-              >
-                Pricing
-              </a>
-              <a
-                href="#proof"
-                onClick={() => setMobileMenuOpen(false)}
-                className="py-2 border-b border-white/10 hover:text-white transition-colors"
-              >
-                Reviews
-              </a>
-              <a
-                href="#faq"
-                onClick={() => setMobileMenuOpen(false)}
-                className="py-2 border-b border-white/10 hover:text-white transition-colors"
-              >
-                FAQ
-              </a>
-              <Button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenTrial();
-                }}
-                className="w-full mt-2 rounded-full text-xs font-bold bg-white text-black hover:bg-neutral-200"
-              >
-                Start Free Trial
-              </Button>
-            </div>
-          </div>
-        )}
       </div>
     </header>
   );

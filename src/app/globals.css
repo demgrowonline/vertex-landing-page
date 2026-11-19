@@ -22,7 +22,6 @@
   }
 
   * {
-    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
     @apply border-border outline-ring/50;
   }
 
@@ -34,7 +33,7 @@
     overflow-x: clip;
     background-color: var(--canvas);
     color: var(--ink);
-    @apply font-sans;
+    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
   }
 
   body {

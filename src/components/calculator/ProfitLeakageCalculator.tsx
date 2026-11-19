@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import { Label } from "@/components/ui/label";
 
 interface CalculatorProps {
   onOpenTrial: () => void;
@@ -52,9 +53,9 @@ export function ProfitLeakageCalculator({ onOpenTrial }: CalculatorProps) {
               {/* Slider 1: Active Projects */}
               <div className="space-y-3">
                 <div className="flex justify-between items-center">
-                  <label className="text-sm font-bold text-white">
+                  <Label className="text-sm font-bold text-white">
                     Active Turnkey Projects Per Year
-                  </label>
+                  </Label>
                   <Badge variant="outline" className="text-sm font-bold text-white font-mono px-3 py-1 bg-white/10 border-white/10">
                     {projectCount} Projects
                   </Badge>
@@ -80,9 +81,9 @@ export function ProfitLeakageCalculator({ onOpenTrial }: CalculatorProps) {
               {/* Slider 2: Average Contract Value */}
               <div className="space-y-3">
                 <div className="flex justify-between items-center">
-                  <label className="text-sm font-bold text-white">
+                  <Label className="text-sm font-bold text-white">
                     Average Contract Value Per Residence
-                  </label>
+                  </Label>
                   <Badge variant="outline" className="text-sm font-bold text-white font-mono px-3 py-1 bg-white/10 border-white/10">
                     ₹{avgContractLakhs} Lakhs
                   </Badge>
@@ -108,9 +109,9 @@ export function ProfitLeakageCalculator({ onOpenTrial }: CalculatorProps) {
               {/* Slider 3: Quoted Gross Margin Target */}
               <div className="space-y-3">
                 <div className="flex justify-between items-center">
-                  <label className="text-sm font-bold text-white">
+                  <Label className="text-sm font-bold text-white">
                     Target Quoted Margin %
-                  </label>
+                  </Label>
                   <Badge variant="outline" className="text-sm font-bold text-white font-mono px-3 py-1 bg-white/10 border-white/10">
                     {targetMarginPct}%
                   </Badge>

@@ -12,6 +12,14 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 interface ModalProps {
   isOpen: boolean;
@@ -115,34 +123,44 @@ export function StudioTrialModal({ isOpen, onClose }: ModalProps) {
                 <Label htmlFor="projectScale" className="font-semibold text-neutral-300">
                   Active Turnkey Projects Per Year
                 </Label>
-                <select
-                  id="projectScale"
+                <Select
                   value={formData.projectScale}
-                  onChange={(e) => setFormData({ ...formData, projectScale: e.target.value })}
-                  className="w-full px-3.5 py-2 rounded-xl border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-white text-xs bg-[#1a1a22]"
+                  onValueChange={(val) => setFormData({ ...formData, projectScale: val || "" })}
                 >
-                  <option>1 to 3 Turnkey Residences (Boutique)</option>
-                  <option>4 to 8 Active Residences (Growing Studio)</option>
-                  <option>9 to 15 Turnkey Residences (Scale Studio)</option>
-                  <option>16+ Projects (Enterprise / High Volume)</option>
-                </select>
+                  <SelectTrigger id="projectScale" className="w-full rounded-xl border-white/10 text-white bg-[#1a1a22] text-xs">
+                    <SelectValue placeholder="Select project scale" />
+                  </SelectTrigger>
+                  <SelectContent className="bg-[#141419] border-white/10 text-white text-xs">
+                    <SelectGroup>
+                      <SelectItem value="1 to 3 Turnkey Residences (Boutique)">1 to 3 Turnkey Residences (Boutique)</SelectItem>
+                      <SelectItem value="4 to 8 Active Residences (Growing Studio)">4 to 8 Active Residences (Growing Studio)</SelectItem>
+                      <SelectItem value="9 to 15 Turnkey Residences (Scale Studio)">9 to 15 Turnkey Residences (Scale Studio)</SelectItem>
+                      <SelectItem value="16+ Projects (Enterprise / High Volume)">16+ Projects (Enterprise / High Volume)</SelectItem>
+                    </SelectGroup>
+                  </SelectContent>
+                </Select>
               </div>
 
               <div className="space-y-1.5">
                 <Label htmlFor="primaryGoal" className="font-semibold text-neutral-300">
                   Primary Margin Goal
                 </Label>
-                <select
-                  id="primaryGoal"
+                <Select
                   value={formData.primaryGoal}
-                  onChange={(e) => setFormData({ ...formData, primaryGoal: e.target.value })}
-                  className="w-full px-3.5 py-2 rounded-xl border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-white text-xs bg-[#1a1a22]"
+                  onValueChange={(val) => setFormData({ ...formData, primaryGoal: val || "" })}
                 >
-                  <option>Stop unbilled site material and labor wage leakage</option>
-                  <option>Cut quotation time from 5 days to 15 minutes</option>
-                  <option>Ditch chaotic WhatsApp voice notes and multiple Excel sheets</option>
-                  <option>Real-time P&L visibility on active site cashflow</option>
-                </select>
+                  <SelectTrigger id="primaryGoal" className="w-full rounded-xl border-white/10 text-white bg-[#1a1a22] text-xs">
+                    <SelectValue placeholder="Select primary goal" />
+                  </SelectTrigger>
+                  <SelectContent className="bg-[#141419] border-white/10 text-white text-xs">
+                    <SelectGroup>
+                      <SelectItem value="Stop unbilled site material and labor wage leakage">Stop unbilled site material and labor wage leakage</SelectItem>
+                      <SelectItem value="Cut quotation time from 5 days to 15 minutes">Cut quotation time from 5 days to 15 minutes</SelectItem>
+                      <SelectItem value="Ditch chaotic WhatsApp voice notes and multiple Excel sheets">Ditch chaotic WhatsApp voice notes and multiple Excel sheets</SelectItem>
+                      <SelectItem value="Real-time P&L visibility on active site cashflow">Real-time P&L visibility on active site cashflow</SelectItem>
+                    </SelectGroup>
+                  </SelectContent>
+                </Select>
               </div>
 
               <div className="pt-2">
